@@ -1,0 +1,5 @@
+BEGIN
+   INPUT a,b,c
+   DTB=(a+b+c)/2
+   DISPLAY DTB
+END

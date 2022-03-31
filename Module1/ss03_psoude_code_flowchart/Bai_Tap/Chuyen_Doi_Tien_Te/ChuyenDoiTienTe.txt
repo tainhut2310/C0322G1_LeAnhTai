@@ -1,0 +1,5 @@
+BEGIN
+   INPUT a
+   VND=a*23000
+   DISPLAY VND
+END
