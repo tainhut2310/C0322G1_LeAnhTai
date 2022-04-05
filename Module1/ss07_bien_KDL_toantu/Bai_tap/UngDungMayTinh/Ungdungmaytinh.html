@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung Dung May Tinh</title>
+</head>
+<body>
+   <h2>Caulator</h2>
+   <input type="number"; value="12" id="oneId" >
+   <input type="number"; value="12" id="twoId" ><br>
+   <br>
+   <td>
+   <button type="button" onclick=convert('A') id="Addition" value="Cong" >Addition(+)</button>
+   <button type="button" onclick=convert('B') id="Subtration" value="Tru" >Subtration(-)</button>
+   <button type="button" onclick=convert('C') id="Multiplication" value="Nhan" >Multiplication(X)</button>
+   <button type="button" onclick=convert('D') id="Dicision" value="Chia" >Division(/)</button>
+   </td>
+   <p id="result"></p>
+   <script>
+      function convert(gop) {
+         let a = parseInt(document.getElementById('oneId').value);
+         let b = parseInt(document.getElementById('twoId').value);
+         let sum;
+      if (gop == 'A') {
+         sum= a + b;
+         document.getElementById('result').innerText = 'Result Division: ' + sum;
+      }
+      else if (gop == 'B'){
+         sum= a - b;
+         document.getElementById('result').innerText = 'Result Division: ' + sum;
+      }
+      else if (gop == 'C'){
+         sum= a * b;
+         document.getElementById('result').innerText = 'Result Division: ' + sum;
+      }
+      else {
+         sum= a / b;
+         document.getElementById('result').innerText = 'Resul Divisiont: ' + sum;
+      }
+      }
+
+
+   </script>
+</body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen Doi Tien Te</title>
+</head>
+<body>
+        <table cellspacing="5" style=" width: 50%">
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <td></td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="number" style=" width: 150px" value="1" id="Amount">
+                </td>
+                <td align="center">
+                    <select style="width: 100px" id="From">
+                        <option value="VND">VietNam</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+                <td align="center">
+                    <select style="width:100px" id="To">
+                        <option value="USD">USD</option>
+                        <option value="VND">VietNam</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="button" style=" background-color: blueviolet; width: 90px"; onclick="getValue()">Covert</button><br>
+                </td>
+            </tr>
+        </table>
+        <p id="result"></p>
+     <script>
+         function getValue() {
+             let a = parseFloat(document.getElementById("Amount").value);
+             let b = document.getElementById("From").value;
+             let c = document.getElementById("To").value;
+             if (b == c) {
+                 document.getElementById('result').innerText = 'Result: '+ a + ' ' + b;
+             }
+             if (b == "VND" && c == "USD") {
+                 document.getElementById('result').innerText = 'Result: '+ a / 23000 + " $";
+             }
+             if (b == "USD" && c == "VND") {
+                 document.getElementById('result').innerText = 'Result: '+ a * 23000 + ' vnd';
+             }
+         }
+     </script>
+</body>
+</html>
