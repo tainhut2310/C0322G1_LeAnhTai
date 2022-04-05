@@ -20,22 +20,17 @@
       function convert(gop) {
          let a = parseInt(document.getElementById('oneId').value);
          let b = parseInt(document.getElementById('twoId').value);
-         let sum;
       if (gop == 'A') {
-         sum= a + b;
-         document.getElementById('result').innerText = 'Result Division: ' + sum;
+         document.getElementById('result').innerText = 'Result Division: ' + (a + b);
       }
       else if (gop == 'B'){
-         sum= a - b;
-         document.getElementById('result').innerText = 'Result Division: ' + sum;
+         document.getElementById('result').innerText = 'Result Division: ' + (a - b);
       }
       else if (gop == 'C'){
-         sum= a * b;
-         document.getElementById('result').innerText = 'Result Division: ' + sum;
+         document.getElementById('result').innerText = 'Result Division: ' + (a * b);
       }
       else {
-         sum= a / b;
-         document.getElementById('result').innerText = 'Resul Divisiont: ' + sum;
+         document.getElementById('result').innerText = 'Resul Divisiont: ' + (a / b);
       }
       }
 
