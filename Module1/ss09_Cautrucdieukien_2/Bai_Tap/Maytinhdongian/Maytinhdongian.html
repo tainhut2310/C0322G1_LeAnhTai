@@ -3,28 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>May Tinh Don Gian</title>
+    <style>
+        input {
+            width: 30px;
+            height: 30px;
+        }
+        #kq {
+            width: 150px;
+            height: 30px;
+        }
+    </style>
 </head>
 <body>
           <div id="container">
+              <input id="kq" placeholder="Hien thi ket qua"/><br>
               <input type="button" value="1" onclick="set_num(this.value)"/>
               <input type="button" value="2" onclick="set_num(this.value)"/>
               <input type="button" value="3" onclick="set_num(this.value)"/>
               <input type="button" value="+" onclick="set_num(this.value)"/>
-              <input type="button" value="-" onclick="set_num(this.value)"/>
+              <input type="button" value="-" onclick="set_num(this.value)"/><br>
               <input type="button" value="4" onclick="set_num(this.value)"/>
               <input type="button" value="5" onclick="set_num(this.value)"/>
               <input type="button" value="6" onclick="set_num(this.value)"/>
               <input type="button" value="x" onclick="set_num(this.value)"/>
-              <input type="button" value="/" onclick="set_num(this.value)"/>
+              <input type="button" value="/" onclick="set_num(this.value)"/><br>
               <input type="button" value="7" onclick="set_num(this.value)"/>
               <input type="button" value="8" onclick="set_num(this.value)"/>
               <input type="button" value="9" onclick="set_num(this.value)"/>
-              <input type="button" value="=" onclick="result"/>
-              <input type="button" value="C" onclick="delete"/>
+              <input type="button" value="=" onclick="ketqua()"/>
+              <input type="button" value="C" onclick="xoa()"/>
           </div>
           <script>
-           function convert(gop) {
-               }
+           function set_num(num) {
+             document.getElementById('kq').value += num;
+           }
+           function xoa() {
+               document.getElementById('kq').value= '';
+           }
+           function ketqua() {
+               document.getElementById('kq').value =eval(document.getElementById('kq').value);
            }
        </script>
 </body>
