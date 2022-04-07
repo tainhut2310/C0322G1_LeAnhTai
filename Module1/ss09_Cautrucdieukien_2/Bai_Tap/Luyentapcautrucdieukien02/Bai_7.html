@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giai phuong trinh bac 2</title>
+</head>
+<body>
+     <script>
+         let a =parseInt(prompt('Moi ban nhap vao he so a:'));
+         let b =parseInt(prompt('Moi ban nhap vao he so b:'));
+         let c =parseInt(prompt('Moi ban nhap vao he so c:'));
+         if( a==0) {
+             if( b==0 && c==0) {
+                 alert('Phuong trinh vo so nghiem');
+             }else if( b==0 && c!=0) {
+                 alert('Phuong trinh vo nghiem');
+             }else {
+                 //ax+b=0 ==> x=-b/a
+                 let x = parseFloat(-b / a);
+                 alert('Phuong trinh 1 co nghiem x= ' + x);
+             }
+         }else {
+             let delta = Math.pow(b,2) - 4 * a * c;
+             if( delta < 0) {
+                  alert('Phuong trinh vo nghiem')
+             }else if( delta == 0) {
+                 let nkep = -b / 2 * a;
+                 alert('Phuong trinh co nghiem kep x1=x2= '+ nkep);
+             } else {
+                     let x1 =(-b + Math.sqrt(delta))/(2 * a);
+                     let x2 =(-b - Math.sqrt(delta))/(2 * a);
+                     alert('Phuong trinh co 2 nghiem phan biet x1= ' + x1 + ', x2='+ x2 );
+             }
+         }
+     </script>
+</body>
+</html>

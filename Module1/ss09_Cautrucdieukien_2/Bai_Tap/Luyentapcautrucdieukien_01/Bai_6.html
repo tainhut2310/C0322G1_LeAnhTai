@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Hoa Hong</title>
+</head>
+<body>
+    <script>
+        let Tongdoanhso = parseFloat(prompt('Moi ban nhap vao tong doanh so'));
+        let Hoahong;
+        if( Tongdoanhso <= 100) {
+            // Với tổng doanh thu <= 100 thì hoa hồng nhận được là 5%
+            Hoahong = (Tongdoanhso * 5) / 100;
+            alert('Voi tong doanh so la ' + Tongdoanhso + ' thi hoa hong ban nhan duoc la ' + Hoahong);
+        } else if(Tongdoanhso > 100 && Tongdoanhso <= 300) {
+            // Với tổng doanh thu >100 & <=300 thì hoa hồng nhận được là 10%
+            Hoahong = (Tongdoanhso * 10) / 100;
+            alert('Voi tong doanh so la ' + Tongdoanhso + ' thi hoa hong ban nhan duoc la ' + Hoahong);
+        } else {
+            // Với tổng doanh thu >300 thì hoa hồng nhận được là 20%
+            Hoahong = (Tongdoanhso * 20) / 100;
+            alert('Voi tong doanh so la ' + Tongdoanhso + ' thi hoa hong ban nhan duoc la ' + Hoahong);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra canh cua mot tam giac</title>
+</head>
+<body>
+     <script>
+         let a = parseFloat(prompt('Moi ban nhap vao he so a:'));
+         let b = parseFloat(prompt('Moi ban nhap vao he so b:'));
+         let c = parseFloat(prompt('Moi ban nhap vao he so c:'));
+         if( a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a) {
+                 alert('3 so nhap vao la canh tam giac');
+         }else {
+             alert('3 so nhap vao khong phai la canh cua tam giac');
+         }
+     </script>
+</body>
+</html>

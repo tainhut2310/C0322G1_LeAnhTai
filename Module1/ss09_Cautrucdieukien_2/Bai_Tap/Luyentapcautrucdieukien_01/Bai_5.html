@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xep hang hoc luc</title>
+</head>
+<body>
+     <script>
+         let tongdkt= parseFloat(prompt('Moi ban nhap tong diem cac bai kiem tra'));
+         let dtgk= parseFloat(prompt('Moi ban nhap diem thi giua ky'));
+         let dtck= parseFloat(prompt('Moi ban nhap diem thi cuoi ky'));
+         let Tongdiem= (tongdkt + dtgk + dtck)/3;
+         if( Tongdiem >= 9) {
+             alert('Ban dat loai Gioi');
+         } else if(Tongdiem >= 7) {
+             alert('Ban dat loai Kha');
+         } else if(Tongdiem >= 5) {
+             alert('Ban dat loai TB');
+         } else {
+             alert('Ban dat loai Yeu');
+         }
+     </script>
+</body>
+</html>

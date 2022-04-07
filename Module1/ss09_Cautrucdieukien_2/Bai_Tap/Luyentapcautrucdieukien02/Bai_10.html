@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh gia dien</title>
+</head>
+<body>
+    <script>
+        //ví dụ giá điện trong một khoảng thời gian cố định
+        const  gia1 = 600;
+        const  gia2 = 700;
+        const  gia3 = 900;
+        const  gia4 = 1100;
+        let money;
+        let kwh =parseFloat(prompt('Moi ban nhap vao so kwh:'));
+        if(kwh <= 100) {
+            money = kwh * gia1;
+        }else if(kwh <= 150) {
+            money = 100 * gia1 + (kwh - 100) * gia2;
+        }else if(kwh <= 200) {
+            money = 100 * gia1 + 50 * gia2 + (kwh - 150) * gia3;
+        }else {
+            money = 100 * gia1 + 50 * gia2 + 50 * gia3 + (kwh - 200) * gia4;
+        }
+        alert('So tien ma ban phai thanh toan la: '+ money);
+    </script>
+</body>
+</html>

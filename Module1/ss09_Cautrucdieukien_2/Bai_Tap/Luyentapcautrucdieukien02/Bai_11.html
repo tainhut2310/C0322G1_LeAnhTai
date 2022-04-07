@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh thue thu nhap ca nhan</title>
+</head>
+<body>
+     <label>Nhập lương</label>
+     <input type="number" id="myId" value="1">
+     <button type="button" onclick="convert()">Result</button>
+     <p id="result1"></p><br>
+     <p id="result2"></p><br>
+     <p id="result3"></p>
+     <script>
+         function convert() {
+             let luong =document.getElementById('myId').value;
+             let thueSuat, soThue, luongRong = 0;
+             if (luong > 80) {
+                 soThue = luong * 35 / 100;
+                 thueSuat = 35;
+             } else if (luong > 52) {
+                 soThue = luong * 30 / 100;
+                 thueSuat = 30;
+             } else if(luong > 32) {
+                 soThue = luong * 25 / 100;
+                 thueSuat = 25;
+             }else if(luong > 18) {
+                 soThue = luong * 20 / 100;
+                 thueSuat = 20;
+             } else if(luong > 10) {
+                 soThue = luong * 15 / 100;
+                 thueSuat = 15;
+             }else if(luong > 5) {
+                 soThue = luong * 10 / 100;
+                 thueSuat = 10;
+             }else {
+                 soThue = luong * 5 / 100;
+                 thueSuat = 5;
+             }
+             luongRong = luong - soThue;
+             document.getElementById('result1').innerHTML='Lương chưa trừ thuế: ' + luong;
+             document.getElementById('result2').innerHTML='Thuế thu nhập với thuế suất: ' + thueSuat + '% = ' + soThue;
+             document.getElementById('result3').innerHTML='Số lương thực nhận: ' + luongRong;
+         }
+     </script>
+</body>
+</html>

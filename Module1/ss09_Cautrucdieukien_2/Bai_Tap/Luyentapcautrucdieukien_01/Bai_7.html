@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <script>
+         let tongPhi, phi=0;
+         const phiThueBao = 25000;
+         let soPhut = parseInt(prompt('Moi ban nhap vao so phut:'));
+         if( soPhut > 200) {
+             phi =( soPhut - 200)*200 + 150*400 + 50*600;
+         }else if (soPhut > 50 && soPhut <= 200) {
+             phi = (soPhut - 50) * 400 + 50 * 600;
+         }else {
+             phi =soPhut * 600;
+         }
+         tongPhi =phiThueBao + phi;
+         alert('Tong phi ma ban phai tra la: ' + tongPhi);
+     </script>
+</body>
+</html>
