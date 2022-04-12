@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Hinh Trai Tim</title>
+</head>
+<body>
+     <script>
+         let h = parseInt(prompt('Nhap n:'));
+         for(let i = 0; i < h; i++) {
+             for(let j = 0; j < h; j++) {
+                 if((i < h/2 && j===0 ) || (i<h/2 && j===h-1) || (i > h/2 && j===h-i +(h/2)) || (i > h/2 && j===i-(h/2))) {
+                     document.write('*');
+                 }else {
+                     document.write('&nbsp&nbsp')
+                 }
+             }
+             document.write('<br>');
+         }
+     </script>
+</body>
+</html>

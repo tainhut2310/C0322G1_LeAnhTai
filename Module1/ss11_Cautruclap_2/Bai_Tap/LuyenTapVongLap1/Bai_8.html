@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game doan so</title>
+</head>
+<body>
+      <input type="button" value="Chơi" onclick="start()">
+      <script>
+          function start() {
+              let somay = parseInt(Math.random() * 100);
+              let dem = 0;
+              do {
+                  dem++;
+                  let songuoi = parseInt(prompt('Moi ban doan so ngau nhien 1->100: ' + 'Ban doan lan thu:' + dem));
+                  if (songuoi === somay) {
+                      document.write('Chuc mung ban WIN' + '<br>');
+                      document.write('So cua may = ' + somay);
+                      break;
+                  } else if (songuoi > somay) {
+                      confirm('So ban doan > so may')
+                  } else {
+                      confirm('So ban doan < so may')
+                  }
+                  if(dem === 7) {
+                      confirm('Ban da het luot doan: GAME OVER: So cua may la: '+ somay);
+                      break;
+                  }
+              } while (true);
+          }
+      </script>
+</body>
+</html>

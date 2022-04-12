@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tong 20 so dau tien trong day Fibonacci</title>
+</head>
+<body>
+<script>
+    let st1 = 0;
+    let st2 = 1;
+    let fibonacci;
+    let sum= 0;
+    for( let i =0; i < 20; i++) {
+        document.write(st1 + "<br>");
+        sum = sum + st1;
+        fibonacci= st1 + st2;
+        st1 = st2;
+        st2 = fibonacci;
+        }
+    document.write('Sum = ' + sum);
+    </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Lai Ngan Hang</title>
+</head>
+<body>
+     <script>
+         do {
+             let tienGui = parseFloat(prompt('Moi ban nhap so tien ban dau:'));
+             while(tienGui <= 0) {
+                 tienGui = parseFloat(prompt('Ban nhap gia tri sai, xin nhap lai:'));
+             }
+             let soThang = parseInt(prompt('Moi ban nhap so thang cho vay:'));
+             while(soThang <= 0) {
+                 soThang = parseFloat(prompt('Ban nhap gia tri sai, xin nhap lai:'));
+             }
+             let laiSuat = parseFloat(prompt('Moi ban nhap lai suat hang thang:')) / 100;
+             while(laiSuat <= 0) {
+                 laiSuat = parseFloat(prompt('Ban nhap gia tri sai, xin nhap lai:'));
+             }
+             let tienLai;
+             if(tienGui > 0 && soThang > 0 && laiSuat > 0) {
+                 tienLai = tienGui * Math.pow(1 + laiSuat, soThang) - tienGui;
+                 document.write('Tien lai= ' + tienLai + 'vnd');
+                 break;
+             }
+         } while(true)
+     </script>
+</body>
+</html>

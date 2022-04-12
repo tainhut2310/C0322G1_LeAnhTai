@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So chia het cho 5 dau tien trong day Fibonacci</title>
+</head>
+<body>
+   <script>
+    let st1 = 0;
+    let st2 = 1;
+    let fibonacci;
+    for( let i =0; i < 20; i++) {
+        document.write(st1 + "<br>");
+        fibonacci= st1 + st2;
+        st1 = st2;
+        st2 = fibonacci;
+        if( st1 % 5 === 0) {
+            document.write('So chia het cho 5 trong day dau tien: '+ st1);
+            break;
+        }
+    }
+</script>
+</body>
+</html>

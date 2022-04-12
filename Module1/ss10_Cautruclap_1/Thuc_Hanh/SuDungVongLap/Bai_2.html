@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Tong Cac Phan Tu Nhap Vao</title>
+</head>
+<body>
+      <h2>Javascript Tong Cac Phan Tu</h2>
+      <p id="demo"></p>
+      <script>
+          let num = parseInt(prompt('Enter your number'));
+          let total = 0;
+          let i = 1;
+          if(num > 0) {
+              for (i = 1; i <= num; i++) {
+                  total += i;
+              }
+              document.getElementById('demo').innerHTML = 'Tong cac phan tu ' + 1 + ' den so ' + num + ' = ' + total;
+          }else {
+              document.getElementById('demo').innerHTML= 'Ban phai nhap mot so lon hon '+ 0;
+          }
+      </script>
+</body>
+</html>

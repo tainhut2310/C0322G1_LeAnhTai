@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+      <h2>TU DIEN</h2>
+      <input type="text" id="myId" />
+      <input type="button" value="Dich" onclick="Translate()" />
+      <p id="Result"></p>
+      <script>
+          let English = ['apple','tomato','potato','motorbike','sunday','monday','water','milk'];
+          let Vietnamese = ['táo','cà chua','khoai tây','xe máy','chủ nhật','thứ Hai','nước','sữa'];
+          function Translate() {
+              let word = document.getElementById('myId').value;
+              for(let i = 0; i < English.length; i++) {
+                      if(word === English[i]) {
+                          document.getElementById('Result').innerHTML='Result: ' + Vietnamese[i];
+                      }else if(word === Vietnamese[i]) {
+                          document.getElementById('Result').innerHTML = 'Result: ' + English[i];
+                      }
+                  }
+              }
+      </script>
+</body>
+</html>

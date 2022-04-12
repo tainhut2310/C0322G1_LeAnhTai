@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh tong 30 so chia het cho 7</title>
+</head>
+<body>
+<script>
+    let numbers = 30;
+    let count = 0;
+    let n= 1
+    let sum=0;
+    while(count < numbers) {
+        if(n % 7 === 0) {
+            sum= sum + n;
+            document.write(n + " ");
+            count++;
+        }
+        n++;
+    }
+    document.write( '<br>'+'Sum number firt 30 = '+ sum);
+</script>
+</body>
+</html>

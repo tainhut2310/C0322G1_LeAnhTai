@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Tam Giac Vuong</title>
+</head>
+<body>
+<script>
+    //Hình 1
+    let n = parseInt(prompt('Nhap n:'))
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j <= i; j++) {
+            document.write('*')
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+    //Hình 2
+    for (let i = 0; i < n; i++) {
+        for (let j = n-i; j > 0; j--) {
+            document.write('*')
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+    //Hình 3
+    for (let i = 0; i < n; i++) {
+        for(let k = i; k < n-1; k++) {
+            document.write("&nbsp&nbsp")
+        }
+        for (let j = 0; j <= i; j++) {
+            document.write('*')
+        }
+        document.write('<br>');
+    }
+    document.write('<br>');
+    //Hình 4
+    for (let i = 0; i < n; i++) {
+        for (let j = n; j > i; j--) {
+            document.write('*')
+        }
+        document.write('<br>');
+        for(let k = 0; k <= i; k++) {
+            document.write("&nbsp&nbsp")
+        }
+    }
+
+</script>
+</body>
+</html>

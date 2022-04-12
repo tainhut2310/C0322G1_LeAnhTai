@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi 20 so Fibonacci dau tien</title>
+</head>
+<body>
+      <script>
+          let st1 = 0;
+          let st2 = 1;
+          let fibonacci;
+          for( let i =0; i < 20; i++) {
+              document.write(st1 + "<br>");
+              fibonacci= st1 + st2;
+              st1 = st2;
+              st2 = fibonacci;
+          }
+      </script>
+</body>
+</html>
