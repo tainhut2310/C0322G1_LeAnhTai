@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm Và Thay Thế Ký Tự</title>
+</head>
+<body>
+     <script>
+         let arrstring =['O','P','-','K','-','T','J','-','M','R','-','A','B','-','C','D'];
+         document.write('Mảng ký tự trước khi thay thế: ');
+         for(let i = 0; i < arrstring.length; i++) {
+             document.write(arrstring[i]);
+              if(arrstring[i] === '-') {
+                 arrstring[i] = '_';
+              }
+         }
+         document.write('<br>' + 'Mảng ký tự sau khi thay thế: ');
+         for(let i = 0; i < arrstring.length; i++) {
+             document.write(arrstring[i]);
+         }
+     </script>
+</body>
+</html>

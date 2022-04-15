@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương Trình Nối Mảng</title>
+</head>
+<body>
+    <script>
+        let a = [4,30,29,10,25,34,76,54,8,9];
+        let b = [43,3,79,10,5,34,6,54,38,59];
+        let c = [];
+        for(let i = 0; i < a.length; i++) {
+            c[i] = a[i];
+        }
+        for(let i = 0; i < b.length; i++) {
+            c[a.length + i] = b[i];
+        }
+        document.write('Mảng sau khi nối: '+ c);
+    </script>
+</body>
+</html>

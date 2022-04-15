@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GTLN & Giá Trị Trung Bình Của Mảng</title>
+</head>
+<body>
+     <script>
+         let arrnumber = [4,30,29,10,25,34,76,54,8,9];
+         let max= arrnumber[0];
+         let sum = arrnumber[0];
+         for(let i = 1; i < arrnumber.length; i++) {
+             if (max < arrnumber[i]) {
+                 max = arrnumber[i];
+             }
+             sum += arrnumber[i];
+         }
+         document.write('Giá trị lớn nhất của Mảng = ' + max + '<br>');
+         document.write('Giá trị trung bình của các phần tử trong Mảng = ' + sum/2);
+     </script>
+</body>
+</html>

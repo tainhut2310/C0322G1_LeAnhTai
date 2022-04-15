@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương Trình Kiểm Tra Và Xóa Phần Tử</title>
+</head>
+<body>
+     <script>
+         let arrNumber = [4,30,29,10,25,34,76,54,8,9];
+         let find = parseInt(prompt('Enter a number you want find:'));
+         let flag = false;
+         for(let i = 0; i < arrNumber.length; i++) {
+             if(arrNumber[i] === find) {
+                 flag = true;
+                 for(let j= i; j < arrNumber.length - 1; j++) {
+                     arrNumber[j] = arrNumber[j + 1];
+                 }
+                 arrNumber[arrNumber.length - 1] = 0;
+                 document.write('Mảng sau khi xóa và thêm phần tử 0 vào cuối Mảng: ' + arrNumber);
+             }
+         }
+         if(flag === false) {
+             document.write(find + ' không thuộc mảng đã cho')
+         }
+     </script>
+</body>
+</html>

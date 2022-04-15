@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Ký Tự Đảo Ngược Trong Mảng</title>
+</head>
+<body>
+     <script>
+         let array = ['c','s','c','2','6','1'];
+         let first = 0;
+         let last = array.length - 1;
+         while(first < last) {
+             let temp = array[first];
+             array[first] = array[last];
+             array[last] = temp;
+             first++;
+             last--;
+         }
+         document.write(array.join(""));
+     </script>
+</body>
+</html>

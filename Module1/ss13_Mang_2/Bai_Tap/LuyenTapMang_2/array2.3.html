@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương Trình Đếm Số Ký Tự Trong Mảng</title>
+</head>
+<body>
+      <script>
+          let array = ['Ha Noi','29','30','31','32','33','Da Nang','43','Sai Gon','50','51','52','53','54','55','56','57'];
+          let dem = 0;
+          for(let i = 0; i < array.length; i++) {
+              let newarr = parseInt(array[i]);
+              if(newarr % 1 === 0) {
+                  dem++;
+                  document.write(newarr + '&nbsp;&nbsp')
+              }
+          }
+          document.write('<br>' +'Có tổng ' + dem + ' số trong mảng');
+      </script>
+</body>
+</html>

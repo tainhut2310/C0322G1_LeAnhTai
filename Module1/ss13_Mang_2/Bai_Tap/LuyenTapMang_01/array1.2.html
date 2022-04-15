@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển Thị GTLN Trong Mảng</title>
+</head>
+<body>
+     <script>
+         let arrnumber = [4,30,29,10,25,34,76,54,8,9];
+         let max= arrnumber[0];
+         let place=0;
+         for(let i = 1; i < arrnumber.length; i++) {
+             if(max < arrnumber[i]) {
+                 max = arrnumber[i];
+                 place = i;
+             }
+         }
+         document.write('Giá trị lớn nhất của Mảng là: ' + max + ' ở vị trí thứ ' + place);
+     </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển Thị Số Nguyên</title>
+</head>
+<body>
+     <script>
+         let arrnumber = [4,30,29,10,25,34,76,54,8,9];
+         let dem= 0;
+         for(let i = 0; i < arrnumber.length; i++) {
+             if(arrnumber[i] >= 10) {
+                 document.write(arrnumber[i] + '&nbsp;&nbsp');
+                 dem++;
+             }
+         }
+         document.write('<br>' +'Có '+ dem + ' số nguyên lớn hơn hoặc bằng 10');
+     </script>
+</body>
+</html>

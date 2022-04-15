@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương Trình Sắp Xếp Mảng</title>
+</head>
+<body>
+     <script>
+         let arrNumber = [4,30,29,10,25,34,76,54,8,9];
+         for(let i = 0; i < arrNumber.length - 1; i++) {
+             for(let j= i + 1; j < arrNumber.length; j++) {
+                 if(arrNumber[i] < arrNumber[j]) {
+                     let temp = arrNumber[i];
+                     arrNumber[i] = arrNumber[j];
+                     arrNumber[j] = temp;
+                 }
+             }
+         }
+         document.write('Mảng sau khi sắp xếp: ' + arrNumber);
+     </script>
+</body>
+</html>

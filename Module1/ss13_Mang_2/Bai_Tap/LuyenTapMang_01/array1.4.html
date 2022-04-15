@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo Ngược Các Phần Tử Trong Mảng</title>
+</head>
+<body>
+     <script>
+         let arrnumber = [4,30,29,10,25,34,76,54,8,9];
+         document.write('Mảng trước khi đảo: ' + arrnumber);
+         let first= 0;
+         let last= arrnumber.length - 1;
+         while(first < last ) {
+             let temp = arrnumber[first];
+             arrnumber[first] = arrnumber[last];
+             arrnumber[last] = temp;
+             first++;
+             last--;
+         }
+         document.write('<br>' + 'Mảng sau khi đảo: ' + arrnumber);
+     </script>
+</body>
+</html>

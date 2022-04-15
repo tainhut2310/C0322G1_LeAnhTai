@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng Dụng Vui Faking TextArea On Typing</title>
+</head>
+<body>
+     <h1>Type anthing slowly</h1>
+     <textarea rows="15" cols="60" id="textmy" onclick="gettext()"></textarea>
+     <script>
+         function gettext() {
+             //let c = document.getElementById('textmy').value;
+             let a = [];
+             let textarray = ['W','E','L','C','O','M','E',' ','T','O',' ','V','I','Ệ','T',' ','N','A','M'];
+             for(let i = 0; i < textarray.length; i++) {
+                 // let c = document.getElementById('textmy').value;
+                 document.getElementById('textmy').innerHTML= textarray[i];
+             }
+         }
+     </script>
+</body>
+</html>

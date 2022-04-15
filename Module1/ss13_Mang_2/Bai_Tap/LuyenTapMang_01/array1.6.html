@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm Số Trong Mảng</title>
+</head>
+<body>
+    <script>
+        let arrNumber = [4,30,29,10,25,34,76,54,8,9];
+        let find = parseInt(prompt('Enter a number you want find:'));
+        let flag = false;
+        for(let i = 0; i < arrNumber.length; i++) {
+            if (arrNumber[i] === find) {
+                flag = true;
+            }
+        }
+        if(flag === true) {
+            document.write(find + ' is in the array');
+        }else {
+            document.write(find + ' is not in the array');
+        }
+    </script>
+</body>
+</html>

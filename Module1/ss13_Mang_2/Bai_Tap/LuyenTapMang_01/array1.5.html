@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm Số Nguyên Âm Trong Một Chuỗi</title>
+</head>
+<body>
+     <script>
+         let string = "Chị Dậu -8 6 Lặn -5 Lội Bờ -3-7 9 Sông -9-8 5 Nuôi Đủ -5 Con -2-3 Với -1 Chồng";
+         let count = 0;
+         document.write('Chuỗi trước khi duyệt tìm kiếm số nguyên âm: ')
+         for(let i = 0; i < string.length; i++) {
+             document.write(string[i]);
+             if(string[i] === '-' && parseInt(string[i+1]) % 1 === 0) {
+                 count++;
+             }
+         }
+         document.write('<br>' + 'Chuỗi đã cho ở trên có tổng ' + count + ' số nguyên âm')
+     </script>
+</body>
+</html>

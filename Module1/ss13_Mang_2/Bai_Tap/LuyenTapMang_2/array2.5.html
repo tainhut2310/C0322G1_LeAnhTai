@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Hai Chuỗi Có Giống Nhau</title>
+</head>
+<body>
+      <script>
+          let a = prompt('Mời bạn nhập vào chuỗi 1:');
+          let b = prompt('Mời bạn nhập vào chuỗi 2:');
+          let count = 0;
+          if(a.length === b.length) {
+              for(let i = 0; i < a.length; i++) {
+                  if(a[i] === b[i]) {
+                      count++;
+                  }
+              }
+              if(count === a.length) {
+                  document.write('Hai chuỗi nhập vào giống nhau')
+              } else {
+                  document.write('Hai chuỗi nhập không giống nhau')
+              }
+          } else {
+              document.write('Hai chuỗi nhập không giống nhau')
+          }
+      </script>
+</body>
+</html>
