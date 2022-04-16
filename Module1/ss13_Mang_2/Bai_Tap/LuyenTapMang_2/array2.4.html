@@ -6,14 +6,14 @@
 </head>
 <body>
      <script>
-         let array = "Cong Tang Ton Nu Nguyen Thi Long Lanh Bong Benh Anh Tuyet";
-         let dem = 0;
+         let array = "Cong Tang  Ton   Nu   Nguyen   Thi Long Lanh Bong   Benh   Anh Tuyet";
+         let count = 0;
          for(let i = 0; i < array.length; i++) {
-             if(array[i] === ' ' ) {
-                 dem++;
+             if(array[i] === ' ' && array[i-1] !== ' ') {
+                 count++;
              }
          }
-         document.write('Tổng số từ trong mảng = '+ (dem + 1));
+         document.write('Tổng số từ trong mảng = '+ (count + 1));
      </script>
 </body>
 </html>

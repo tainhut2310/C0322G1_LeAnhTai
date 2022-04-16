@@ -12,9 +12,9 @@
       <script>
           let English = ['apple','tomato','potato','motorbike','sunday','monday','water','milk'];
           let Vietnamese = ['táo','cà chua','khoai tây','xe máy','chủ nhật','thứ Hai','nước','sữa'];
-          let flag = false
           function Translate() {
               let word = document.getElementById('myId').value;
+              let flag = false;
               for(let i = 0; i < English.length; i++) {
                       if(word === English[i]) {
                           flag = true;
