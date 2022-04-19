@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm tính diện tích, chu vi hình tròn</title>
+</head>
+<body>
+<script>
+    function dienTich(radius) {
+        const PI = 3.14;
+        return radius * radius * PI;
+    }
+
+    function chuVi(diameter) {
+        const PI = 3.14;
+        return diameter * PI;
+    }
+
+    let bkinh = prompt('Nhập bán kính r:');
+    let S = dienTich(bkinh);
+    document.write('S= ' + S);
+    let dkinh = prompt('Nhập đường kính d:');
+    let C = chuVi(dkinh);
+    document.write('<br> C= ' + C);
+</script>
+</body>
+</html>

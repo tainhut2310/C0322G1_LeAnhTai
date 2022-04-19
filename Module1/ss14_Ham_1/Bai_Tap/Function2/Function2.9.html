@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự trong mảng</title>
+</head>
+<body>
+<script>
+    function textarr(arrString, a) {
+        let count = 0;
+        let flag = false;
+        for (let i = 0; i < arrString.length; i++) {
+            if (arrString[i] === a) {
+                count++;
+                flag = true;
+            }
+        }
+        if (flag) {
+            return a + ' xuất hiện ' + count + ' lần trong mảng';
+        } else {
+            return -1;
+        }
+    }
+
+    let arrCharacter = ['f', 'g', 'j', 's', 'f', 'r', 'j', 'f', 'h', 'f'];
+    let charracter = prompt('Nhập ký tự muốn tìm');
+    document.write(textarr(arrCharacter, charracter));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo Ngược Mảng Số Nguyên</title>
+</head>
+<body>
+<script>
+    function reverse(arr) {
+        let first = 0;
+        let last = arr.length - 1;
+        while( first < last) {
+            let temp = arr[first];
+            arr[first] = arr[last];
+            arr[last] = temp;
+            first++;
+            last--;
+        }
+        return arr;
+    }
+    let intArray = [4,6,5,56,344,6,45,434,64,6,54,34,454,4,565,]
+    document.write(reverse(intArray));
+</script>
+</body>
+</html>

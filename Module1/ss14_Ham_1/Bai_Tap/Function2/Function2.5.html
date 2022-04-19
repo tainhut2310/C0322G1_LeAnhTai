@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm tìm giá trị nhỏ nhất</title>
+</head>
+<body>
+<script>
+    function minValue(a,b,c) {
+        let min = a;
+        if(min > b) {
+            min = b;
+        }
+        if(min > c) {
+            min = c;
+        }
+        return min;
+    }
+    let x = prompt('Nhập giá trị 1:');
+    let y = prompt('Nhập giá trị 2:');
+    let z = prompt('Nhập giá trị 3:');
+    let GTNN = document.write('min = ' + minValue(x,y,z));
+</script>
+</body>
+</html>

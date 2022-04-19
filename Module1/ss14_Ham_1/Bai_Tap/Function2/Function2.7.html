@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi số hai số nguyên</title>
+</head>
+<body>
+<script>
+    function reverse(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        document.write('Số thứ nhất: ' + a + '<br>');
+        document.write('Số thứ hai: ' + b);
+    }
+    let x = prompt('Nhập vào số thứ nhất:');
+    let y = prompt('Nhập vào số thứ hai:');
+    reverse(x, y);
+</script>
+</body>
+</html>

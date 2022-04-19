@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên dương</title>
+</head>
+<body>
+<script>
+    function testNumber(x) {
+        if(Number(x) === parseInt(x)) {
+            if(x >= 0) {
+                return true
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+    let aNumber = prompt('Nhập vào một số:');
+    document.write(testNumber(aNumber));
+</script>
+</body>
+</html>

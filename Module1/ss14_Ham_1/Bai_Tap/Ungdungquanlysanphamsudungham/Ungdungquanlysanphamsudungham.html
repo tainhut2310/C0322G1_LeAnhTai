@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<body>
+<h3>Add New Product</h3>
+<p ><input type="text" placeholder="New Product"> <button type="button">Add</button></p>
+<h3>Display All Product</h3>
+<h4>Product Name</h4>
+<form>
+<table border="1">
+    <tr>
+        <td id="showDS"></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+</form>
+<script>
+        let arrDs = ['Sony Xperia','Samsung','Nokia 6','Xiaomi Redmi Note 4','Apple iPhone 6S','Xiaomi Mi 5s Plus','Apple iPhone 8 Plus','Fujitsu F-04E','Oppo A71'];
+        for(let i = 0; i < arrDs.length; i++) {
+            document.getElementById('showDS').innerHTML= arrDs[i] + '<br>';
+        }
+    /*function witeLog() {
+        let mystring = '';
+        for (let param of arguments) {
+            mystring += `${param} - `
+        }
+        console.log((mystring));
+    }
+    witeLog('Log 1', 'Log 2', 'Log 3');*/
+</script>
+</body>
+</html>

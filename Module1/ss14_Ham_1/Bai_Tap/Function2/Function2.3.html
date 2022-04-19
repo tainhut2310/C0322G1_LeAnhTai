@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm Tính Giai Thừa</title>
+</head>
+<body>
+<script>
+    function factorial(x) {
+        let sum = 1;
+        for (let i = 1; i <= x; i++) {
+            sum *= i;
+        }
+        return sum;
+    }
+
+    let intNumber = prompt('Nhập số nguyên bất kỳ:');
+    document.write(intNumber + '! = ' + factorial(intNumber));
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra ký tự</title>
+</head>
+<body>
+<script>
+    function test(x) {
+        if(parseInt(x) % 1 === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let chracters = prompt('Nhập vào một ký tự:');
+    document.write(test(chracters));
+</script>
+</body>
+</html>
