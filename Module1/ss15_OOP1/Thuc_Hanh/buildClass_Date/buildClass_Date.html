@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Date</title>
+</head>
+<body>
+<script>
+    class MyDate {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        //Phương thức trả về giá trị
+        getDay = function () {
+            return this.day;
+        }
+        getMonth = function () {
+            return this.month;
+        }
+        getYear = function () {
+            return this.year;
+        }
+        //Phương thức thiết lập lại giá trị
+        setDay = function (day) {
+            this.day = day;
+        }
+        setMonth = function (month) {
+            this.month = month;
+        }
+        setYear = function (year) {
+            this.year = year;
+        }
+        setDate = function (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        tostring = function () {
+        }
+    }
+
+    let date = new MyDate(2, 2, 2007);
+    //Truy cập phương thức của date
+    date.setDate(3,3,2008);//thay đổi phương thức của MyDate
+    let day = date.getDay()
+    let month = date.getMonth();
+    let year = date.getYear();
+    alert(day + '/' + month + '/' + year);
+</script>
+</body>
+</html>

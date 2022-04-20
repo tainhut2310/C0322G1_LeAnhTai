@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        convertDoF() {
+            return 9/5 * this.doC + 32;
+        }
+        convertDoK() {
+            return this.doC + 273.15;
+        }
+    }
+    let Tempera = new Temperature(25);
+    let getDoF = Tempera.convertDoF();
+    let getDoK = Tempera.convertDoK();
+    alert('Do F = ' + getDoF);
+    alert('Do K = ' + getDoK);
+</script>
+</body>
+</html>

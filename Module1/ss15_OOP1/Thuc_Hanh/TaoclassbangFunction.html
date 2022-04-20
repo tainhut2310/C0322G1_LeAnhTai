@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo class bằng từ khóa function</title>
+</head>
+<body>
+<script>
+    /*
+    // B1: Tạo class bằng từ khóa function
+    function Dienthoai(ten, hangSX) {
+        var ten = ten;
+        var hangSX = hangSX;
+
+
+        // this đại diện cho đối tượng hiện tại
+        this.goiDien = function () {
+            document.write(ten + ' dang goi cho toi. <br/>')
+        }
+    }
+
+    // B2 tạo đối tượng
+    let iphone11 = new Dienthoai('Iphone 11', 'Apple');
+    iphone11.goiDien();
+    let A10 = new Dienthoai('A10','Samsung');
+    A10.goiDien();*/
+
+
+
+// B1 tạo bằng từ khóa class
+    class Dienthoai {
+        constructor(ten, hangSX) {
+            this.ten = ten;
+            this.hangSX = hangSX;
+        }
+
+        goiDien(){
+            document.write(this.ten + ' dang goi dien cho toi.<br>')
+        }
+        showHangSX() {
+            document.write(this.hangSX + ' duoc san xuat boi ' + this.hangSX)
+        }
+        // Setter - cập nhật thuộc tính của Object
+        setTen(tenMoi) {
+            this.ten = tenMoi;
+        }
+        // Getter - lấy thông tin thuộc tính
+        getTen() {
+            return this.ten;
+        }
+    }
+    // B2 tạo đối tượng
+    let iPhone11 = new Dienthoai('Iphone 11','Apple');
+    iPhone11.setTen('iPhone12');// Cách 1: Cập nhật tên
+    iPhone11.ten = 'iPhone13'; // Cách 2: Cập nhật tên
+    iPhone11.goiDien();
+    document.write('Ten cua Object iPhone11 là: '+ iPhone11.getTen());//Cách 1:Lấy thông tin của thuộc tính
+    document.write('<br/> Ten cua Object iPhone11 là: '+ iPhone11.ten);//Cách 2:Lấy thông tin của thuộc tính
+    let A11 = new Dienthoai('A11','Samsung');
+    A11.goiDien();
+    A11.showHangSX();
+    iPhone11.showHangSX();
+    A11.setTen('A12')
+    A11.ten = 'A12';*/
+
+
+    // B1: Tạo đối tượng trực tiếp
+    let iPhone13 = {
+        ten: 'iPhone13',
+        hangSx: 'Apple',
+        gia: 1500,
+        hienThi: function () {
+            document
+
+        }
+    }
+</script>
+</body>
+</html>
