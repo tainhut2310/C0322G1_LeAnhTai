@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tính Biểu Thức</title>
 </head>
 <body>
-$END$
+      <script>
+          let n = parseInt(prompt('Nhap n:'));
+          let S=0;
+          for(let i = 1; i <= n; i++) {
+              S = S + 1/(Math.pow(i,3));
+          }
+          document.write(S);
+      </script>
 </body>
 </html>

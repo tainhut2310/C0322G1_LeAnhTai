@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Hiển thị số theo yêu cầu</title>
 </head>
 <body>
-$END$
+<script>
+    let numbers = 0;
+    let a = 1;
+    let b = 1;
+    let fib;
+    /*for (let i = 0; i <= 19; i++) {
+        fib = a + b;
+        let flag = true;
+        for (let j = 2; j < fib; j++) {
+            if (fib % j === 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag === true) {
+            document.write(fib + ' ');
+        }
+        a = b;
+        b = fib;
+    }*/
+    for(let i = 0; i < 18; i++) {
+        fib = a + b;
+        document.write(fib + ' ');
+        a = b;
+        b = fib;
+    }
+</script>
 </body>
 </html>

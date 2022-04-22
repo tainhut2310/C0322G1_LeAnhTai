@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tìm số từ và số ký tự</title>
 </head>
 <body>
-$END$
+     <script>
+         let a = 'Nguyen   Thi   Long Lanh   Bong    Benh   Anh   Tuyet';
+         let count = 0;
+         let count1 = 0;
+         for(let i = 0; i < a.length; i++) {
+             if(a[i] === ' ' && a[i-1] !== ' ') {
+                 count++;
+             }
+             if(a[i] !== ' ') {
+                 count1++;
+             }
+         }
+         document.write(count + '<br>' + count1);
+     </script>
 </body>
 </html>

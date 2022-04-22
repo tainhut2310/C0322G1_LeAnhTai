@@ -6,23 +6,40 @@
 </head>
 <body>
 <h3>Add New Product</h3>
-<p ><input type="text" placeholder="New Product"> <button type="button">Add</button></p>
+<p><input type="text" placeholder="New Product" id="inputValue">
+    <button type="button" onclick="addDs()">Add</button>
+</p>
 <h3>Display All Product</h3>
 <h4>Product Name</h4>
-<form>
-<table border="1">
-    <tr>
-        <td id="showDS"></td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
-</form>
+<p id="myTable"></p>
 <script>
-        let arrDs = ['Sony Xperia','Samsung','Nokia 6','Xiaomi Redmi Note 4','Apple iPhone 6S','Xiaomi Mi 5s Plus','Apple iPhone 8 Plus','Fujitsu F-04E','Oppo A71'];
-        for(let i = 0; i < arrDs.length; i++) {
-            document.getElementById('showDS').innerHTML= arrDs[i] + '<br>';
+    let arrDs = ['Sony Xperia', 'Samsung', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S', 'Xiaomi Mi 5s Plus', 'Apple iPhone 8 Plus', 'Fujitsu F-04E', 'Oppo A71'];
+    function showArray(arr) {
+        let sount = '<table border="1" width="500" >';
+        for (let i = 0; i < arr.length; i++) {
+            sount = sount + '<tr>';
+            for (let j = 0; j < 3; j++) {
+                if (j === 0) {
+                    sount = sount + '<td>' + (i + 1) + '</td>';
+                }
+                if (j === 1) {
+                    sount = sount + '<td>' + arr[i] + '</td>';
+                }
+                if (j === 1) {
+                    sount = sount + '<td>' + '<button type="button">Edit</button>&nbsp;&nbsp;<button type="button">Delete</button>' + '</td>'
+                }
+            }
+            sount = sount + '</tr>';
         }
+        sount = sount + '</table>';
+        document.write(sount);
+    }
+    showArray(arrDs);
+    function addDs() {
+        let getValue = document.getElementById('inputValue').value;
+        arrDs.push(getValue);
+        document.getElementById('myTable').innerHTML = showArray(arrDs);
+    }
     /*function witeLog() {
         let mystring = '';
         for (let param of arguments) {

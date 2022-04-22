@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Hiển Thị Các Số Không Phải Số Nguyên Tố</title>
 </head>
 <body>
-$END$
+     <script>
+         let n =parseInt(prompt('Nhập 1 số nguyên bất kỳ:'));
+         let count = 3;
+         while(count <= n) {
+             for (let i = count; i <= n; i++) {
+                 for (let j = 2; j < i; j++) {
+                     if (i % j === 0) {
+                         document.write(i + '&nbsp;&nbsp');
+                         break;
+                     }
+                 }
+                 count++;
+             }
+         }
+     </script>
 </body>
 </html>
