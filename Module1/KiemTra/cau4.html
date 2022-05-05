@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(toadoX, toadoY, radius, color) {
+            this._toadoX = toadoX;
+            this._toadoY = toadoY;
+            this._radius = radius;
+            this._color = color;
+        }
+
+        getToadoX() {
+            return this._toadoX;
+        }
+
+        setToadoX(value) {
+            this._toadoX = value;
+        }
+
+        getToadoY() {
+            return this._toadoY;
+        }
+
+        setToadoY(value) {
+            this._toadoY = value;
+        }
+
+        getRadius() {
+            return this._radius;
+        }
+
+        setRadius(value) {
+            this._radius = value;
+        }
+
+        getColor() {
+            return this._color;
+        }
+
+        setColor(value) {
+            this._color = value;
+        }
+    }
+
+    let inputToadoX = parseFloat(prompt('Moi ban nhap gia tri toa do x:'));
+    let inputToadoY = parseFloat(prompt('Moi ban nhap gia tri toa do y:'));
+    let inputRadius = parseFloat(prompt('Moi ban nhap gia tri radius:'));
+    let inputColor = prompt('Moi ban nhap gia tri toa do x:');
+    let circle = new Circle(inputToadoX, inputToadoY, inputRadius, inputColor);
+    console.log(circle);
+</script>
+</body>
+</html>

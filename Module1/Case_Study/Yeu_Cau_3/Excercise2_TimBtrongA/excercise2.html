@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim phan tu trong B nhung khong xuat hien trong A</title>
+</head>
+<body>
+<script>
+    let arrA = [7, 2, 5, 3, 5, 3];
+    let arrB = [7, 2, 5, 4, 4, 6, 3, 5, 3];
+    let arrC = [];
+    for (let i = 0; i < arrB.length; i++) {
+        if(arrA.indexOf(arrB[i]) === -1 && arrC.indexOf(arrB[i]) === -1) {
+            arrC.push(arrB[i]);
+        }
+    }
+    document.write('Phần tử xuất hiện trong B nhưng không xuất hiện trong A là: ' + arrC);
+</script>
+</body>
+</html>

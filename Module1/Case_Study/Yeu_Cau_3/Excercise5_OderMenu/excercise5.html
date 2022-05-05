@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuong trinh goi thuc uong gian don</title>
+</head>
+<body>
+<p id="display"></p>
+<script>
+    let menu = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa','Thoát'];
+    let donGia = [10,20,15,15,10,15];
+    let sount = '<table>' +
+        '<tr>' +
+        '<th>STT</th>' +
+        '<th>Ten Do Uong</th>' +
+        '<th>Chon</th>' +
+        '</tr>'
+    for (let i = 0; i < menu.length; i++) {
+        sount += '<tr>' +
+            '<td>' + (i + 1) + '</td>' +
+            '<td>' + menu[i] + '</td>' +
+            '<td>' + '<button onclick="getSL('+ i +')" type="button">Chọn</button>' +
+            '</td>' +
+            '</tr>'
+    }
+    sount += '</table>'
+    document.getElementById('display').innerHTML = sount;
+    function getSL(value) {
+            alert(menu[value] + ' co don gia ' + donGia[value]);
+            let soLuong = parseInt(prompt('Moi ban nhap so luong:'));
+            let sum = soLuong * donGia[value];
+            document.write('Tong so tien can phai tra = ' + sum);
+    }
+</script>
+</body>
+</html>

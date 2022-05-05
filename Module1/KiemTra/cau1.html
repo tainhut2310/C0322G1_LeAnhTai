@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputDiem = parseInt(prompt('Moi ban nhap vao so luong danh sach diem thi:'));
+    let arrDiem = [];
+    for (let i = 0; i < inputDiem; i++) {
+        arrDiem[i] = parseFloat(prompt('Nhap vao diem o vi tri thu ' + i));
+    }
+
+    function findMax(arr) {
+        let max = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    let getMax = findMax(arrDiem);
+    document.write('Gia tri lon nhat cua mang danh sach dienm la: ' + getMax);
+</script>
+</body>
+</html>

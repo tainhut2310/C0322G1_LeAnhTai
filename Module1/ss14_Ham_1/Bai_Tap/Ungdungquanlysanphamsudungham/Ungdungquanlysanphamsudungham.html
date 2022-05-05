@@ -15,10 +15,56 @@
 <script>
     let arrDs = ['Sony Xperia', 'Samsung', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S', 'Xiaomi Mi 5s Plus', 'Apple iPhone 8 Plus', 'Fujitsu F-04E', 'Oppo A71'];
     function showArray(arr) {
-        let sount = '<table border="1" width="500" >';
+        let sount = '<table border="1" width="500" >' +
+        '<tr>'+
+            '<th>STT</th>' +
+            '<th>Name</th>' +
+            '<th>Action</th>' +
+                '</tr>';
         for (let i = 0; i < arr.length; i++) {
-            sount = sount + '<tr>';
-            for (let j = 0; j < 3; j++) {
+            sount = sount + '<tr>' +
+                '<td>' + (i + 1) + '</td>' +
+                '<td>' + arr[i] +'</td>' +
+                '<td>' +'<button onclick="edit('+ i +')" type="button">Edit</button>&nbsp;&nbsp;<button onclick="remove(' + i +')" type="button">Delete</button>'+
+                '</td>' +
+                    '</tr>'
+        }
+        sount = sount + '</table>';
+        document.getElementById("myTable").innerHTML= sount;
+    }
+    showArray(arrDs);
+    function addDs() {
+        let getValue = document.getElementById('inputValue').value;
+        arrDs.push(getValue);
+        showArray(arrDs);
+        showArray(arrDs);
+    }
+    function edit(value) {
+        let name = prompt("Nhap lai ten san pham:");
+        console.log(typeof name);
+        arrDs[value] = name;
+        showArray(arrDs);
+    }
+    function remove(value) {
+        let name = arrDs[value];
+        let choose = confirm('Ban co chac chan muon xoa ' + name);
+        if(choose) {
+            arrDs.splice(value,1);
+            alert('Xoa thanh cong');
+        } else {
+            alert('Suy nghi can than');
+        }
+        showArray(arrDs);
+    }
+    /*function witeLog() {
+        let mystring = '';
+        for (let param of arguments) {
+            mystring += `${param} - `
+        }
+        console.log((mystring));
+    }
+    witeLog('Log 1', 'Log 2', 'Log 3');
+    for (let j = 0; j < 3; j++) {
                 if (j === 0) {
                     sount = sount + '<td>' + (i + 1) + '</td>';
                 }
@@ -29,25 +75,7 @@
                     sount = sount + '<td>' + '<button type="button">Edit</button>&nbsp;&nbsp;<button type="button">Delete</button>' + '</td>'
                 }
             }
-            sount = sount + '</tr>';
-        }
-        sount = sount + '</table>';
-        document.write(sount);
-    }
-    showArray(arrDs);
-    function addDs() {
-        let getValue = document.getElementById('inputValue').value;
-        arrDs.push(getValue);
-        document.getElementById('myTable').innerHTML = showArray(arrDs);
-    }
-    /*function witeLog() {
-        let mystring = '';
-        for (let param of arguments) {
-            mystring += `${param} - `
-        }
-        console.log((mystring));
-    }
-    witeLog('Log 1', 'Log 2', 'Log 3');*/
+            sount = sount + '</tr>';*/
 </script>
 </body>
 </html>

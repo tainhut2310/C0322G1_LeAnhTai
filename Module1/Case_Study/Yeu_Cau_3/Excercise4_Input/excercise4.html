@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhap so tu ban phim in ra man hinh bang chu</title>
+</head>
+<body>
+<script>
+    let inputNum = prompt('Enter a numbers:');
+    let arrChar = ['mot','hai','ba','bon','nam','sau','bay','tam','chin'];
+    let arrNumber = [1,2,3,4,5,6,7,8,9];
+    for (let i = 0; i < inputNum.length ; i++) {
+        for (let j = 0; j < arrNumber.length ; j++) {
+            if(parseInt(inputNum[i]) === arrNumber[j]) {
+                document.write(arrChar[j] + '&nbsp');
+            }
+        }
+    }
+</script>
+</body>
+</html>

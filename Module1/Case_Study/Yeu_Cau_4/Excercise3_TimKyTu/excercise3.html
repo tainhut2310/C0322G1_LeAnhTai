@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm ký tự chung</title>
+</head>
+<body>
+<script>
+    let char1 = 'aabcc';
+    let char2 = 'adcaa';
+    let count = 0;
+    for(let i =  0; i < char1.length; i++) {
+        for( let j = 0; j < char2.length; j++) {
+            if(char1[i] === char2[j]) {
+                count++;
+                char2 = char2.replace(char2[j],'');
+                break;
+            }
+        }
+    }
+    document.write('commonCharacterCount(s1,s2) = ' + count);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve Tam Giac Vuong Can Rong</title>
+</head>
+<body>
+<script>
+    let height = parseInt(prompt('Enter heigh:'));
+    for(let i = 0; i < height; i++) {
+        for(let j = 0; j < height; j++) {
+            if((j === 0 && i < height) || (i === height - 1 && j < height) || i === j) {
+                document.write('*');
+            } else {
+                document.write('&nbsp&nbsp');
+            }
+        }
+        document.write('<br/>');
+    }
+</script>
+</body>
+</html>

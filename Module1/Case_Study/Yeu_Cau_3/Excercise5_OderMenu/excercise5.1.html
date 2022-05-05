@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="myId"></p>
+<p id="result"></p>
+<button onclick="display()">Order</button>
+<script>
+    let menu = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa', 'Thoát'];
+    let price = [15000, 25000, 20000, 20000, 10000, 15000, 0];
+    let totalMoney = 0;
+    let quantity;
+    let empty = '';
+    for (let i = 0; i < menu.length; i++) {
+       empty += (i + 1) + '&nbsp&nbsp' + menu[i] + '<br/>';
+    }
+    document.getElementById('myId').innerHTML = empty;
+    function display() {
+        do {
+            let choose = parseInt(prompt('Mời bạn chọn đồ uống:'));
+            if (choose === menu.length) {
+                break;
+            } else if (choose > 0 && choose < 7) {
+                for (let i = 0; i < menu.length; i++) {
+                    if (choose - 1 === i) {
+                        quantity = parseInt(prompt(menu[i] + ' có giá ' + price[i] + '\nMời bạn nhập số lượng:'));
+                        totalMoney += price[i] * quantity;
+                        break;
+                    }
+                }
+            } else {
+                alert('Nhập sai, mời bạn nhập lại');
+            }
+        } while (true);
+        document.getElementById('result').innerText = 'Tổng tiền phải trả: ' + totalMoney;
+    }
+</script>
+</body>
+</html>

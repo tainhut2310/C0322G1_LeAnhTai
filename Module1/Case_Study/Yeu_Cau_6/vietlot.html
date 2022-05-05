@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình mua vé số Vietlot</title>
+</head>
+<body>
+<h2>Xổ số CodeGym</h2>
+<div id="">
+    <input type="button" value="00" onclick="num_vietlot(this.value)" id="myid1">
+    <input type="button" value="00" onclick="num_vietlot(this.value)" id="myid2">
+    <input type="button" value="00" onclick="num_vietlot(this.value)" id="myid3">
+    <input type="button" value="00" onclick="num_vietlot(this.value)" id="myid4">
+    <input type="button" value="00" onclick="num_vietlot(this.value)" id="myid5">
+    <input type="button" value="00" onclick="num_vietlot(this.value)" id="myid6">
+</div>
+<input type="button" onclick="buyVietlot()" value="Mua vé">
+<input type="button" onclick="showResult" value="Xem kết qủa">
+<script>
+    function buyVietlot() {
+        let choose = parseInt(prompt('Bạn có 2 lựa chọn: \n1. Bạn muốn tự chọn số. \n2. Hệ thống tự random.'));
+        if (choose === 1) {
+        }
+    }
+
+    function num_vietlot(num) {
+        let chooseNum = prompt("moi ban chon so");
+        document.getElementById('myid1').value = chooseNum;
+        document.getElementById('myid2').value = chooseNum;
+        document.getElementById('myid3').value = chooseNum;
+        document.getElementById('myid4').value = chooseNum;
+        document.getElementById('myid5').value = chooseNum;
+        document.getElementById('myid6').value = chooseNum;
+    }
+
+</script>
+</body>
+</html>

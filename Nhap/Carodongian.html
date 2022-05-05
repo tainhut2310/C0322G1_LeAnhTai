@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+     <p id="carogame"></p>
+     <input type="button" value="Change Value" onclick="ChangeValue()">
+     <script>
+         let b = document.getElementById('carogame');
+         let broad = [];
+         let data = "";
+         for(let i = 0; i < 5 ; i ++) {
+             broad[i] = new Array('.','.','.','.','.');
+         }
+         for(let i = 0; i < 5; i ++) {
+             data += '<br>';
+             for(let j = 0; j < 5; j++) {
+                 data += broad[i][j] + '&nbsp;&nbsp';
+             }
+         }
+         data += '<br><br>'
+         b.innerHTML =data;
+         function ChangeValue() {
+             let c = prompt('Chọn x or o:');
+             let positionX = parseInt(prompt('X :'));
+             let positionY = parseInt(prompt('Y :'));
+             broad[positionX][positionY] = c;
+             data="";
+             for(let i = 0; i < 5; i ++) {
+                 data += '<br>';
+                 for(let j = 0; j < 5; j++) {
+                     data += broad[i][j] + '&nbsp;&nbsp;&nbsp;&nbsp';
+                 }
+             }
+             data += '<br><br>'
+             b.innerHTML =data;
+         }
+     </script>
+</body>
+</html>

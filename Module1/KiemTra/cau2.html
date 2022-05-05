@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let intNumbers = parseInt(prompt('Moi ban nhap vao so luong phan tu Mang so nguyen:'));
+    let arrNumber = [];
+    for (let i = 0; i < intNumbers; i++) {
+        arrNumber[i] = parseInt(prompt('Nhap vao diem o vi tri thu ' + i));
+    }
+    let aNumber = parseInt(prompt('Moi ban nhap vao mot so nguyen muon tim:'));
+
+    function tryRemoveFromArray(arr, aIntNumber) {
+        let flag = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (aIntNumber === arr[i]) {
+                arr.splice(i, 1);
+                flag = true;
+            }
+        }
+        if (flag === false) {
+            return arr;
+        } else {
+            return arr;
+        }
+    }
+
+    let getArr = tryRemoveFromArray(arrNumber, aNumber);
+    document.write('Mang tra ve sau khi xu ly yeu cau:' + getArr);
+</script>
+</body>
+</html>

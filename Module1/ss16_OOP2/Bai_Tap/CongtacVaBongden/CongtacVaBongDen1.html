@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cong Tac Va Bong Den</title>
+</head>
+<body>
+<script>
+    class ElectricLamp {
+        constructor() {
+            this._status = false;
+        }
+        getStatus() {
+            return this._status;
+        }
+        setStatus(value) {
+            this._status = value;
+        }
+        turnOff() {
+           this._status = false;
+           alert("Den dang tat");
+
+        }
+        turnOn() {
+            this._status = true;
+            alert("Den dang bat");
+        }
+    }
+    class SwitchButton {
+        constructor() {
+            this._status = false;
+        }
+        getStatus() {
+            return this._status;
+        }
+        setStatus(value) {
+            this._status = value;
+        }
+        connectToLamp(bongDen) {
+            this.bongDen = bongDen;
+        }
+        switchOff() {
+            this._status = false;
+            this.bongDen.turnOff();
+        }
+        switchOn() {
+            this._status = true;
+            this.bongDen.turnOn();
+        }
+    }
+    let bongDen = new ElectricLamp();
+    let congTac = new SwitchButton();
+    congTac.connectToLamp(bongDen);
+    congTac.switchOff();
+    congTac.switchOn();
+</script>
+</body>
+</html>

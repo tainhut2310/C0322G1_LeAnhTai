@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let newArr = [1, 5, 2, 13, 9, 12, 8, 0, 5, 1];
+    function fibonacci(n) {
+        if (n === 0) {
+            return 0;
+        } else if (n === 1) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+    function getFib(arr) {
+        let arr1 = [];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j <= arr[i]; j++) {
+                if (fibonacci(j) === arr[i]) {
+                    arr1.push(arr[i]);
+                    break;
+                }
+            }
+        }
+        return arr1;
+    }
+    let setArr = getFib(newArr);
+    let temp = 0;
+    for (let i = 0; i < setArr.length -1; i++) {
+        for (let j = i + 1; j < setArr.length; j++) {
+            if(setArr[i] > setArr[j]) {
+                temp = setArr[i];
+                setArr[i] = setArr[j];
+                setArr[j] = temp;
+            }
+        }
+    }
+    document.write(setArr + '&nbsp');
+</script>
+</body>
+</html>

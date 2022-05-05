@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra ky tu nguyen am hay phu am</title>
+</head>
+<body>
+<script>
+    let inputChar = prompt('Mời bạn nhập ký tự muốn kiểm tra:')
+    let char = "o,u,i,a,e,O,U,I,A,E";
+    if(char.indexOf(inputChar) !== -1) {
+        alert(inputChar + ' là ký tự nguyên âm');
+    }else {
+        alert(inputChar + ' không phải là nguyên âm');
+    }
+</script>
+</body>
+</html>

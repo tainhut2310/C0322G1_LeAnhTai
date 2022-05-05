@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dem so luong ky tu khac nhau</title>
+</head>
+<body>
+<script>
+    let char = 'cabca';
+    let arr = char.split("")
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                arr.splice(j,1);
+            }
+        }
+    }
+    document.write('Có ' + arr.length + ' khác nhau là ' + arr);
+</script>
+</body>
+</html>

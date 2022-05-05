@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim chi so cua phan so lon nhat</title>
+</head>
+<body>
+<script>
+    let numerrators = [5,9,2,5,6];
+    let denominators = [6,2,3,4,3];
+    let maxFraction = numerrators[0]/denominators[0];
+    let index = 0;
+    for (let i = 1; i < numerrators.length; i++) {
+        if(maxFraction < numerrators[i]/denominators[i]) {
+            maxFraction = numerrators[i]/denominators[i];
+            index = i;
+        }
+    }
+document.write(maxFraction + ' la phan so lon nhat, co chi so la ' + index);
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputIntNumber = parseInt(prompt('Moi ban nhap vao mot so nguyen:'));
+
+    function fibonacci(n) {
+        if (n === 0 || n === 1) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+
+    function isFibonacci(fib) {
+        let flag = false;
+        for (let i = 0; i <= fib; i++) {
+            if (fibonacci(i) === fib) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    let getFib = isFibonacci(inputIntNumber);
+    if (getFib === true) {
+        document.write(inputIntNumber + ' la so Fibonacci.')
+    } else {
+        document.write(inputIntNumber + ' khong phai la so Fibonacci.')
+    }
+</script>
+</body>
+</html>

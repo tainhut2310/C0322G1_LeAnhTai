@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Thue Thu Nhap Ca Nhan</title>
+</head>
+<body>
+<script>
+    let luongNhanVien = prompt('Moi ban nhap luong:');
+    let thueThuNhap,thueSuat;
+    let luongRong = 0;
+    if(luongNhanVien >= 15) {
+        thueThuNhap =(luongNhanVien * 20) / 100;
+        thueSuat = 20;
+    } else if(luongNhanVien >= 7) {
+        thueThuNhap =(luongNhanVien * 10) / 100;
+        thueSuat = 10;
+    } else {
+        thueThuNhap = (luongNhanVien * 5) / 100;
+        thueSuat = 5;
+    }
+    luongRong = luongNhanVien - thueThuNhap;
+    document.write('Luong chua tru thue = ' + luongNhanVien + '<br/>');
+    document.write('Thue thu nhap voi thue suat ' + thueSuat + '% = ' + thueThuNhap + '<br/>');
+    document.write('Luong thuc nhan = ' + luongRong);
+</script>
+</body>
+</html>

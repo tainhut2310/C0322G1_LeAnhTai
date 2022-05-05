@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve Hinh Chu Nhat</title>
+</head>
+<body>
+<script>
+    let length = parseInt(prompt('Enter length x:'));
+    let width  = parseInt(prompt('Enter width y:'));
+    for(let i = 0; i < length; i++) {
+        for(let j = 0; j < width; j++) {
+            if((i === 0 && j < width) || (j === 0 && i < length) || (i === length - 1 && j < width) || (j === width - 1 && i < length)) {
+                document.write('*');
+            } else {
+                document.write('&nbsp&nbsp');
+            }
+        }
+        document.write('<br/>');
+    }
+</script>
+</body>
+</html>

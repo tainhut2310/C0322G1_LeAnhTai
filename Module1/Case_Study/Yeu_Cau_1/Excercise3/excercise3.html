@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ve hinh tam giac can dac</title>
+</head>
+<body>
+<script>
+    let height = parseInt(prompt("Enter height:"));
+    for (let i = 1; i <= height; i++) {
+        for (let j = i + 1; j <= height; j++) {
+            document.write("&nbsp&nbsp")
+        }
+        for (let k = 1; k <= 2 * i -1; k++) {
+            document.write('*')
+        }
+        document.write('<br>');
+    }
+</script>
+</body>
+</html>
