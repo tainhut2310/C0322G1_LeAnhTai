@@ -37,8 +37,6 @@ public class readNumbersIntoWords {
                 case 9:
                     System.out.println("Nine");
                     break;
-                default:
-                    System.out.println("out of ability");
             }
         }
         if (number >= 10 && number < 20) {
@@ -75,6 +73,7 @@ public class readNumbersIntoWords {
                     System.out.println("Nineteen");
                     break;
             }
+
         }
         if (number >= 20 && number < 100) {
             numberB = number % 10;
@@ -141,57 +140,86 @@ public class readNumbersIntoWords {
             numberE = (number / 10) % 10;
             switch (numberD) {
                 case 1:
-                    System.out.print("One hundred ");
+                    System.out.print("One hundred and ");
                     break;
                 case 2:
-                    System.out.print("Two hundred ");
+                    System.out.print("Two hundred and ");
                     break;
                 case 3:
-                    System.out.print("Three hundred ");
+                    System.out.print("Three hundred and ");
                     break;
                 case 4:
-                    System.out.print("Four hundred ");
+                    System.out.print("Four hundred and ");
                     break;
                 case 5:
-                    System.out.print("Five hundred ");
+                    System.out.print("Five hundred and ");
                     break;
                 case 6:
-                    System.out.print("Six hundred ");
+                    System.out.print("Six hundred and ");
                     break;
                 case 7:
-                    System.out.print("Seven hundred ");
+                    System.out.print("Seven hundred and ");
                     break;
                 case 8:
-                    System.out.print("Eight hundred ");
+                    System.out.print("Eight hundred and ");
                     break;
                 case 9:
-                    System.out.print("Nine hundred ");
+                    System.out.print("Nine hundred and ");
                     break;
             }
             switch (numberE) {
                 case 2:
-                    System.out.print("and twenty ");
+                    System.out.print("twenty ");
                     break;
                 case 3:
-                    System.out.print("and thirty ");
+                    System.out.print("thirty ");
                     break;
                 case 4:
-                    System.out.print("and forty ");
+                    System.out.print("forty ");
                     break;
                 case 5:
-                    System.out.print("and fifty ");
+                    System.out.print("fifty ");
                     break;
                 case 6:
-                    System.out.print("and sixty ");
+                    System.out.print("sixty ");
                     break;
                 case 7:
-                    System.out.print("and seventy ");
+                    System.out.print("seventy ");
                     break;
                 case 8:
-                    System.out.print("and eighty ");
+                    System.out.print("eighty ");
                     break;
                 case 9:
-                    System.out.print("and ninety ");
+                    System.out.print("ninety ");
+                    break;
+            }
+            switch (numberF) {
+                case 1:
+                    System.out.println("one");
+                    break;
+                case 2:
+                    System.out.println("two");
+                    break;
+                case 3:
+                    System.out.println("three");
+                    break;
+                case 4:
+                    System.out.println("four");
+                    break;
+                case 5:
+                    System.out.println("five");
+                    break;
+                case 6:
+                    System.out.println("six");
+                    break;
+                case 7:
+                    System.out.println("seven");
+                    break;
+                case 8:
+                    System.out.println("eight");
+                    break;
+                case 9:
+                    System.out.println("nine");
                     break;
             }
         }
