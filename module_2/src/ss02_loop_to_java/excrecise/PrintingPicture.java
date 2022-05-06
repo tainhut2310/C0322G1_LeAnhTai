@@ -14,6 +14,8 @@ public class PrintingPicture {
         System.out.println("0. Exit");
         choice = Integer.parseInt(input.nextLine());
         switch (choice) {
+            case 0:
+                System.exit(0);
             case 1:
                 System.out.println("Enter length: ");
                 length = Integer.parseInt(input.nextLine());
@@ -29,12 +31,29 @@ public class PrintingPicture {
                 }
                 break;
             case 2:
-                for (int i = 0; i < 5 ; i++) {
+                System.out.println("Enter length: ");
+                length = Integer.parseInt(input.nextLine());
+
+                for (int i = 0; i < length ; i++) {
                     for (int j = 0; j <= i ; j++) {
-                        System.out.println("* ");
+                        System.out.print("* ");
                     }
+                    System.out.println();
                 }
-                System.out.println();
+                break;
+            case 3:
+                System.out.println("Enter length: ");
+                length = Integer.parseInt(input.nextLine());
+
+                for (int i = 0; i < length ; i++) {
+                    for (int j = 0; j < length - i ; j++) {
+                        System.out.print("* ");
+                    }
+                    System.out.println();
+                }
+                break;
+            default:
+                System.out.println("No choose!");
         }
     }
 }
