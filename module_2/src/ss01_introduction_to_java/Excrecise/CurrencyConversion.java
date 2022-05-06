@@ -1,4 +1,4 @@
-package Excrecise;
+package ss01_introduction_to_java.Excrecise;
 
 import java.util.Scanner;
 
