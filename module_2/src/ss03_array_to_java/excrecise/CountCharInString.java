@@ -2,7 +2,7 @@ package ss03_array_to_java.excrecise;
 
 import java.util.Scanner;
 
-public class CoutCharInString {
+public class CountCharInString {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String string = "Công Tằng Tôn Nữ Nguyễn Thị Long Lanh Bồng Bềnh Ánh Tuyết";
