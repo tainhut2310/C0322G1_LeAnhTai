@@ -8,7 +8,6 @@ public class CountCharInString {
         String string = "Công Tằng Tôn Nữ Nguyễn Thị Long Lanh Bồng Bềnh Ánh Tuyết";
         System.out.print("Nhap vao ky tu muon dem: ");
         char charFind = input.nextLine().charAt(0);
-        ;
         int count = 0;
         for (int i = 0; i < string.length() ; i++) {
             if (charFind == string.charAt(i)) {
