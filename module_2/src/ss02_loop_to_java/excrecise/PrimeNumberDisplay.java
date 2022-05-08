@@ -8,21 +8,21 @@ class PrimeNumberDisplay {
         Scanner input = new Scanner(System.in);
         int numbers = Integer.parseInt(input.nextLine());
         int count = 0;
-        int N = 2;
+        int n = 2;
         System.out.print(numbers + " số nguyên tố đầu tiên là: ");
         while (count < numbers) {
             boolean check = true;
-            for (int i = 2; i < N ; i++) {
-                if (N % i == 0) {
+            for (int i = 2; i < n ; i++) {
+                if (n % i == 0) {
                     check = false;
                     break;
                 }
             }
             if (check) {
-                System.out.print(N + " ");
+                System.out.print(n + " ");
                 count++;
             }
-            N++;
+            n++;
         }
     }
 }
