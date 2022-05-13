@@ -1,13 +1,13 @@
-package ss06_inheritance.excrecise.class_point2d_point3d;
+package ss06_inheritance_polymorphism.excrecise.class_point_movable_point;
 
-public class Point2D {
+public class Point {
     private float x = 0.0f;
     private float y = 0.0f;
 
-    public Point2D() {
+    public Point() {
     }
 
-    public Point2D(float x, float y) {
+    public Point(float x, float y) {
         this.x = x;
         this.y = y;
     }
@@ -28,18 +28,13 @@ public class Point2D {
         this.y = y;
     }
 
-    public void setXY(float x, float y) {
-        this.x = x;
-        this.y = y;
-    }
-
     public float[] getXY() {
-        return new float[]{x, y};
+        return new float[2];
     }
 
     @Override
     public String toString() {
-        return "Point2D{" +
+        return "Point{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

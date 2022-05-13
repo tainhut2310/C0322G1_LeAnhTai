@@ -1,6 +1,4 @@
-package ss06_inheritance.excrecise.class_inhertance;
-
-import java.util.SplittableRandom;
+package ss06_inheritance_polymorphism.excrecise.class_inheritance;
 
 public class Circle {
     private double radius = 1.0;

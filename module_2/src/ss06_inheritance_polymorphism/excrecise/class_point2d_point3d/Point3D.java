@@ -1,4 +1,4 @@
-package ss06_inheritance.excrecise.class_point2d_point3d;
+package ss06_inheritance_polymorphism.excrecise.class_point2d_point3d;
 
 public class Point3D extends Point2D {
     private float z = 0.0f;

@@ -1,4 +1,4 @@
-package ss06_inheritance.excrecise.class_inhertance;
+package ss06_inheritance_polymorphism.excrecise.class_inheritance;
 
 public class Cylinder extends Circle {
     private double height = 1.0;
