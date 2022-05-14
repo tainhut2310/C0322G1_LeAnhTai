@@ -8,9 +8,11 @@ public class ColorableTest {
         shapes[2] = new Rectangle(20, 20);
         shapes[3] = new Square(30);
         for (Shape shape : shapes) {
-            System.out.println(shape);
             if (shape instanceof Colorable) {
+                System.out.print(shape + " ");
                 ((Colorable) shape).howToColor();
+            } else {
+                System.out.println(shape);
             }
         }
     }
