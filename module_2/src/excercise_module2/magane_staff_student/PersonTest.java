@@ -67,17 +67,17 @@ public class PersonTest {
         }
     }
 
-    public static void SearchPerson() {
+    public static void searchPerson() {
         System.out.print("Nhập tên muốn tìm :");
         String find = input.nextLine();
         for (int i = 0; i < personList.length; i++) {
             if (personList[i] != null && (personList[i].getName().contains(find))) {
                 System.out.println(personList[i]);
-            }
+            } 
         }
     }
 
-    public static void DeletePerson() {
+    public static void deletePerson() {
         boolean flag = false;
         int index = 0;
         System.out.print("Nhập id muốn xóa: ");
@@ -98,7 +98,7 @@ public class PersonTest {
         displayList();
     }
 
-    public static void UpdatePerson() {
+    public static void updatePerson() {
         boolean flag = false;
         int index = 0;
         System.out.print("Nhập id muốn update: ");
@@ -170,15 +170,15 @@ public class PersonTest {
                     break;
                 case 3:
                     System.out.println("Search Person");
-                    SearchPerson();
+                    searchPerson();
                     break;
                 case 4:
                     System.out.println("Delete Person");
-                    DeletePerson();
+                    deletePerson();
                     break;
                 case 5:
                     System.out.println("Update Person");
-                    UpdatePerson();
+                    updatePerson();
                     break;
                 case 6:
                     System.exit(0);
