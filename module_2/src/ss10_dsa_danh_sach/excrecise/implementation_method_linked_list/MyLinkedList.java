@@ -1,14 +1,14 @@
-package ss10_dsa_danh_sach.practice.implementation_method_linked_list;
+package ss10_dsa_danh_sach.excrecise.implementation_method_linked_list;
 
-public class LinkedList<E> {
+public class MyLinkedList<E> {
     private Node head;
     private int numNodes;
     private Node tail;
 
-    public LinkedList() {
+    public MyLinkedList() {
     }
 
-    public LinkedList(Object element) {
+    public MyLinkedList(Object element) {
         head = new Node(element);
     }
 
@@ -121,7 +121,7 @@ public class LinkedList<E> {
         if (numNodes == 0) {
             throw new NullPointerException();
         }
-        LinkedList<E> temp = new LinkedList<E>();
+        MyLinkedList<E> temp = new MyLinkedList<E>();
         Node tempNode = head;
         temp.addFirst((E) tempNode.data);
         tempNode = tempNode.next;

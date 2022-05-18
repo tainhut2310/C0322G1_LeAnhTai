@@ -1,4 +1,4 @@
-package ss10_dsa_danh_sach.excrecise.implementation_class_linked_list_basic;
+package ss10_dsa_danh_sach.practice.implementation_class_linked_list_basic;
 
 public class MyLinkedList {
         private Node head;

@@ -1,4 +1,4 @@
-package ss10_dsa_danh_sach.excrecise.implementation_class_list_basic;
+package ss10_dsa_danh_sach.practice.implementation_class_list_basic;
 
 import java.util.Arrays;
 

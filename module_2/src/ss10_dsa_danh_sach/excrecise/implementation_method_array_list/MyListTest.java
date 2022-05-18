@@ -1,4 +1,4 @@
-package ss10_dsa_danh_sach.practice.implementation_method_array_list;
+package ss10_dsa_danh_sach.excrecise.implementation_method_array_list;
 
 public class MyListTest {
     public static void main(String[] args) {

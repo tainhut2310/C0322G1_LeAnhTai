@@ -1,8 +1,8 @@
-package ss10_dsa_danh_sach.practice.implementation_method_linked_list;
+package ss10_dsa_danh_sach.excrecise.implementation_method_linked_list;
 
-public class LinkedListTest {
+public class MyLinkedListTest {
     public static void main(String[] args) {
-        LinkedList<Integer> integerLinkedList = new LinkedList<>(10);
+        MyLinkedList<Integer> integerLinkedList = new MyLinkedList<>(10);
         integerLinkedList.addFirst(11);
         integerLinkedList.addFirst(18);
         integerLinkedList.addFirst(17);
