@@ -4,11 +4,6 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class DecimalToBinary {
-
-    public void convertBinary(int num) {
-
-    }
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         //Chuyển đổi từ hệ thập phân sang hệ nhị phân.
