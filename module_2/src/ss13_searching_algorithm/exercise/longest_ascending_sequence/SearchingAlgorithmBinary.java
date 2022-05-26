@@ -1,4 +1,4 @@
-package ss13_searching_algorithm.practice.longest_ascending_sequence;
+package ss13_searching_algorithm.excrecise.longest_ascending_sequence;
 
 import java.util.*;
 

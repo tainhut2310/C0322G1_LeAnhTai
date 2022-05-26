@@ -1,11 +1,11 @@
-package ss16_io_text_file.excrecise.coppy_file_text;
+package ss16_io_text_file.exercise.copy_file_text;
 
 import java.io.*;
 
 public class ReadAndWriteFile {
     public static void main(String[] args) {
-        File file = new File("src\\ss16_io_text_file\\excrecise\\coppy_file_text\\sourcefile.txt");
-        File file1 = new File("src\\ss16_io_text_file\\excrecise\\coppy_file_text\\targetfile.txt");
+        File file = new File("src\\ss16_io_text_file\\exercise\\copy_file_text\\sourcefile.txt");
+        File file1 = new File("src\\ss16_io_text_file\\exercise\\copy_file_text\\targetfile.txt");
         if (!file.exists()) {
             System.out.println("File nguồn không tồn tại!");
         } else if (file1.exists()) {

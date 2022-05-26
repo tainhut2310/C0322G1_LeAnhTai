@@ -1,4 +1,4 @@
-package ss16_io_text_file.excrecise.write_file_csv;
+package ss16_io_text_file.exercise.write_file_csv;
 
 public class Country {
     private int id;

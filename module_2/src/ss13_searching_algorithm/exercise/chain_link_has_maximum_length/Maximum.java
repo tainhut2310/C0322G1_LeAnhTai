@@ -1,4 +1,4 @@
-package ss13_searching_algorithm.practice.chain_link_has_maximum_length;
+package ss13_searching_algorithm.excrecise.chain_link_has_maximum_length;
 
 import java.util.LinkedList;
 import java.util.Scanner;
