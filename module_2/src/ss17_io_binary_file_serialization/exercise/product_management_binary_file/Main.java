@@ -31,7 +31,7 @@ public class Main {
                 case 4:
                     System.exit(0);
             }
-        } while(true);
+        } while (true);
     }
 
     public static Scanner input = new Scanner(System.in);
@@ -75,10 +75,15 @@ public class Main {
         System.out.print("Nhập tên sản phẩm hoặc hãng sản xuất muốn tìm:");
         String find = input.nextLine();
         List<Product> productList = readProduct("src\\ss17_io_binary_file_serialization\\exercise\\product_management_binary_file\\file_product.txt");
+        boolean check = false;
         for (int i = 0; i < productList.size(); i++) {
             if (productList.get(i) != null && (productList.get(i).getName().contains(find) || productList.get(i).getProduction().contains(find))) {
+                check = true;
                 System.out.println(productList.get(i));
             }
+        }
+        if (!check) {
+            System.out.println("Không tìm thấy sản phẩm bạn muốn tìm!");
         }
     }
 
