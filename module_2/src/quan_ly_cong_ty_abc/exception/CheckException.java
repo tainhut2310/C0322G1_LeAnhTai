@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class CheckException extends Exception {
     public static Scanner scanner = new Scanner(System.in);
+
     public static int checkParseInt() {
         int value;
         while (true) {

@@ -20,15 +20,13 @@ public class ReadAndWriteFile {
     public static List<String[]> readFile(String pathFile) {
         File file = new File(pathFile);
         List<String[]> list = new ArrayList<>();
-        String line = null;
+        String line;
         try (FileReader fileReader = new FileReader(file);
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
             while ((line = bufferedReader.readLine()) != null && !line.equals("")) {
                 String[] arr = line.split(",");
                 list.add(arr);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

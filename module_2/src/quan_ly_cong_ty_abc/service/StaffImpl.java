@@ -2,6 +2,7 @@ package quan_ly_cong_ty_abc.service;
 
 import quan_ly_cong_ty_abc.controller.CompanyController;
 import quan_ly_cong_ty_abc.exception.CheckException;
+import quan_ly_cong_ty_abc.exception.NotFoundEmployeeException;
 import quan_ly_cong_ty_abc.model.ProductionStaff;
 import quan_ly_cong_ty_abc.model.Staff;
 import quan_ly_cong_ty_abc.model.ManagementStaff;
@@ -18,7 +19,7 @@ public class StaffImpl implements IStaff {
     public static final String REGEX_DATE = "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
     public static final String REGEX_ID_MANAGEMENT_STAFF = "(NVQL)[-][\\d]{3}";
     public static final String REGEX_ID_PRODUCTION_STAFF = "(NVSX)[-][\\d]{3}";
-    public static final String REGEX_INT = "^[1-9]|([1][0-9])$";
+    public static final String REGEX_INT = "[1-9][0-9]*";
 
     @Override
     public void display() {
@@ -31,19 +32,24 @@ public class StaffImpl implements IStaff {
 
     @Override
     public void add() {
-        System.out.println("Chọn loại nhân viên: ");
-        System.out.println("1.\tNhân viên quản lý");
-        System.out.println("2.\tNhân viên sản xuất");
-        System.out.print("Chọn chức năng: ");
-        String choose = scanner.nextLine();
-        switch (choose) {
-            case "1":
-                inputManagementStaff();
-                break;
-            case "2":
-                inputProductionStaff();
-                break;
-        }
+        String choose;
+        do {
+            System.out.println("Chọn loại nhân viên: ");
+            System.out.println("1.\tNhân viên quản lý");
+            System.out.println("2.\tNhân viên sản xuất");
+            System.out.print("Chọn chức năng: ");
+            choose = scanner.nextLine();
+            switch (choose) {
+                case "1":
+                    inputManagementStaff();
+                    break;
+                case "2":
+                    inputProductionStaff();
+                    break;
+                default:
+                    System.out.println("Bạn cần nhập đúng lựa chọn! Xin vui lòng nhập lại:");
+            }
+        } while (true);
     }
 
     @Override
@@ -91,24 +97,26 @@ public class StaffImpl implements IStaff {
         String typeSearch = scanner.nextLine();
         boolean check = true;
         staffList = readFile();
-        for (int i = 0; i < staffList.size(); i++) {
-            if (typeSearch.contains(staffList.get(i).getIdStaff()) ||
-                    typeSearch.contains(staffList.get(i).getName()) ||
-                    typeSearch.contains(staffList.get(i).getBirthdayDate()) ||
-                    typeSearch.contains(staffList.get(i).getAddress())) {
+        for (Staff staff : staffList) {
+            if (staff.getIdStaff().contains(typeSearch) ||
+                    staff.getName().contains(typeSearch) ||
+                    staff.getBirthdayDate().contains(typeSearch) ||
+                    staff.getAddress().contains(typeSearch)) {
                 check = false;
-                System.out.println("Đã tìm thấy nhân viên cần tìm");
-                System.out.println(staffList.get(i));
-                break;
+                System.out.println(staff);
             }
         }
-        if(check) {
-            System.out.println("Không tìm thấy nhân viên muốn tìm!");
+        try {
+            if (check) {
+                throw new NotFoundEmployeeException("Không tìm thấy nhân viên muốn tìm!");
+            }
+        } catch (NotFoundEmployeeException e) {
+            System.out.println(e.getMessage());
         }
     }
 
     public List<Staff> readFile() {
-        List<String[]> list = ReadAndWriteFile.readFile("src\\quan_ly_cong_ty_abc\\data\\management.csv");
+        List<String[]> list = ReadAndWriteFile.readFile("src\\quan_ly_cong_ty_abc\\data\\employee.csv");
         staffList.clear();
         for (String[] item : list) {
             if (item[1].contains("NVQL")) {
@@ -139,26 +147,16 @@ public class StaffImpl implements IStaff {
         for (Staff item : staffList) {
             line.append(item.getInfo());
         }
-        ReadAndWriteFile.writeFile("src\\quan_ly_cong_ty_abc\\data\\management.csv", line.toString());
+        ReadAndWriteFile.writeFile("src\\quan_ly_cong_ty_abc\\data\\employee.csv", line.toString());
     }
 
     public void inputManagementStaff() {
-        int idManagementStaff;
-        int max = 0;
-        if (staffList.size() == 0) {
-            idManagementStaff = 1;
-        } else {
-            for (int i = 0; i < staffList.size(); i++) {
-                if (max < staffList.get(i).getId()) {
-                    max = staffList.get(i).getId();
-                }
-            }
-            idManagementStaff = max + 1;
-        }
+        int idManagementStaff = getIdManagementStaff();
+
         System.out.print("Nhập mã nhân viên: ");
         String idStaff = RegexData.regexIdManagementStaff(scanner.nextLine(), REGEX_ID_MANAGEMENT_STAFF);
 
-        System.out.print("Nhập tên nhân viên: ");
+        System.out.print("Nhập tên nhân viên quản lý: ");
         String name = scanner.nextLine();
 
         System.out.print("Nhập ngày sinh: ");
@@ -172,30 +170,36 @@ public class StaffImpl implements IStaff {
 
         System.out.print("Nhập hệ số lương: ");
         String coefficientsSalary = RegexData.regexInt(scanner.nextLine(), REGEX_INT);
+
         ManagementStaff managementStaff = new ManagementStaff(idManagementStaff, idStaff, name, birthdayDate, address, basicSalary, coefficientsSalary);
         staffList.add(managementStaff);
         System.out.println("Đã thêm mới thành công!");
         writeFile();
     }
 
-    public void inputProductionStaff() {
+    public int getIdManagementStaff() {
         staffList = readFile();
-        int idProductionStaff;
+        int idManagementStaff;
         int max = 0;
         if (staffList.size() == 0) {
-            idProductionStaff = 1;
+            idManagementStaff = 1;
         } else {
-            for (int i = 0; i < staffList.size(); i++) {
-                if (max < staffList.get(i).getId()) {
-                    max = staffList.get(i).getId();
+            for (Staff staff : staffList) {
+                if (max < staff.getId()) {
+                    max = staff.getId();
                 }
             }
-            idProductionStaff = max + 1;
+            idManagementStaff = max + 1;
         }
-        System.out.print("Nhập mã nhân viên: ");
-        String idStaff = RegexData.regexIdManagementStaff(scanner.nextLine(), REGEX_ID_PRODUCTION_STAFF);
+        return idManagementStaff;
+    }
 
-        System.out.print("Nhập tên nhân viên: ");
+    public void inputProductionStaff() {
+        int idProductionStaff = getIdManagementStaff();
+        System.out.print("Nhập mã nhân viên: ");
+        String idStaff = RegexData.regexIdProductionStaff(scanner.nextLine(), REGEX_ID_PRODUCTION_STAFF);
+
+        System.out.print("Nhập tên nhân viên sản xuất: ");
         String name = scanner.nextLine();
 
         System.out.print("Nhập ngày sinh: ");
@@ -209,6 +213,7 @@ public class StaffImpl implements IStaff {
 
         System.out.print("Nhập giá mỗi sản phẩm: ");
         String pricePerProduct = RegexData.regexInt(scanner.nextLine(), REGEX_INT);
+
         ProductionStaff productionStaff = new ProductionStaff(idProductionStaff, idStaff, name, birthdayDate, address, productNumber, pricePerProduct);
         staffList.add(productionStaff);
         System.out.println("Đã thêm mới thành công!");

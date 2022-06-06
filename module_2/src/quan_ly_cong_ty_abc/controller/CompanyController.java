@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class CompanyController {
     public static Scanner scanner = new Scanner(System.in);
     public static StaffImpl staff = new StaffImpl();
+
     public static void displayMenu() {
         int choose;
         do {
