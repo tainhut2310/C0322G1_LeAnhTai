@@ -1,4 +1,4 @@
-package ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.model;
+package ss12_java_collection_framework.exercise.using_arraylist_linkedlist.model;
 
 public class Product {
     private int id;

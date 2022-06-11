@@ -17,6 +17,18 @@ public class Room extends Facility {
         this.serviceFree = serviceFree;
     }
 
+    @Override
+    public String getInfo() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s",
+                super.getIdFacility(),
+                super.getNameService(),
+                super.getUsableArea(),
+                super.getRentalCosts(),
+                super.getMaximumNumberOfPeople(),
+                super.getRentalType(),
+                this.serviceFree + "\n");
+    }
+
     public String getServiceFree() {
         return serviceFree;
     }

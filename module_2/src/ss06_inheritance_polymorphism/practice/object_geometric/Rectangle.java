@@ -1,4 +1,4 @@
-package ss06_inheritance.practice.object_geometric;
+package ss06_inheritance_polymorphism.practice.object_geometric;
 
 public class Rectangle extends Shape {
     private double width = 1.0;

@@ -40,7 +40,7 @@ public class Main {
         count++;
     }
 
-    public static void SearchProduct() {
+    public static void searchProduct() {
         System.out.print("Nhập tên sản phẩm hoặc hãng sản xuất muốn tìm:");
         String find = input.nextLine();
         for (int i = 0; i < productsList.length ; i++) {
@@ -50,7 +50,7 @@ public class Main {
         }
     }
 
-    public static void DeleteProduct() {
+    public static void deleteProduct() {
         System.out.print("Nhập id muốn xóa: ");
         int placeId = Integer.parseInt(input.nextLine());
         for (int i = 0; i < productsList.length ; i++) {
@@ -62,7 +62,7 @@ public class Main {
         displayList();
     }
 
-    public static void UpdateProduct() {
+    public static void updateProduct() {
         System.out.print("Nhập id muốn update: ");
         int placeId = Integer.parseInt(input.nextLine());
         System.out.print("Nhập tên: ");
@@ -103,15 +103,15 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Search Product");
-                    SearchProduct();
+                    searchProduct();
                     break;
                 case 4:
                     System.out.println("Delete Product");
-                    DeleteProduct();
+                    deleteProduct();
                     break;
                 case 5:
                     System.out.println("Update Product");
-                    UpdateProduct();
+                    updateProduct();
                     break;
                 case 6:
                     System.exit(0);

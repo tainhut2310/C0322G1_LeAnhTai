@@ -1,4 +1,4 @@
-package ss06_inheritance.practice.object_geometric;
+package ss06_inheritance_polymorphism.practice.object_geometric;
 
 public class Circle extends Shape {
     private double radius = 1.0;

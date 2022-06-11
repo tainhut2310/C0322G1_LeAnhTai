@@ -1,4 +1,4 @@
-package ss06_inheritance.practice.object_geometric;
+package ss06_inheritance_polymorphism.practice.object_geometric;
 
 public class Square extends Rectangle {
     public Square() {

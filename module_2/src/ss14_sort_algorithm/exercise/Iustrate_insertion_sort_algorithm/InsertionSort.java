@@ -1,4 +1,4 @@
-package ss14_sort_algorithm.excrecise.Iustrate_insertion_sort_algorithm;
+package ss14_sort_algorithm.exercise.Iustrate_insertion_sort_algorithm;
 
 import java.util.Arrays;
 import java.util.Scanner;

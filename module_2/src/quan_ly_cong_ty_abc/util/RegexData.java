@@ -85,7 +85,7 @@ public class RegexData {
                 if (temp.matches(regex) && !temp.equals("")) {
                     return temp;
                 } else {
-                    throw new Exception("Bạn đã nhập sai định dạng, số nhập phải là số dương\nXin vui lòng nhập lại: ");
+                    throw new Exception("Nhập sai định dạng, Mhập vào phải là số dương\nXin vui lòng nhập lại: ");
                 }
             } catch (Exception e) {
                 System.out.print(e.getMessage());

@@ -20,6 +20,19 @@ public class House extends Facility {
         this.floors = floors;
     }
 
+    @Override
+    public String getInfo() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s",
+                super.getIdFacility(),
+                super.getNameService(),
+                super.getUsableArea(),
+                super.getRentalCosts(),
+                super.getMaximumNumberOfPeople(),
+                super.getRentalType(),
+                this.typeHouse,
+                this.floors + "\n");
+    }
+
     public String getTypeHouse() {
         return typeHouse;
     }

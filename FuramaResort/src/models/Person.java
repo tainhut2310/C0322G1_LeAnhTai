@@ -1,9 +1,9 @@
 package models;
 
 public abstract class Person {
-    private int id;
+    private String id;
     private String name;
-    private int age;
+    private String dateOfBirth;
     private String gender;
     private String idCard;
     private String phoneNumber;
@@ -13,10 +13,10 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String name, int age, String gender, String idCard, String phoneNumber, String email) {
+    public Person(String id, String name, String dateOfBirth, String gender, String idCard, String phoneNumber, String email) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.idCard = idCard;
         this.phoneNumber = phoneNumber;
@@ -31,11 +31,11 @@ public abstract class Person {
         this.gender = gender;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -47,12 +47,12 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getIdCard() {
@@ -79,11 +79,12 @@ public abstract class Person {
         this.email = email;
     }
 
+    public abstract String getInfo();
     @Override
     public String toString() {
         return "id=" + id +
                 ", name='" + name + '\'' +
-                ", age=" + age +
+                ", dateOfBirth=" + dateOfBirth +
                 ", gender='" + gender + '\'' +
                 ", idCard=" + idCard +
                 ", phoneNumber=" + phoneNumber +

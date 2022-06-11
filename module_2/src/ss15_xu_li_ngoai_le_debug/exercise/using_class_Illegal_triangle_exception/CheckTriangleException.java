@@ -1,4 +1,4 @@
-package ss15_xu_li_ngoai_le_debug.excrecise.using_class_Illegal_triangle_exception;
+package ss15_xu_li_ngoai_le_debug.exercise.using_class_Illegal_triangle_exception;
 
 import java.util.Scanner;
 

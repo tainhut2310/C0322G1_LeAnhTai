@@ -10,14 +10,14 @@ public class SumMainDiagonal {
         System.out.print("Nhap vao so cot: ");
         int col = Integer.parseInt(input.nextLine());
         double[][] array = new double[row][col];
-        for (int i = 0; i < row ; i++) {
-            for (int j = 0; j < col ; j++) {
-                System.out.print("Nhap phan tu o vi tri thu "+ i + "\t" + j + " : ");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print("Nhap phan tu o vi tri thu " + i + "\t" + j + " : ");
                 array[i][j] = Double.parseDouble(input.nextLine());
             }
         }
         System.out.println("Mang sau khi nhap:");
-        for (int i = 0; i < row ; i++) {
+        for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 System.out.print(array[i][j] + "\t");
             }
@@ -25,9 +25,9 @@ public class SumMainDiagonal {
         }
         double sum = 0.0;
         if (row == col) {
-            for (int i = 0; i < row ; i++) {
-                for (int j = 0; j < col ; j++) {
-                    if ( i == j ) {
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < col; j++) {
+                    if (i == j) {
                         sum += array[i][j];
                     }
                 }

@@ -1,4 +1,4 @@
-package ss14_sort_algorithm.excrecise.algorithm_settings_insertion;
+package ss14_sort_algorithm.exercise.algorithm_settings_insertion;
 
 public class InsertionSort {
     public static int[] list = {9, 8, 6, 5, 3, 2, 4, 1, 7};

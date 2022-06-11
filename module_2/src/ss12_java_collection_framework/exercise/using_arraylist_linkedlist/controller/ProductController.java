@@ -1,7 +1,6 @@
-package ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.controller;
+package ss12_java_collection_framework.exercise.using_arraylist_linkedlist.controller;
 
-import ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.service.ProductServiceImpl;
-import ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.util.ProductPriceComparator;
+import ss12_java_collection_framework.exercise.using_arraylist_linkedlist.service.ProductServiceImpl;
 
 import java.util.Scanner;
 

@@ -1,9 +1,9 @@
 package services;
 
 public interface ContractService {
-    void creatNewContract();
+    void creatNew();
 
-    void displayListContact();
+    void displayList();
 
-    void editContract();
+    void edit();
 }

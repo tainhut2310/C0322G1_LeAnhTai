@@ -34,12 +34,16 @@ public class PromotionServiceImpl implements PromotionService {
     public void displayGetVoucher() {
         Stack<Booking> bookingStack = new Stack<>();
         Set<Booking> bookingSet = BookingServiceImpl.sendBooking();
+
         System.out.print("Nhập số lượng voucher khuyến mãi 10%: ");
         int voucher10 = Integer.parseInt(scanner.nextLine());
+
         System.out.print("Nhập số lượng voucher khuyến mãi 20%: ");
         int voucher20 = Integer.parseInt(scanner.nextLine());
+
         System.out.print("Nhập số lượng voucher khuyến mãi 50%: ");
         int voucher50 = Integer.parseInt(scanner.nextLine());
+
         int sumVoucher = voucher10 + voucher20 + voucher50;
         int i = 0;
         for (Booking item : bookingSet) {

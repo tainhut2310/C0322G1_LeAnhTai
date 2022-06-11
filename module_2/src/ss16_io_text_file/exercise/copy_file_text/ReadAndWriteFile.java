@@ -1,6 +1,7 @@
 package ss16_io_text_file.exercise.copy_file_text;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class ReadAndWriteFile {
     public static void main(String[] args) {

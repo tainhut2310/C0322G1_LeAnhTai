@@ -8,9 +8,9 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(int id,
+    public Employee(String id,
                     String name,
-                    int age,
+                    String dateOfBirth,
                     String gender,
                     String idCard,
                     String phoneNumber,
@@ -18,10 +18,25 @@ public class Employee extends Person {
                     String level,
                     String workingPosition,
                     double salary) {
-        super(id, name, age, gender, idCard, phoneNumber, email);
+        super(id, name, dateOfBirth, gender, idCard, phoneNumber, email);
         this.level = level;
         this.workingPosition = workingPosition;
         this.salary = salary;
+    }
+
+    @Override
+    public String getInfo() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
+                super.getId(),
+                super.getName(),
+                super.getDateOfBirth(),
+                super.getGender(),
+                super.getIdCard(),
+                super.getPhoneNumber(),
+                super.getEmail(),
+                this.level,
+                this.workingPosition,
+                this.salary + "\n");
     }
 
     public String getLevel() {

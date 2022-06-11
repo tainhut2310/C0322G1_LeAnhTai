@@ -16,12 +16,12 @@ public class FindElementMinInArray {
         for (int value : array) {
             System.out.print(value + "\t");
         }
-        int min = array[0];
+        int min = 0;
         for (int i = 0; i < array.length ; i++) {
-            if (array[i] < min) {
-                min = array[i];
+            if (array[i] < array[min]) {
+                min = i;
             }
         }
-        System.out.println("\nMin element in array: " + min);
+        System.out.println("\nMin element in array: " + array[min]);
     }
 }

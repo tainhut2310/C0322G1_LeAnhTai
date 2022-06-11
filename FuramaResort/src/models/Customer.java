@@ -7,18 +7,32 @@ public class Customer extends Person {
     public Customer() {
     }
 
-    public Customer(int id,
+    public Customer(String id,
                     String name,
-                    int age,
+                    String dateOfBirth,
                     String gender,
                     String idCard,
                     String phoneNumber,
                     String email,
                     String typeOfCustomer,
                     String address) {
-        super(id, name, age, gender, idCard, phoneNumber, email);
+        super(id, name, dateOfBirth, gender, idCard, phoneNumber, email);
         this.typeOfCustomer = typeOfCustomer;
         this.address = address;
+    }
+
+    @Override
+    public String getInfo() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s",
+                super.getId(),
+                super.getName(),
+                super.getDateOfBirth(),
+                super.getGender(),
+                super.getIdCard(),
+                super.getPhoneNumber(),
+                super.getEmail(),
+                this.typeOfCustomer,
+                this.address + "\n");
     }
 
     public String getTypeOfCustomer() {

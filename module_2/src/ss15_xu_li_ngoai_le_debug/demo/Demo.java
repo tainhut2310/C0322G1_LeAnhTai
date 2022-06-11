@@ -9,6 +9,9 @@ public class Demo {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        byte num = Byte.parseByte(scanner.nextLine());//exception NumberFormatException
+        float nn = scanner.nextInt();//exception InputMisMatchException
 //        int number = scanner.nextInt();
         inputArray();
 

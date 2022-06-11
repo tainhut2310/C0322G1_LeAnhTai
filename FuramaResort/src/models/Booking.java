@@ -5,8 +5,7 @@ public class Booking {
     private String startDate;
     private String endDate;
     private Customer customerCode;
-    private Facility serviceName;
-    private Facility idService;
+    private Facility idFacility;
 
     public Booking() {
     }
@@ -15,14 +14,12 @@ public class Booking {
                    String startDate,
                    String endDate,
                    Customer customerCode,
-                   Facility serviceName,
-                   Facility idService) {
+                   Facility idFacility) {
         this.bookingCode = bookingCode;
         this.startDate = startDate;
         this.endDate = endDate;
         this.customerCode = customerCode;
-        this.serviceName = serviceName;
-        this.idService = idService;
+        this.idFacility = idFacility;
     }
 
     public int getBookingCode() {
@@ -57,22 +54,13 @@ public class Booking {
         this.customerCode = customerCode;
     }
 
-    public Facility getServiceName() {
-        return serviceName;
+    public Facility getIdFacility() {
+        return idFacility;
     }
 
-    public void setServiceName(Facility serviceName) {
-        this.serviceName = serviceName;
+    public void setIdFacility(Facility idFacility) {
+        this.idFacility = idFacility;
     }
-
-    public Facility getIdService() {
-        return idService;
-    }
-
-    public void setIdService(Facility idService) {
-        this.idService = idService;
-    }
-
 
     @Override
     public String toString() {
@@ -81,8 +69,7 @@ public class Booking {
                 ", startDay=" + startDate +
                 ", endDay=" + endDate +
                 ", customerCode=" + customerCode.getId() +
-                ", serviceName='" + serviceName.getNameService() + '\'' +
-                ", idService='" + idService.getIdFacility() + '\'' +
+                ", idFacility='" + idFacility.getIdFacility() +
                 '}';
     }
 }

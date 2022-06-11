@@ -1,7 +1,7 @@
 package ss12_java_collection_framework.practice;
 
-import ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.model.Product;
-import ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.service.IProductService;
+import ss12_java_collection_framework.exercise.using_arraylist_linkedlist.model.Product;
+import ss12_java_collection_framework.exercise.using_arraylist_linkedlist.service.IProductService;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,12 +1,10 @@
-package ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.service;
+package ss12_java_collection_framework.exercise.using_arraylist_linkedlist.service;
 
-import javafx.print.Collation;
-import ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.model.Product;
-import ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.util.ProductPriceComparator;
-import ss12_java_collection_framework.excrecise.using_arraylist_linkedlist.util.ProductPriceComparatorMin;
+import ss12_java_collection_framework.exercise.using_arraylist_linkedlist.model.Product;
+import ss12_java_collection_framework.exercise.using_arraylist_linkedlist.util.ProductPriceComparator;
+import ss12_java_collection_framework.exercise.using_arraylist_linkedlist.util.ProductPriceComparatorMin;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 

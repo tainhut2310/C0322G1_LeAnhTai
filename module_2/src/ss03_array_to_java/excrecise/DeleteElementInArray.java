@@ -17,7 +17,7 @@ public class DeleteElementInArray {
         for (int i = 0; i < arrNumber.length ; i++) {
             if( elementDelete == arrNumber[i]) {
                 flag = true;
-                arrNumber[i] = arrNumber[i + 1];
+//                arrNumber[i] = arrNumber[i + 1];
                 place = i;
                 break;
             }
