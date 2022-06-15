@@ -1,19 +1,19 @@
 create database quan_ly_nha_cung_cap_vat_tu;
 use quan_ly_nha_cung_cap_vat_tu;
 create table vat_tu(
-ma_vtu int not null auto_increment primary key,
+ma_vtu int auto_increment primary key,
 ten_vtu varchar(50) not null
 );
 create table phieu_nhap(
-so_pn int not null auto_increment primary key,
+so_pn int auto_increment primary key,
 ngay_nhap date not null
 );
 create table phieu_xuat(
-so_px int not null auto_increment primary key,
+so_px int auto_increment primary key,
 ngay_xuat date not null
 );
 create table don_dh(
-so_dh int not null auto_increment primary key,
+so_dh int auto_increment primary key,
 ngay_dh date not null
 );
 create table nha_cc(
@@ -22,8 +22,8 @@ ten_ncc varchar(20) not null,
 dia_chi varchar(50)
 );
 create table chi_tiet_px(
-ma_vtu int not null,
-so_px int not null,
+ma_vtu int,
+so_px int,
 primary key (ma_vtu, so_px),
 unique (ma_vtu, so_px),
 foreign key (ma_vtu) references vat_tu (ma_vtu),
@@ -32,8 +32,8 @@ don_gia_xuat double not null,
 so_luong_xuat int not null
 );
 create table chi_tiet_pn(
-ma_vtu int not null,
-so_pn int not null,
+ma_vtu int,
+so_pn int,
 primary key (ma_vtu, so_pn),
 unique (ma_vtu, so_pn),
 foreign key (ma_vtu) references vat_tu (ma_vtu),
@@ -42,8 +42,8 @@ don_gia_nhap double not null,
 so_luong_nhap int not null
 );
 create table chi_tiet_ddh(
-ma_vtu int not null,
-so_dh int not null,
+ma_vtu int,
+so_dh int,
 primary key (ma_vtu, so_dh),
 unique (ma_vtu, so_dh),
 foreign key (ma_vtu) references vat_tu (ma_vtu),
