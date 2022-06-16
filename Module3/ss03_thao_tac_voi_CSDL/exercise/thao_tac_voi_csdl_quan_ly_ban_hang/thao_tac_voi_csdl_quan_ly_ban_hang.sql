@@ -1,6 +1,6 @@
 use quan_ly_ban_hang;
-insert into customer (customer_id, customer_name, age)
-value (1, 'Minh Quan', 10), (2, 'Ngoc Oanh', 20), (3, 'Hong Ha', 50);
+insert into customer (customer_name, age)
+value ('Minh Quan', 10), ('Ngoc Oanh', 20), ('Hong Ha', 50);
 
 insert into `order` (order_id, order_date, total_price, customer_id)
 value (1, '2006/03/21', null, 1), (2, '2006/03/23', null, 2), (3, '2006/03/16', null, 1);
@@ -18,7 +18,7 @@ join `order` on customer.customer_id = `order`.customer_id
 join order_detail on order_detail.order_id = `order`.order_id
 join product on product.product_id = order_detail.product_id;
 
-select customer.customer_id, customer.customer_name, count(customer.customer_id) as so_lan_mua 
+select customer.customer_id, customer.customer_name, count(`order`.customer_id) as so_lan_mua 
 from  `order` right join customer on `order`.customer_id = customer.customer_id
 group by `order`.order_id
 having so_lan_mua = 0;
