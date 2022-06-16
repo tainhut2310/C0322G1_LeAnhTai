@@ -91,20 +91,12 @@ order by so_lan_dat_phong;
 -- 5.	Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong, ten_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tong_tien 
 -- (Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá, với Số Lượng và Giá là từ bảng dich_vu_di_kem, hop_dong_chi_tiet) 
 -- cho tất cả các khách hàng đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
-select k.ma_khach_hang, k.ho_ten, l.ten_loai_khach, h.ma_hop_dong, d.ten_dich_vu, h.ngay_lam_hop_dong, h.ngay_ket_thuc, tong_tien 
-from khach_hang k left join hop_dong h on k.ma_khach_hang = h.ma_khach_hang
-join loai_khach l on k.ma_loai_khach = l.ma_loai_khach
-join dich_vu d on h.ma_dich_vu = d.ma_dich_vu
-join hop_dong_chi_tiet t on h.ma_hop_dong = t.ma_hop_dong
-join dich_vu_di_kem dk on t.ma_dich_vu_di_kem = dk.ma_dich_vu_di_kem
-having count(h.ma_hop_dong) > 0;
-
-
 select k.ma_khach_hang, k.ho_ten, l.ten_loai_khach, h.ma_hop_dong, d.ten_dich_vu,
 h.ngay_lam_hop_dong, h.ngay_ket_thuc from hop_dong h
 right join khach_hang k on h.ma_khach_hang = k.ma_khach_hang
 left join loai_khach l on k.ma_loai_khach = l.ma_loai_khach
 left join dich_vu d on h.ma_dich_vu = d.ma_dich_vu;
+
 -- ifnull((d.chi_phi_thue + t.so_luong * dk.gia),0) tong_tien
 -- join hop_dong_chi_tiet t on h.ma_hop_dong = t.ma_hop_dong
 -- join dich_vu_di_kem dk on t.ma_dich_vu_di_kem = dk.ma_dich_vu_di_kem
