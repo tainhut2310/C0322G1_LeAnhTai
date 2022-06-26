@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid view</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .menu {
+            width: 25%;
+            height: 70px;
+            float: left; background-color: #73AD21;
+        }
+        .main {
+            width: 75%;
+            height: 70px;
+            float: left; background-color: red;
+        }
+        .col-1 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-2 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-3 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-4 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-5 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-6 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-7 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-8 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-9 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-10 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-11 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .col-12 {width: 8.33%; float: left; padding: 15px; boder: 1px solid red}
+        .row::after{content: "";
+            clear: both;
+            display: table;}
+
+    </style>
+</head>
+<body class="row">
+    <div class="menu">25%</div>
+    <div class="main">75%</div>
+<div>
+    <div class="col-1">Một</div>
+    <div class="col-2">Hai</div>
+    <div class="col-3">Ba</div>
+    <div class="col-4">Bốn</div>
+    <div class="col-5">Năm</div>
+    <div class="col-6">Sáu</div>
+    <div class="col-7">Bảy</div>
+    <div class="col-8">Tám</div>
+    <div class="col-9">Chín</div>
+    <div class="col-10">Mười</div>
+    <div class="col-11">Mười Một</div>
+    <div class="col-12">Mười Hai</div>
+</div>
+</body>
+</html>

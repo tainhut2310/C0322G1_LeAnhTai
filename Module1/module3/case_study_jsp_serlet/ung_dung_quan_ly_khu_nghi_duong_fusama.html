@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý khu nghỉ dưỡng Fusama</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        .row::after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+        .header{
+            background-color: #b6effb;
+            border: solid 1px beige;
+            position: relative;
+            height: 100px;
+        }
+        .logo{
+            position: absolute;
+            left: 50px;
+            top: 15px;
+        }
+        .name{
+            position: absolute;
+            right: 50px;
+            top: 40px;
+        }
+        .menu-header{
+            background-color: #34ce57;
+            border: solid 1px beige;
+            position: relative;
+            height: 50px;
+        }
+        .logo-img{
+            position: absolute;
+            left: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="header">
+        <span class="logo"><img src="FURAMA.png" width="70" height="70"></span>
+        <span class="logo-img"><img src="furama-resort-da-nang_1.jpg" height="100" width="600" alt=""></span>
+        <span style="color: darkorange" class="name">LÊ ANH TÀI</span>
+    </div>
+</div>
+<div class="menu-header">
+<div class="col-2">
+    <div style="padding: 0px; text-align: center" class="col-5"><img src="home.png" width="30" height="30" alt=""></div>
+    <div style="padding: 0px; bottom: 3px" class="col-7">HOME</div>
+</div>
+<div class="col-2">
+    <div style="padding: 0px; text-align: center" class="col-5"><img src="employees.png" width="30" height="30" alt=""></div>
+    <div style="padding: 0px; bottom: 3px" class="col-7">EMPLOYEE</div>
+</div>
+<div class="col-2">
+    <div style="padding: 0px; text-align: center" class="col-5"><img src="rating.png" width="30" height="30" alt=""></div>
+    <div style="padding: 0px; bottom: 3px" class="col-7">CUSTOMER</div>
+</div>
+<div class="col-2">
+    <div style="padding: 0px; text-align: center" class="col-5"><img src="customer-service.png" width="30" height="30" alt=""></div>
+    <div style="padding: 0px; bottom: 3px" class="col-7">SERVICE</div>
+</div>
+<div class="col-2">
+    <div style="padding: 0px; text-align: center" class="col-5"><img src="contract.png" width="30" height="30" alt=""></div>
+    <div style="padding: 0px; bottom: 3px" class="col-7">CONTRACT</div>
+</div>
+<div class="col-2">
+    <input style="width: 200px; border-radius: 50px" placeholder="Tìm kiếm">
+</div>
+</div>
+<div class="body">
+    <div style="border: solid 1px beige; height: 600px" class="col-3">
+        <div>ITEM ONE</div>
+        <div>ITEM TWO</div>
+        <div>ITEM THREE</div>
+    </div>
+    <div style="border: solid 1px beige; height: 600px" class="col-9"></div>
+</div>
+<div class="footer">
+<div style="border: solid 1px beige; height: 100px" class="col-12"></div>
+</div>
+</body>
+</html>
