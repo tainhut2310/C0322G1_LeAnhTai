@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a391014a-90b0-476d-898a-0dd865dbb01e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../sever-time/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sever-time/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../C0322G1_DangChiTrung_Module1" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../C0322G1_DangChiTrung_Module1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module1/ss04_git_html/Bai_tap/wf-hello" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module1/ss04_git_html/Bai_tap/wf-hello" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module1/ss05_HTML Form &amp; Table/Bai_Tap/FormLaySuveryKhachHang/FormLaySuveryKhachHang.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module1/ss05_HTML Form &amp; Table/Bai_Tap/FormLaySuveryKhachHang/FormLaySuveryKhachHang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study_database/file_tao_bang/quan_ly_khu_nghi_duong_fusama.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study_database/file_tao_bang/quan_ly_khu_nghi_duong_fusama.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Demo/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Demo/Demo1$Demo2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Demo/Demo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Demo/Demo2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Demo/Method.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Demo/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/META-INF/module_2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Practice/BmiCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Practice/DayInMonth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Practice/LeapYearCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/Practice/Variable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/controller/PersonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/model/CongNhat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/model/NhanVien.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/model/QuanLy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/model/SanXuat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/service/IPersonService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/service/PersonServiceArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/service/PersonServiceArrayList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/service/PersonServiceLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/service/PersonServiceMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/until/PersonNameComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/until/PersonSalaryComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/until/PersonSalaryComparatorAscending.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/bai_tap_tong_hop/view/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/excercise_module2/magane_staff_student/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/excercise_module2/magane_staff_student/PersonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/excercise_module2/magane_staff_student/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/excercise_module2/magane_staff_student/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/excercise_module2/product_management/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/excercise_module2/product_management/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/controllers/MedicalRecordController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/data/medical_records.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/exception/CheckException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/exception/DateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/exception/NameMedicalException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/exception/NamePatientException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/exception/StringException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/model/MedicalRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/model/Normal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/model/Vip.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/service/IMedicalRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/service/NormalVipService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/util/ReadWriteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/util/RegexData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_benh_vien/view/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/controller/CompanyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/data/employee.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/exception/CheckException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/exception/NotFoundEmployeeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/model/ManagementStaff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/model/ProductionStaff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/model/Staff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/service/IStaff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/service/StaffImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/util/ReadAndWriteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/util/RegexData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_cong_ty_abc/view/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/controllers/PhoneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/data/mobiles.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/exception/CheckException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/exception/IntegerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/exception/NotFoundProductException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/model/CellPhone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/model/GenuinePhone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/model/Phone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/service/IPhone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/service/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/service/impl/PhoneImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/util/ReadAndWriteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/util/RegexData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_dien_thoai/view/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/controllers/CandidateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/data/candidate.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/data/certificated.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/model/Candidate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/model/Certificated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/model/Experience.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/model/Fresher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/service/CandidateImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/service/ICandidate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/service/IService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/util/ReadAndWriteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_nop_ho_so/util/RegexData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/controllers/PersonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/data/student.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/data/teacher.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/exception/CheckException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/model/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/model/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/model/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/service/IStudentTeacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/service/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/service/StudentTeacherImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/util/ReadAndWriteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/util/RegexData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/util/SortByDateComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/util/SortByNameComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/quan_ly_person/view/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss01_introduction_to_java/Excrecise/CurrencyConversion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss01_introduction_to_java/Excrecise/PublicHello.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss01_introduction_to_java/Excrecise/ReadNumbersIntoWords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss01_introduction_to_java/Practice/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss01_introduction_to_java/Practice/LinearEquationResolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss01_introduction_to_java/Practice/Operator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss01_introduction_to_java/Practice/SystemTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss02_loop_to_java/excrecise/CheckPrime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss02_loop_to_java/excrecise/PrimeNumberDisplay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss02_loop_to_java/excrecise/PrintingPicture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss02_loop_to_java/practice/DrawingMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss02_loop_to_java/practice/GreateCommonFactor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss02_loop_to_java/practice/IntertestCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss02_loop_to_java/practice/IsPrime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/excrecise/AddElementInArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/excrecise/CountCharInString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/excrecise/DeleteElementInArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/excrecise/FindElementMaxInArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/excrecise/FindElementMinInArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/excrecise/MergeArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/excrecise/SumMainDiagonal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/excrecise/SumOneColumDefine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/practice/ConvertTemperature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/practice/CountStudentExamPassing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/practice/FindElementInArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/practice/FindMaxElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/practice/FindMinimum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss03_array_to_java/practice/ReverseArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss04_class_object_to_java/excrecise/build_class_fan/Fan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss04_class_object_to_java/excrecise/build_class_fan/OOPFan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss04_class_object_to_java/excrecise/build_class_stopwatch/OOPStopWatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss04_class_object_to_java/excrecise/build_class_stopwatch/StopWatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss04_class_object_to_java/excrecise/build_quadratic_equation/OOPQuadraticEquation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss04_class_object_to_java/excrecise/build_quadratic_equation/QuadraticEquation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss04_class_object_to_java/practice/OOPRectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss04_class_object_to_java/practice/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/demo/StudentDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/demo/StudentDemos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/excrecise/access_modifier/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/excrecise/access_modifier/TestCircle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/excrecise/build_class_in_java/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/excrecise/build_class_in_java/TestStudent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/practice/static_method/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/practice/static_method/TestStaticMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/practice/static_property/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss05_access_modifier_static_method_static_property/practice/static_property/TestStaticProperty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_inheritance/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_inheritance/Cylinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_inheritance/TestCircle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_inheritance/TestCylinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_point2d_point3d/Point2D.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_point2d_point3d/Point3D.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_point2d_point3d/TestPoint2D.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_point2d_point3d/TestPoint3D.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_point_movable_point/MovablePoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_point_movable_point/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_point_movable_point/TestMovablePoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/excrecise/class_point_movable_point/TestPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/practice/object_geometric/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/practice/object_geometric/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/practice/object_geometric/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss06_inheritance_polymorphism/practice/object_geometric/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/CircleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/Colorable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/ColorableTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/RectangleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/ShapeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/colorable_interface/SquareTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/CircleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/RectangleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/Resizeable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/ResizeableTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/excrecise/resizeable_interface/SquareTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/class_animal_interface_edible/AbstractAndInterfaceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/class_animal_interface_edible/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/class_animal_interface_edible/Apple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/class_animal_interface_edible/Chicken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/class_animal_interface_edible/Edible.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/class_animal_interface_edible/Fruit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/class_animal_interface_edible/Orange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/class_animal_interface_edible/Tiger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/geometry_class/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/geometry_class/ComparableCircle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss07_abstract_class_interface/practice/geometry_class/ComparableCircleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss08_clean_code_refactoring/excrecise/Refactoring/TennisGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss08_clean_code_refactoring/excrecise/Refactoring/TennisGameTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss08_clean_code_refactoring/practice/change_variable_name_and_detached_const/Calculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss08_clean_code_refactoring/practice/change_variable_name_and_detached_const/CalculatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss08_clean_code_refactoring/practice/detached_method/Cylinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss08_clean_code_refactoring/practice/detached_method/CylinderTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss08_clean_code_refactoring/practice/detached_variavble/FizzBuzz.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss08_clean_code_refactoring/practice/detached_variavble/FizzBuzzTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/excrecise/implementation_method_array_list/MyList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/excrecise/implementation_method_array_list/MyListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/excrecise/implementation_method_linked_list/MyLinkedList$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/excrecise/implementation_method_linked_list/MyLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/excrecise/implementation_method_linked_list/MyLinkedListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/practice/implementation_class_linked_list_basic/MyLinkedList$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/practice/implementation_class_linked_list_basic/MyLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/practice/implementation_class_linked_list_basic/MyLinkedListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/practice/implementation_class_list_basic/MyList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss10_dsa_danh_sach/practice/implementation_class_list_basic/MyListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/exrcecise/check_brackets_in_expression/BracketsInExpression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/exrcecise/convert_decimal_to_binary/DecimalToBinary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/exrcecise/count_words_using_map/UsingTreeMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/exrcecise/invert_elements_in_array_stack/StackList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/exrcecise/rational_data_organization/Personal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/exrcecise/rational_data_organization/PersonalTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/exrcecise/string_check_using_queue/PalindromeUsingQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/practice/implementation_queue_using_array/MyQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/practice/implementation_queue_using_array/QueueClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/practice/implementation_queue_using_linklist/LinkedListQueueClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/practice/implementation_queue_using_linklist/MyLinkedListQueue$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/practice/implementation_queue_using_linklist/MyLinkedListQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/practice/implementation_using_stack_linkedlist_class/GenericStackClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss11_stack_queue/practice/implementation_using_stack_linkedlist_class/MyGenericStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/exercise/using_arraylist_linkedlist/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/exercise/using_arraylist_linkedlist/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/exercise/using_arraylist_linkedlist/service/IProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/exercise/using_arraylist_linkedlist/service/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/exercise/using_arraylist_linkedlist/util/ProductPriceComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/exercise/using_arraylist_linkedlist/util/ProductPriceComparatorMin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/exercise/using_arraylist_linkedlist/view/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/practice/ProductServiceImplLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/practice/distinguish_hashmap_hashset/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/practice/distinguish_hashmap_hashset/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss12_java_collection_framework/practice/using_hashmap_linkedhashmap_treemap/TestMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss13_searching_algorithm/exercise/chain_link_has_maximum_length/Maximum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss13_searching_algorithm/exercise/longest_ascending_sequence/SearchingAlgorithmBinary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss13_searching_algorithm/practice/complexity_of_the_algorithm/AlgorithmComplexityTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss14_sort_algorithm/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss14_sort_algorithm/exercise/Iustrate_insertion_sort_algorithm/InsertionSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss14_sort_algorithm/exercise/algorithm_settings_insertion/InsertionSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss14_sort_algorithm/practice/bubble_sort/BubbleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss14_sort_algorithm/practice/illustration_bubble_sort/BubbleSortByStep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss14_sort_algorithm/practice/select_sort_algorithm/SelectionSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss15_xu_li_ngoai_le_debug/demo/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss15_xu_li_ngoai_le_debug/demo/MyException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss15_xu_li_ngoai_le_debug/exercise/using_class_Illegal_triangle_exception/CheckTriangleException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss15_xu_li_ngoai_le_debug/exercise/using_class_Illegal_triangle_exception/IllegalTriangleException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss15_xu_li_ngoai_le_debug/practice/debug_application_java/LinearEquationResolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss15_xu_li_ngoai_le_debug/practice/using_array_index_out_of_bounds_exception/ArrayExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss15_xu_li_ngoai_le_debug/practice/using_class_number_format_exception/CalculationExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/demo/TestFileClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/exercise/copy_file_text/ReadAndWriteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/exercise/copy_file_text/sourcefile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/exercise/copy_file_text/targetfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/exercise/write_file_csv/Country.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/exercise/write_file_csv/ReadFileCSV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/exercise/write_file_csv/file.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/practice/find_maximum_value_and_write_out_the_file/FindMaxValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/practice/find_maximum_value_and_write_out_the_file/ReadAndWriteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/practice/find_maximum_value_and_write_out_the_file/number.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/practice/sum_the_numbers_in_the_text_file/ReadFileExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss16_io_text_file/practice/sum_the_numbers_in_the_text_file/file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/exercise/copy_binary_file/ReadWriteBinary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/exercise/copy_binary_file/source_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/exercise/copy_binary_file/target_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/exercise/product_management_binary_file/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/exercise/product_management_binary_file/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/exercise/product_management_binary_file/file_product.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/practice/copy_large_files/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/practice/copy_large_files/destinationfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/practice/copy_large_files/sourcefile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/practice/read_write_file_binary/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/practice/read_write_file_binary/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss17_io_binary_file_serialization/practice/read_write_file_binary/binary_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss19_string_and_regex/exrecise/validate_name_class/ClassExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss19_string_and_regex/exrecise/validate_phonenumber/PhoneNumberExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss19_string_and_regex/practice/crawl_list_music/CrawlSongExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss19_string_and_regex/practice/validate_account/AccountExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss19_string_and_regex/practice/validate_account/AccountExampleText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss19_string_and_regex/practice/validate_email/EmailExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/out/production/module_2/ss19_string_and_regex/practice/validate_email/EmailExampleText.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2B8SPYrpJzgg5lWpg0TWNGnqarJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a391014a-90b0-476d-898a-0dd865dbb01e" name="Default Changelist" comment="" />
+      <created>1656286195207</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656286195207</updated>
+      <workItem from="1656286198959" duration="2000" />
+    </task>
+    <servers />
+  </component>
+</project>
