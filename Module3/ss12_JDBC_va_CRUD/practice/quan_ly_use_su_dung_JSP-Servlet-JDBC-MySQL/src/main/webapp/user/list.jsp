@@ -23,7 +23,7 @@
 </center>
 <div align="center">
     <form action="/users">
-        <input type="submit" name="action" value="sort" class="btn btn-primary">
+        <input type="submit" name="action" value="Sort User" class="btn btn-primary">
     </form>
     <form action="/users?" >
         <input placeholder="Nhập tên quốc gia" type="text" name="nameSearch">
