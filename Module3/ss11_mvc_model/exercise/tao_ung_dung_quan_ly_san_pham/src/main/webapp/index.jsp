@@ -11,7 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/product">Danh sách Product</a>
-
+<table border="1">
+    <tr>
+        <th><a href="/product">Danh sách Product</a></th>
+        <th><a href="/product?action=create">Thêm mới Product</a></th>
+    </tr>
+</table>
 </body>
 </html>

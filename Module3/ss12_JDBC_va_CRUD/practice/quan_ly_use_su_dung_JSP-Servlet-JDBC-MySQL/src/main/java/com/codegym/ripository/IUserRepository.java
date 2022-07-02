@@ -1,11 +1,11 @@
-package com.codegym.dao;
+package com.codegym.ripository;
 
 import com.codegym.model.User;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IUserDAO {
+public interface IUserRepository {
     public void insertUser(User user) throws SQLException;
 
     public User selectUser(int id);
@@ -19,4 +19,8 @@ public interface IUserDAO {
     public boolean updateUser(User user) throws SQLException;
 
     public List<User> sortUser();
+
+    User getUserById(int id);
+
+    void insertUserStore(User user) throws SQLException;
 }

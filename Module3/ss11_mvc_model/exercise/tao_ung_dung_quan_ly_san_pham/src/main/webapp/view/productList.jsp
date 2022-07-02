@@ -26,7 +26,6 @@
     <th>Price Product</th>
     <th>Product Description</th>
     <th>Producer</th>
-    <th>ADD</th>
     <th>Update</th>
     <th>Delete</th>
   </tr>
@@ -37,9 +36,8 @@
       <td> ${product.price} </td>
       <td> ${product.productDescription} </td>
       <td> ${product.producer} </td>
-      <td><a href="/product?action=create">Thêm mới Product</a></td>
-      <td><a href="/product?action=update&id=${product.getId()}">Cập nhật Product</a></td>
-      <td><a href="/product?action=delete&id=${product.getId()}">Xóa Product</a></td>
+      <td><a href="/product?action=update&id=${product.id}">Cập nhật Product</a></td>
+      <td><a href="/product?action=delete&id=${product.id}">Xóa Product</a></td>
     </tr>
   </c:forEach>
 </table>

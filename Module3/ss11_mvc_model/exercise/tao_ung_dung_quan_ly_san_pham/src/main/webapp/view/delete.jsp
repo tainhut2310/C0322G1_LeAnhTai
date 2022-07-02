@@ -9,17 +9,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Deleting customer</title>
+    <title>Deleting product</title>
 </head>
 <body>
-<h1>Delete customer</h1>
+<h1>Delete Product</h1>
 <p>
     <a href="/product">Back to customer list</a>
 </p>
 <form method="post">
     <h3>Are you sure?</h3>
     <fieldset>
-        <legend>Customer information</legend>
+        <legend>Product information</legend>
         <table>
             <tr>
                 <td>Name: </td>
@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <td><input type="submit" value="Delete Product"></td>
-                <td><a href="/product">Back to customer list</a></td>
+                <td><a href="/product">Back to product list</a></td>
             </tr>
         </table>
     </fieldset>
