@@ -35,6 +35,9 @@ public class UserServlet extends HttpServlet {
                 case "edit":
                     updateUser(request, response);
                     break;
+                case "delete":
+                    deleteUser(request, response);
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
@@ -56,7 +59,7 @@ public class UserServlet extends HttpServlet {
                     showEditForm(request, response);
                     break;
                 case "delete":
-                    deleteUser(request, response);
+                    showDeleteForm(request, response);
                     break;
                 case "search":
                     showSearchForm(request, response);
@@ -150,20 +153,29 @@ public class UserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String country = request.getParameter("country");
 
-        User book = new User(id, name, email, country);
-        userServiceImpl.updateUser(book);
+        User user = new User(id, name, email, country);
+        userServiceImpl.updateUser(user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
         dispatcher.forward(request, response);
+    }
+
+    private void showDeleteForm(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+//        User existingUser = userServiceImpl.selectUser(id);
+        User existingUser = userServiceImpl.getUserById(id);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/delete.jsp");
+        request.setAttribute("user", existingUser);
+        dispatcher.forward(request, response);
+
     }
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
         userServiceImpl.deleteUser(id);
-
-        List<User> listUser = userServiceImpl.selectAllUsers();
-        request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(request, response);
+
     }
 }

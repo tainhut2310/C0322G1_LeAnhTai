@@ -1,8 +1,8 @@
 package com.codegym.service;
 
 import com.codegym.model.User;
-import com.codegym.ripository.IUserRepository;
-import com.codegym.ripository.UserRepositoryImpl;
+import com.codegym.repository.IUserRepository;
+import com.codegym.repository.UserRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;

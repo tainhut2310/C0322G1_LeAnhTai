@@ -71,3 +71,27 @@ insert into permision(id, name) values(2, 'edit');
 insert into permision(id, name) values(3, 'delete');
 
 insert into permision(id, name) values(4, 'view');
+
+delimiter //
+create procedure show_list()
+begin 
+select * from users;
+end //
+delimiter ;
+
+delimiter //
+create procedure update_user(in paramester_id int, paramester_name varchar(20), paramester_email varchar(20), paramester_country varchar(20))
+begin 
+update users set id = paramester_id, `name` = paramester_name, email = paramester_email, country = paramester_country
+where id = paramester_id;
+end //
+delimiter ;
+
+delimiter //
+create procedure remove_user (in key_id int)
+begin 
+delete from users
+where id = key_id;
+end //
+delimiter ; 
+call remove_product(6);
