@@ -1,61 +1,55 @@
 package models;
 
 public class Customer extends Person {
-    private String typeOfCustomer;
-    private String address;
+    private int typeOfCustomer;
+    private int gender;
 
     public Customer() {
     }
 
-    public Customer(String id,
+    public Customer(int id,
                     String name,
                     String dateOfBirth,
-                    String gender,
                     String idCard,
                     String phoneNumber,
                     String email,
-                    String typeOfCustomer,
-                    String address) {
-        super(id, name, dateOfBirth, gender, idCard, phoneNumber, email);
+                    String address,
+                    int typeOfCustomer,
+                    int gender) {
+        super(id, name, dateOfBirth, idCard, phoneNumber, email, address);
         this.typeOfCustomer = typeOfCustomer;
-        this.address = address;
+        this.gender = gender;
     }
 
-    @Override
-    public String getInfo() {
-        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s",
-                super.getId(),
-                super.getName(),
-                super.getDateOfBirth(),
-                super.getGender(),
-                super.getIdCard(),
-                super.getPhoneNumber(),
-                super.getEmail(),
-                this.typeOfCustomer,
-                this.address + "\n");
+    public Customer(
+            String name,
+            String dateOfBirth,
+            String idCard,
+            String phoneNumber,
+            String email,
+            String address,
+            int typeOfCustomer,
+            int gender) {
+        super(name, dateOfBirth, idCard, phoneNumber, email, address);
+        this.typeOfCustomer = typeOfCustomer;
+        this.gender = gender;
     }
 
-    public String getTypeOfCustomer() {
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
+    }
+
+    public int getTypeOfCustomer() {
         return typeOfCustomer;
     }
 
-    public void setTypeOfCustomer(String typeOfCustomer) {
+    public void setTypeOfCustomer(int typeOfCustomer) {
         this.typeOfCustomer = typeOfCustomer;
     }
 
-    public String getAddress() {
-        return address;
-    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" + super.toString() +
-                "typeOfCustomer='" + typeOfCustomer + '\'' +
-                ", address='" + address + '\'' +
-                '}';
-    }
 }

@@ -1,16 +1,18 @@
-package services;
+package repositoy;
 
 import models.Customer;
-import models.Employee;
 
+import java.sql.SQLException;
 import java.util.List;
 
-public interface ICustomerService {
-    public List<Customer> display();
+public interface ICustomerRepository {
+    public List<Customer> display() throws SQLException;
 
-    public Customer addNew(Customer customer);
+    public void addNew(Customer customer);
 
-    public Customer edit(Customer customer);
+    public Customer getCustomerById(int id);
 
-    public void delete(Customer customer);
+    public boolean update(Customer customer) throws SQLException;
+
+    public boolean delete(int id) throws SQLException;
 }

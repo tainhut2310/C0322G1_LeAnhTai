@@ -1,11 +1,22 @@
-package services;
+package repositoy;
 
-public interface IFacilityService {
-    void display();
+import models.Facility;
+import models.House;
+import models.Room;
+import models.Villa;
 
-    void addNewVilla();
+import java.util.List;
 
-    void addNewHouse();
+public interface IFacilityRepository {
+    List<Facility> display();
 
-    void addNewRoom();
+    void addNewVilla(Villa villa);
+
+    void addNewHouse(House house);
+
+    void addNewRoom(Room room);
+
+    Facility edit(int id);
+
+    Facility delete(int id);
 }

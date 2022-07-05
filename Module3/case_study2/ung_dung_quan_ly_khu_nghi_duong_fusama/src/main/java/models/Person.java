@@ -1,41 +1,42 @@
 package models;
 
 public abstract class Person {
-    private String id;
+    private int id;
     private String name;
     private String dateOfBirth;
-    private String gender;
     private String idCard;
     private String phoneNumber;
     private String email;
+    private String address;
 
 
     public Person() {
     }
 
-    public Person(String id, String name, String dateOfBirth, String gender, String idCard, String phoneNumber, String email) {
+    public Person(int id, String name, String dateOfBirth, String idCard, String phoneNumber, String email, String address) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
         this.idCard = idCard;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.address = address;
     }
 
-    public String getGender() {
-        return gender;
+    public Person(String name, String dateOfBirth, String idCard, String phoneNumber, String email, String address) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -79,15 +80,12 @@ public abstract class Person {
         this.email = email;
     }
 
-    public abstract String getInfo();
-    @Override
-    public String toString() {
-        return "id=" + id +
-                ", name='" + name + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", gender='" + gender + '\'' +
-                ", idCard=" + idCard +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'';
+    public String getAddress() {
+        return address;
     }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
 }

@@ -16,6 +16,7 @@
 <body>
 <table class="table">
     <tr>
+        <th>ID</th>
         <th>Dịch vụ</th>
         <th>Diện tích sử dụng</th>
         <th>Giá thuê</th>
@@ -25,18 +26,38 @@
         <th>Mô tả tiện nghi khác</th>
         <th>Diện tích hồ bơi</th>
         <th>Số tầng</th>
+        <th>Dịch vụ miễn phí đi kèm</th>
     </tr>
     <c:forEach items="${facilityList}" var="facility">
         <tr>
-            <td> ${facility.nameService} </td>
+            <td> ${facility.idFacility} </td>
+            <td> ${facility.nameFacility} </td>
             <td> ${facility.usableArea} </td>
             <td> ${facility.rentalCosts} </td>
             <td> ${facility.maxPeople} </td>
             <td> ${facility.rentalType} </td>
-            <td> ${facility.standardRoom} </td>
-            <td> ${facility.descriptionOtherConvenience} </td>
-            <td> ${facility.areaPool} </td>
-            <td> ${facility.numberOfFloors} </td>
+            <c:if test="${facility.idFacility == 1}">
+                <td> ${facility.standardRoom} </td>
+                <td> ${facility.descriptionOtherConvenience} </td>
+                <td> ${facility.areaPool} </td>
+                <td> ${facility.numberOfFloors} </td>
+                <td> NULL </td>
+            </c:if>
+            <c:if test="${facility.idFacility == 2}">
+                <td> ${facility.standardRoom} </td>
+                <td> ${facility.descriptionOtherConvenience} </td>
+                <td> NULL </td>
+                <td> ${facility.numberOfFloors} </td>
+                <td> NULL </td>
+            </c:if>
+            <c:if test="${facility.idFacility == 3}">
+                <td> NULL </td>
+                <td> NULL </td>
+                <td> NULL </td>
+                <td> NULL </td>
+                <td> ${facility.facilityFree} </td>
+            </c:if>
+
         </tr>
     </c:forEach>
 </table>

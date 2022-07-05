@@ -1,11 +1,11 @@
-package repository;
+package repositoy;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/student_management";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/ung_dung_quan_ly_khu_nghi_duong_fusama";
     private String jdbcUsername = "root";
     private String jdbcPassword = "Kc332200490440";
     private Connection connection;

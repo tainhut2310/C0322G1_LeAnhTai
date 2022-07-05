@@ -1,74 +1,50 @@
 package models;
 
 public class Employee extends Person {
-    private String level;
-    private String workingPosition;
-    private double salary;
+    private int educationDegree;
+    private int position;
+    private int division;
 
     public Employee() {
     }
 
-    public Employee(String id,
+    public Employee(int id,
                     String name,
                     String dateOfBirth,
-                    String gender,
                     String idCard,
                     String phoneNumber,
                     String email,
-                    String level,
-                    String workingPosition,
-                    double salary) {
-        super(id, name, dateOfBirth, gender, idCard, phoneNumber, email);
-        this.level = level;
-        this.workingPosition = workingPosition;
-        this.salary = salary;
+                    String address,
+                    int educationDegree,
+                    int position,
+                    int division) {
+        super(id, name, dateOfBirth, idCard, phoneNumber, email, address);
+        this.educationDegree = educationDegree;
+        this.position = position;
+        this.division = division;
     }
 
-    @Override
-    public String getInfo() {
-        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",
-                super.getId(),
-                super.getName(),
-                super.getDateOfBirth(),
-                super.getGender(),
-                super.getIdCard(),
-                super.getPhoneNumber(),
-                super.getEmail(),
-                this.level,
-                this.workingPosition,
-                this.salary + "\n");
+    public int getEducationDegree() {
+        return educationDegree;
     }
 
-    public String getLevel() {
-        return level;
+    public void setEducationDegree(int educationDegree) {
+        this.educationDegree = educationDegree;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public int getPosition() {
+        return position;
     }
 
-    public String getWorkingPosition() {
-        return workingPosition;
+    public void setPosition(int position) {
+        this.position = position;
     }
 
-    public void setWorkingPosition(String workingPosition) {
-        this.workingPosition = workingPosition;
+    public int getDivision() {
+        return division;
     }
 
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" + super.toString() +
-                "level='" + level + '\'' +
-                ", workingPosition: '" + workingPosition + '\'' +
-                ", salary: " + salary +
-                '}';
+    public void setDivision(int division) {
+        this.division = division;
     }
 }

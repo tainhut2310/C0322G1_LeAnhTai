@@ -1,33 +1,29 @@
 package models;
 
-public class Booking {
+public class Contract {
     private int contractId;
     private String startDate;
     private String endDate;
     private double deposit;
     private double totalMoney;
 
-    public Booking() {
+    public Contract() {
     }
 
-    public Booking(int bookingCode,
-                   String startDate,
-                   String endDate,
-                   Customer customerCode,
-                   Facility idFacility) {
-        this.bookingCode = bookingCode;
+    public Contract(int contractId, String startDate, String endDate, double deposit, double totalMoney) {
+        this.contractId = contractId;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.customerCode = customerCode;
-        this.idFacility = idFacility;
+        this.deposit = deposit;
+        this.totalMoney = totalMoney;
     }
 
-    public int getBookingCode() {
-        return bookingCode;
+    public int getContractId() {
+        return contractId;
     }
 
-    public void setBookingCode(int bookingCode) {
-        this.bookingCode = bookingCode;
+    public void setContractId(int contractId) {
+        this.contractId = contractId;
     }
 
     public String getStartDate() {
@@ -46,30 +42,19 @@ public class Booking {
         this.endDate = endDate;
     }
 
-    public Customer getCustomerCode() {
-        return customerCode;
+    public double getDeposit() {
+        return deposit;
     }
 
-    public void setCustomerCode(Customer customerCode) {
-        this.customerCode = customerCode;
+    public void setDeposit(double deposit) {
+        this.deposit = deposit;
     }
 
-    public Facility getIdFacility() {
-        return idFacility;
+    public double getTotalMoney() {
+        return totalMoney;
     }
 
-    public void setIdFacility(Facility idFacility) {
-        this.idFacility = idFacility;
-    }
-
-    @Override
-    public String toString() {
-        return "Booking{" +
-                "bookingCode=" + bookingCode +
-                ", startDay=" + startDate +
-                ", endDay=" + endDate +
-                ", customerCode=" + customerCode.getId() +
-                ", idFacility='" + idFacility.getIdFacility() +
-                '}';
+    public void setTotalMoney(double totalMoney) {
+        this.totalMoney = totalMoney;
     }
 }

@@ -1,8 +1,8 @@
-package repository.impl;
+package repositoy.impl;
 
-import services.IContractService;
+import repositoy.IContractRepository;
 
-public class ContractRepositoryImpl implements IContractService {
+public class ContractRepositoryImpl implements IContractRepository {
 
     @Override
     public void creatNew() {

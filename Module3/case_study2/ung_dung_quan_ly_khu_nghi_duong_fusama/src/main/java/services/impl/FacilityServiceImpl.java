@@ -1,26 +1,46 @@
 package services.impl;
 
-import services.FacilityService;
+import models.Facility;
+import models.House;
+import models.Room;
+import models.Villa;
+import repositoy.IFacilityRepository;
+import repositoy.impl.FacilityRepositoryImpl;
+import services.IFacilityService;
 
-public class FacilityServiceImpl implements FacilityService {
+import java.util.List;
+
+public class FacilityServiceImpl implements IFacilityService {
+    private IFacilityRepository facilityRepository = new FacilityRepositoryImpl();
+
 
     @Override
-    public void display() {
-        
+    public List<Facility> display() {
+        return facilityRepository.display();
     }
 
     @Override
-    public void addNewVilla() {
-
+    public void addNewVilla(Villa villa) {
+        facilityRepository.addNewVilla(villa);
     }
 
     @Override
-    public void addNewHouse() {
-
+    public void addNewHouse(House house) {
+        facilityRepository.addNewHouse(house);
     }
 
     @Override
-    public void addNewRoom() {
+    public void addNewRoom(Room room) {
+        facilityRepository.addNewRoom(room);
+    }
 
+    @Override
+    public Facility edit(int id) {
+        return facilityRepository.delete(id);
+    }
+
+    @Override
+    public Facility delete(int id) {
+        return null;
     }
 }

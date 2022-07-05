@@ -1,44 +1,44 @@
 package models;
 
 public abstract class Facility {
-    private String idFacility;
-    private String nameService;
+    private int idFacility;
+    private String nameFacility;
     private double usableArea;
     private double rentalCosts;
-    private int maximumNumberOfPeople;
+    private int maxPeople;
     private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String idFacility,
-                    String nameService,
-                    double usableArea,
-                    double rentalCosts,
-                    int maximumNumberOfPeople,
-                    String rentalType) {
+    public Facility(int idFacility,
+            String nameFacility,
+            double usableArea,
+            double rentalCosts,
+            int maxPeople,
+            String rentalType) {
         this.idFacility = idFacility;
-        this.nameService = nameService;
+        this.nameFacility = nameFacility;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
-        this.maximumNumberOfPeople = maximumNumberOfPeople;
+        this.maxPeople = maxPeople;
         this.rentalType = rentalType;
     }
 
-    public String getIdFacility() {
+    public int getIdFacility() {
         return idFacility;
     }
 
-    public void setIdFacility(String idFacility) {
+    public void setIdFacility(int idFacility) {
         this.idFacility = idFacility;
     }
 
-    public String getNameService() {
-        return nameService;
+    public String getNameFacility() {
+        return nameFacility;
     }
 
-    public void setNameService(String nameService) {
-        this.nameService = nameService;
+    public void setNameFacility(String nameFacility) {
+        this.nameFacility = nameFacility;
     }
 
     public double getUsableArea() {
@@ -57,12 +57,12 @@ public abstract class Facility {
         this.rentalCosts = rentalCosts;
     }
 
-    public int getMaximumNumberOfPeople() {
-        return maximumNumberOfPeople;
+    public int getMaxPeople() {
+        return maxPeople;
     }
 
-    public void setMaximumNumberOfPeople(int maximumNumberOfPeople) {
-        this.maximumNumberOfPeople = maximumNumberOfPeople;
+    public void setMaxPeople(int maxPeople) {
+        this.maxPeople = maxPeople;
     }
 
     public String getRentalType() {
@@ -73,15 +73,5 @@ public abstract class Facility {
         this.rentalType = rentalType;
     }
 
-    public abstract String getInfo();
 
-    @Override
-    public String toString() {
-        return "idFacility= " + idFacility +
-                ", nameService='" + nameService + '\'' +
-                ", usableArea=" + usableArea +
-                ", rentalCosts=" + rentalCosts +
-                ", maximumNumberOfPeople=" + maximumNumberOfPeople +
-                ", rentalType='" + rentalType + '\'';
-    }
 }

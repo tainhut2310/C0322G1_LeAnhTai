@@ -1,15 +1,15 @@
-package services;
+package repositoy;
 
 import models.Employee;
 
 import java.util.List;
 
-public interface IEmployeeService {
+public interface IEmployeeRepository {
     public List<Employee> display();
 
-    public Employee addNew(Employee employee);
+    public void addNew(Employee employee);
 
-    public Employee edit(Employee employee);
+    public Employee edit(int id);
 
-    public void delete(Employee employee);
+    public void delete(int id);
 }

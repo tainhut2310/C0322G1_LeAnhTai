@@ -1,6 +1,6 @@
-package services;
+package repositoy;
 
-public interface IContractService {
+public interface IContractRepository {
     void creatNew();
 
     void displayList();

@@ -1,6 +1,6 @@
 package services;
 
-public interface ContractService {
+public interface IContractService {
     void creatNew();
 
     void displayList();

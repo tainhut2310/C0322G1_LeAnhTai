@@ -1,51 +1,48 @@
 package models;
 
 public class Villa extends Facility {
-    private String typeVilla;
+    private String standardRoom;
+    private String descriptionOtherConvenience;
     private double areaPool;
-    private int floors;
+    private int numberOfFloors;
 
     public Villa() {
     }
 
-    @Override
-    public String getInfo() {
-        return String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s",
-                super.getIdFacility(),
-                super.getNameService(),
-                super.getUsableArea(),
-                super.getRentalCosts(),
-                super.getMaximumNumberOfPeople(),
-                super.getRentalType(),
-                this.typeVilla,
-                this.areaPool,
-                this.floors + "\n");
-    }
-
-    public Villa(String idFacility,
-                 String nameService,
-                 double usableArea,
+    public Villa(int idFacility,
+                 String nameFacility,
+                 int usableArea,
                  double rentalCosts,
-                 int maximumNumberOfPeople,
+                 int maxPeople,
                  String rentalType,
-                 String typeVilla,
+                 String standardRoom,
+                 String descriptionOtherConvenience,
                  double areaPool,
-                 int floors) {
-        super(idFacility, nameService, usableArea, rentalCosts, maximumNumberOfPeople, rentalType);
-        this.typeVilla = typeVilla;
+                 int numberOfFloors) {
+        super(idFacility,nameFacility, usableArea, rentalCosts, maxPeople, rentalType);
+        this.standardRoom = standardRoom;
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
         this.areaPool = areaPool;
-        this.floors = floors;
+        this.numberOfFloors = numberOfFloors;
     }
 
-    public String getTypeVilla() {
-        return typeVilla;
+    public String getStandardRoom() {
+        return standardRoom;
     }
 
-    public void setTypeVilla(String typeVilla) {
-        this.typeVilla = typeVilla;
+    public void setStandardRoom(String standardRoom) {
+        this.standardRoom = standardRoom;
     }
 
-    public double getAeaPool() {
+    public String getDescriptionOtherConvenience() {
+        return descriptionOtherConvenience;
+    }
+
+    public void setDescriptionOtherConvenience(String descriptionOtherConvenience) {
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
+    }
+
+    public double getAreaPool() {
         return areaPool;
     }
 
@@ -53,20 +50,11 @@ public class Villa extends Facility {
         this.areaPool = areaPool;
     }
 
-    public int getFloors() {
-        return floors;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setFloors(int floors) {
-        this.floors = floors;
-    }
-
-    @Override
-    public String toString() {
-        return "Villa{" + super.toString() +
-                "typeVilla='" + typeVilla + '\'' +
-                ", areaPool=" + areaPool +
-                ", floors=" + floors +
-                '}';
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 }
