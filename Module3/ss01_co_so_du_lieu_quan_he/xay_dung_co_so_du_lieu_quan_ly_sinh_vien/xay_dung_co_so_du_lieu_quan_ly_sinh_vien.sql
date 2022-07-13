@@ -1,11 +1,16 @@
+create database `student-management`;
+
 use `student-management`;
-create table class(
-id int primary key,
-name varchar(50)
+
+CREATE TABLE class (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50)
 );	
-create table teacher(
-id int primary key,
-`name` varchar(50),
-age int not null,
-country varchar(50) not null
+
+CREATE TABLE teacher (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50),
+    age INT NOT NULL,
+    country VARCHAR(50) NOT NULL
 );
+
