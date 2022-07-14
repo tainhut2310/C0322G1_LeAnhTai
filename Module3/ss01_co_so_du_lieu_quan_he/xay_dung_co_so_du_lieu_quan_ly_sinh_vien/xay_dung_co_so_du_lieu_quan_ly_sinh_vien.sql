@@ -1,3 +1,5 @@
+drop database `student-management`;
+
 create database `student-management`;
 
 use `student-management`;
