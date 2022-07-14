@@ -1,62 +1,76 @@
-create database quan_ly_nha_cung_cap_vat_tu;
+drop database if exists quan_ly_nha_cung_cap_vat_tu;
+
+create database if not exists quan_ly_nha_cung_cap_vat_tu;
+
 use quan_ly_nha_cung_cap_vat_tu;
-create table vat_tu(
-ma_vtu int auto_increment primary key,
-ten_vtu varchar(50) not null
+
+CREATE TABLE vat_tu (
+    ma_vtu INT AUTO_INCREMENT PRIMARY KEY,
+    ten_vtu VARCHAR(50) NOT NULL
 );
-create table phieu_nhap(
-so_pn int auto_increment primary key,
-ngay_nhap date not null
+
+CREATE TABLE phieu_nhap (
+    so_pn INT AUTO_INCREMENT PRIMARY KEY,
+    ngay_nhap DATE NOT NULL
 );
-create table phieu_xuat(
-so_px int auto_increment primary key,
-ngay_xuat date not null
+
+CREATE TABLE phieu_xuat (
+    so_px INT AUTO_INCREMENT PRIMARY KEY,
+    ngay_xuat DATE NOT NULL
 );
-create table don_dh(
-so_dh int auto_increment primary key,
-ngay_dh date not null
+
+CREATE TABLE don_dat_hang (
+    so_dh INT AUTO_INCREMENT PRIMARY KEY,
+    ngay_dh DATE NOT NULL
 );
-create table nha_cc(
-ma_ncc int auto_increment primary key,
-ten_ncc varchar(20) not null,
-dia_chi varchar(50)
+
+CREATE TABLE nha_cung_cap (
+    ma_ncc INT AUTO_INCREMENT PRIMARY KEY,
+    ten_ncc VARCHAR(20) NOT NULL,
+    dia_chi VARCHAR(50)
 );
-create table chi_tiet_px(
-ma_vtu int,
-so_px int,
-primary key (ma_vtu, so_px),
-unique (ma_vtu, so_px),
-foreign key (ma_vtu) references vat_tu (ma_vtu),
-foreign key (so_px) references phieu_xuat (so_px),
-don_gia_xuat double not null,
-so_luong_xuat int not null
+
+CREATE TABLE chi_tiet_phieu_xuat (
+    ma_vtu INT,
+    so_px INT,
+    PRIMARY KEY (ma_vtu , so_px),
+    FOREIGN KEY (ma_vtu)
+        REFERENCES vat_tu (ma_vtu),
+    FOREIGN KEY (so_px)
+        REFERENCES phieu_xuat (so_px),
+    dg_xuat DOUBLE NOT NULL,
+    sl_xuat INT NOT NULL
 );
-create table chi_tiet_pn(
-ma_vtu int,
-so_pn int,
-primary key (ma_vtu, so_pn),
-unique (ma_vtu, so_pn),
-foreign key (ma_vtu) references vat_tu (ma_vtu),
-foreign key (so_pn) references phieu_nhap (so_pn),
-don_gia_nhap double not null,
-so_luong_nhap int not null
+
+CREATE TABLE chi_tiet_phieu_nhap (
+    ma_vtu INT,
+    so_pn INT,
+    PRIMARY KEY (ma_vtu , so_pn),
+    FOREIGN KEY (ma_vtu)
+        REFERENCES vat_tu (ma_vtu),
+    FOREIGN KEY (so_pn)
+        REFERENCES phieu_nhap (so_pn),
+    dg_nhap DOUBLE NOT NULL,
+    sl_nhap INT NOT NULL
 );
-create table chi_tiet_ddh(
-ma_vtu int,
-so_dh int,
-primary key (ma_vtu, so_dh),
-unique (ma_vtu, so_dh),
-foreign key (ma_vtu) references vat_tu (ma_vtu),
-foreign key (so_dh) references don_dh (so_dh),
-ngay_dh date not null,
-ma_ncc int not null,
-foreign key (ma_ncc) references nha_cc (ma_ncc)
+
+CREATE TABLE chi_tiet_don_dat_hang (
+    ma_vtu INT,
+    so_dh INT,
+    PRIMARY KEY (ma_vtu , so_dh),
+    FOREIGN KEY (ma_vtu)
+        REFERENCES vat_tu (ma_vtu),
+    FOREIGN KEY (so_dh)
+        REFERENCES don_dat_hang (so_dh)
 );
-create table nha_cc_sdt(
-ma_ncc int auto_increment,
-sdt varchar(20),
-primary key (ma_ncc, sdt),
-foreign key (ma_ncc) references nha_cc (ma_ncc)
+
+CREATE TABLE so_dien_thoai_ncc (
+    ma_sdt INT PRIMARY KEY AUTO_INCREMENT,
+    sdt VARCHAR(20),
+    ma_ncc INT,
+    FOREIGN KEY (ma_ncc)
+        REFERENCES nha_cung_cap (ma_ncc)
 );
+
 
 
