@@ -1,4 +1,4 @@
-drop database `student-management`;
+drop database if exists `student-management`;
 
 create database `student-management`;
 
