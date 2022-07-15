@@ -1,39 +1,45 @@
-create database quan_ly_sinh_vien;
-use quan_ly_sinh_vien;
+DROP DATABASE IF EXISTS quan_ly_sinh_vien;
 
-create table class(
-class_id int not null auto_increment primary key,
-class_name varchar(60) not null,
-start_date datetime not null,
-status bit
+CREATE DATABASE IF NOT EXISTS quan_ly_sinh_vien;
+
+USE quan_ly_sinh_vien;
+
+CREATE TABLE class (
+    class_id INT AUTO_INCREMENT PRIMARY KEY,
+    class_name VARCHAR(60) NOT NULL,
+    start_date DATETIME NOT NULL,
+    `status` BIT
 );
 
-create table student(
-student_id int not null auto_increment primary key,
-student_name varchar(30) not null,
-address varchar(50),
-phone varchar(20),
-status bit,
-class_id int not null,
-foreign key (class_id) references class (class_id)
+CREATE TABLE student (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    student_name VARCHAR(30) NOT NULL,
+    address VARCHAR(20),
+    phone VARCHAR(20),
+    `status` BIT,
+    class_id INT NOT NULL,
+    FOREIGN KEY (class_id)
+        REFERENCES class (class_id)
 );
 
-create table `subject`(
-sub_id int not null auto_increment primary key,
-sub_name varchar(30) not null,
-credit Tinyint not null default 1 check (credit >= 1),
-status bit default 1 
+CREATE TABLE `subject` (
+    sub_id INT AUTO_INCREMENT PRIMARY KEY,
+    sub_name VARCHAR(30) NOT NULL,
+    credit TINYINT NOT NULL DEFAULT 1 CHECK (credit >= 1),
+    `status` BIT
 );
 
-create table mark(
-mark_id int not null auto_increment primary key,
-sub_id int not null,
-student_id int not null,
-mark float default 0 check ( mark between 0 and 100),
-exam_times tinyint default 1,
-unique (sub_id, student_id),
-foreign key (sub_id) references subject (sub_id),
-foreign key (student_id) references student (student_id)
+CREATE TABLE mark (
+    mark_id INT AUTO_INCREMENT PRIMARY KEY,
+    sub_id INT NOT NULL,
+    student_id INT NOT NULL,
+    mark FLOAT DEFAULT 0 CHECK (mark BETWEEN 0 AND 100),
+    exam_times TINYINT DEFAULT 1,
+    UNIQUE (mark_id , student_id),
+    FOREIGN KEY (sub_id)
+        REFERENCES `subject` (sub_id),
+    FOREIGN KEY (student_id)
+        REFERENCES student (student_id)
 );
 
 insert into class
@@ -44,6 +50,7 @@ value (2, 'A2', '2008-12-20', 1);
 
 insert into class
 value (3, 'B3', current_date, 0);
+
 INSERT INTO student (student_name, address, phone, status, class_id)
 VALUES ('Hung', 'Ha Noi', '0912113113', 1, 1);
 
@@ -64,22 +71,91 @@ VALUES (1, 1, 8, 1),
        (1, 2, 10, 2),
        (2, 1, 12, 1);
        
-select * from student;   
+SELECT 
+    *
+FROM
+    student;   
     
-select * from student 
-where status = true;
+SELECT 
+    *
+FROM
+    student
+WHERE
+    status = TRUE;
 
-select * from `subject`
-where credit < 10;
+SELECT 
+    *
+FROM
+    `subject`
+WHERE
+    credit < 10;
 
-select s.student_id, s.student_name, c.class_name
-from student s join class c on s.class_id = c.class_id;
+SELECT 
+    s.student_id, s.student_name, c.class_name
+FROM
+    student s
+        JOIN
+    class c ON s.class_id = c.class_id;
 
-select s.student_id, s.student_name, c.class_name
-from student s join class c on s.class_id = c.class_id
-where c.class_name = 'A1';
+SELECT 
+    s.student_id, s.student_name, c.class_name
+FROM
+    student s
+        JOIN
+    class c ON s.class_id = c.class_id
+WHERE
+    c.class_name = 'A1';
 
-select s.student_id, s.student_name, sub.sub_name, m.mark
-from student s join mark m on s.student_id = m.student_id join subject sub on m.sub_id = sub.sub_id
-where  sub.sub_name  = 'CF';
+SELECT 
+    s.student_id, s.student_name, sub.sub_name, m.mark
+FROM
+    student s
+        JOIN
+    mark m ON s.student_id = m.student_id
+        JOIN
+    subject sub ON m.sub_id = sub.sub_id
+WHERE
+    sub.sub_name = 'CF';
+
+SELECT 
+    *
+FROM
+    student
+WHERE
+    student_name LIKE '%h';
+
+SELECT 
+    *
+FROM
+    class
+WHERE
+    DATEDIFF('2008-12-31', start_date) BETWEEN 1 AND 30;
+
+SELECT 
+    *
+FROM
+    `subject`
+WHERE
+    credit BETWEEN 2 AND 5;
+
+UPDATE student 
+SET 
+    class_id = 2
+WHERE
+    student_name LIKE '% Hung %';
+
+SELECT 
+    st.student_name, s.sub_name, m.mark
+FROM
+    student st
+        JOIN
+    mark m ON st.student_id = m.student_id
+        JOIN
+    `subject` s ON s.sub_id = m.sub_id
+ORDER BY mark DESC , st.student_name;
+
+
+
+
+
 
