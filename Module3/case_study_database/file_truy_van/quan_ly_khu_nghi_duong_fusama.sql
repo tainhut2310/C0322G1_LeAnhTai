@@ -76,7 +76,7 @@ where (n.ho_ten like "h%" or n.ho_ten like "t%" or n.ho_ten like "k%") and char_
 
 -- 3.	Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 select k.* from khach_hang k
-where ((datediff(curdate(), k.ngay_sinh) / 365) between 18 and 50) and (k.dia_chi like '%Đà Nẵng' or k.dia_chi like '%Quảng Trị') ;
+where ((datediff(curdate(), k.ngay_sinh) / 365) between 18 and 50) and (k.dia_chi like '%Đà Nẵng' or k.dia_chi like '%Quảng Trị'); 
 
 -- 4.	Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần. 
 -- Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng. 
@@ -251,7 +251,7 @@ select kh.ma_khach_hang, kh.ho_ten, kh.email, kh.so_dien_thoai, kh.ngay_sinh, kh
 -- các nhân viên có địa chỉ là “Hải Châu” và đã từng lập hợp đồng cho một 
 -- hoặc nhiều khách hàng bất kì với ngày lập hợp đồng là “12/12/2019”.
 create view v_nhan_vien as 
-select nv.* from nhan_vien nv 
+select nv.* from nhan_vien nv
 join hop_dong hd on nv.ma_nhan_vien = hd.ma_nhan_vien
 where nv.dia_chi like '%Đà Nẵng' and hd.ngay_lam_hop_dong = '2021-04-25';
 select * from v_nhan_vien;
@@ -262,6 +262,7 @@ update v_nhan_vien set v_nhan_vien.dia_chi = 'Hội An';
 
 -- 23.	Tạo Stored Procedure sp_xoa_khach_hang dùng để xóa thông tin của một khách hàng 
 -- nào đó với ma_khach_hang được truyền vào như là 1 tham số của sp_xoa_khach_hang.
+-- Cách 1: Xóa logic
 delimiter //
 create procedure sp_xoa_khach_hang(in key_ma_khach_hang int)
 begin 
@@ -270,8 +271,33 @@ end //
 delimiter ;
 call sp_xoa_khach_hang(10);
 
+-- Cách 2: Xóa vĩnh viễn
+delimiter //
+create procedure sp_xoa_hop_dong_vinh_vien(in key_ma_hop_dong int)
+begin 
+delete hop_dong.* from hop_dong where hop_dong.ma_hop_dong = key_ma_hop_dong;
+end //
+delimiter ;
+call sp_xoa_hop_dong_vinh_vien(13);
 -- 24.	Tạo Stored Procedure sp_them_moi_hop_dong dùng để thêm mới vào bảng hop_dong
 --  với yêu cầu sp_them_moi_hop_dong phải thực hiện kiểm tra tính hợp lệ của dữ liệu bổ sung, 
 --  với nguyên tắc không được trùng khóa chính và đảm bảo toàn vẹn tham chiếu đến các bảng liên quan.
+delimiter //
+create procedure sp_them_moi_hop_dong(ma_hop_dong int,
+ngay_lam_hop_dong datetime,
+ngay_ket_thuc datetime,
+tien_dat_coc double,
+ma_nhan_vien int,
+ma_khach_hang int,
+ma_dich_vu int,
+statuses int)
+ begin 
+ insert into hop_dong value (ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, ma_nhan_vien, ma_khach_hang, ma_dich_vu, statuses);
+ end //
+ delimiter ;
+ call sp_them_moi_hop_dong(13,'2022-02-22', '2022-03-23', 15000000, 1, 2, 3, 0)
 
+-- 25.	Tạo Trigger có tên tr_xoa_hop_dong khi xóa bản ghi trong bảng hop_dong thì 
+-- hiển thị tổng số lượng bản ghi còn lại có trong bảng hop_dong ra giao diện console của database.
+-- Lưu ý: Đối với MySQL thì sử dụng SIGNAL hoặc ghi log thay cho việc ghi ở console.
 
