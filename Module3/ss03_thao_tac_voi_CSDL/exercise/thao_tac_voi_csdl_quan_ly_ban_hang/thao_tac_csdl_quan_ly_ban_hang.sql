@@ -26,11 +26,14 @@ VALUE (1, 1, 3),
 (2, 5, 4), 
 (2, 3, 3);
 
+
+-- Hiển thị các thông tin  gồm oID, oDate, oPrice của tất cả các hóa đơn trong bảng Order
 SELECT 
     o.order_id, o.order_date, o.order_total_price
 FROM
     `order` o;
 
+-- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
 SELECT 
     c.*, p.*
 FROM
@@ -41,16 +44,20 @@ FROM
     order_detail od ON o.order_id = od.order_id
         JOIN
     product p ON od.product_id = p.product_id;
+    
+-- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
 
 SELECT 
-    c.*, COUNT(o.customer_id) so_lan_mua
+    c.*
 FROM
     customer c
         LEFT JOIN
     `order` o ON c.customer_id = o.customer_id
-GROUP BY o.customer_id
-HAVING so_lan_mua = 0;
+WHERE
+    o.order_id IS NULL;
 
+-- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn (giá một hóa đơn được tính bằng
+--  tổng giá bán của từng loại mặt hàng xuất hiện trong hóa đơn. Giá bán của từng loại được tính = odQTY*pPrice)
 SELECT 
     o.order_id,
     o.order_date,
