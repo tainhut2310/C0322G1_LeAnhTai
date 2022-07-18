@@ -295,7 +295,9 @@ statuses int)
  insert into hop_dong value (ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, ma_nhan_vien, ma_khach_hang, ma_dich_vu, statuses);
  end //
  delimiter ;
- call sp_them_moi_hop_dong(13,'2022-02-22', '2022-03-23', 15000000, 1, 2, 3, 0)
+ call sp_them_moi_hop_dong(13,'2022-02-22', '2022-03-23', 15000000, 1, 2, 3, 0);
+ 
+
 
 -- 25.	Tạo Trigger có tên tr_xoa_hop_dong khi xóa bản ghi trong bảng hop_dong thì 
 -- hiển thị tổng số lượng bản ghi còn lại có trong bảng hop_dong ra giao diện console của database.
