@@ -172,7 +172,7 @@ join nhan_vien nv on hd.ma_nhan_vien = nv.ma_nhan_vien
 join khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
 join dich_vu dv on hd.ma_dich_vu = dv.ma_dich_vu
 join dich_vu_di_kem dk on ct.ma_dich_vu_di_kem = dk.ma_dich_vu_di_kem
-where ((datediff('2020-12-31', hd.ngay_lam_hop_dong) between 0 and 90) and year(hd.ngay_lam_hop_dong) = '2020') 
+where ((datediff('2020-12-31', hd.ngay_lam_hop_dong) between 0 and 90) and year(hd.ngay_lam_hop_dong) = '2020')
 and hd.ma_hop_dong not in (select hd.ma_hop_dong from hop_dong hd
 where (datediff('2021-06-30', hd.ngay_lam_hop_dong) between 0 and 180) and year(hd.ngay_lam_hop_dong) = '2021')
 group by hd.ma_hop_dong;
