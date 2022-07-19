@@ -297,9 +297,57 @@ statuses int)
  delimiter ;
  call sp_them_moi_hop_dong(13,'2022-02-22', '2022-03-23', 15000000, 1, 2, 3, 0);
  
-
-
 -- 25.	Tạo Trigger có tên tr_xoa_hop_dong khi xóa bản ghi trong bảng hop_dong thì 
 -- hiển thị tổng số lượng bản ghi còn lại có trong bảng hop_dong ra giao diện console của database.
 -- Lưu ý: Đối với MySQL thì sử dụng SIGNAL hoặc ghi log thay cho việc ghi ở console.
+delimiter //
+create trigger tr_xoa_hop_dong
+ after delete on hop_dong
+ for each row 
+ begin 	
+ declare so_luong int;
+ declare msg varchar(45);    	
+ select count(*) into so_luong from hop_dong;
+ set msg = concat('Số bản ghi còn lại: ', so_luong);
+ SIGNAL SQLSTATE '77777' set message_text = msg;
+ end ;  //
+ delimiter ;
+
+-- delete from hop_dong where ma_hop_dong = 7;
+-- drop trigger tr_xoa_hop_dong;
+
+-- create table so_luong_hop_dong (
+-- id int primary key auto_increment,
+-- ngay_hieu_chinh datetime,    
+-- so_luong int);
+-- delimiter //
+-- create trigger tr_xoa_hop_dong
+--  after update on hop_dong
+--  for each row 
+--  begin 	
+--  declare so_luong int;    	
+--  select count(*) into so_luong     
+--  from hop_dong    
+--  where flag = 0;       
+--  insert into so_luong_hop_dong (ngay_hieu_chinh, `so_luong`)     
+--  values (now(), so_luong);
+--  end; // 
+--  delimiter ;
+-- update hop_dong set flag = 1
+-- where ma_hop_dong = 13;
+
+-- 26.	Tạo Trigger có tên tr_cap_nhat_hop_dong khi cập nhật ngày kết thúc hợp đồng, 
+-- cần kiểm tra xem thời gian cập nhật có phù hợp hay không, với quy tắc sau: Ngày kết 
+-- thúc hợp đồng phải lớn hơn ngày làm hợp đồng ít nhất là 2 ngày. Nếu dữ liệu hợp lệ 
+-- thì cho phép cập nhật, nếu dữ liệu không hợp lệ thì in ra thông báo “Ngày kết thúc hợp 
+-- đồng phải lớn hơn ngày làm hợp đồng ít nhất là 2 ngày” trên console của database.
+-- Lưu ý: Đối với MySQL thì sử dụng SIGNAL hoặc ghi log thay cho việc ghi ở console.
+
+delimiter //
+create trigger tr_cap_nhat_hop_dong before update on hop_dong for each row
+begin 
+if ( from 
+
+
+
 
