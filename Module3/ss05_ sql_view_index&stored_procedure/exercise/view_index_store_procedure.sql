@@ -100,6 +100,3 @@ where id = key_name;
 end //
 delimiter ; 
 call remove_product(6);
-
-
-
