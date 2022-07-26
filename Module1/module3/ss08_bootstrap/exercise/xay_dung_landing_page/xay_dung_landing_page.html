@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <title>Xây dựng landing page</title>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../bootstrap-5.0.2-dist/css/bootstrap.css">
     <style>
-        .navbar-brand{
+        .navbar-brand {
             padding-left: 20px;
-           margin-right: 1px;
+            margin-right: 1px;
             margin-bottom: 7px;
+        }
+
+        [class*="col-"] {
+            float: left;
+        }
+
+        a {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -25,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" ><h5>Microsoft</h5></a>
+                    <a class="nav-link active" aria-current="page" href="#"><h5>Microsoft</h5></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Surface</a>
@@ -123,10 +130,10 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="Screenshot%202022-06-24%20163605.png" class="d-block w-100" alt="...">
+            <img src="https://laptopg7.vn/images/detailed/101/Microsoft-Surface-Book-3---15-Laptopg7-01-1594720685.jpg" class="d-block w-100" alt=".    ..">
         </div>
         <div class="carousel-item">
-            <img src="Screenshot%202022-06-24%20163605.png" class="d-block w-100" alt="...">
+            <img src="https://macstores.vn/tin-tuc/wp-content/uploads/2020/10/Ve-den-viet-nam-surface-gia-bao-nhieu-1.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -137,23 +144,88 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-    <h1 style="margin-top: 50px">For all the ways you create</h1>
-    <div style="margin-top: 50px" class="container-fluid">
+
+    <div style="margin-top: 50px" class="container">
+        <h1 style="margin-top: 50px">For all the ways you create</h1>
         <div class="row">
-            <div class="col-lg-12 ">
-                <div style="float: left" class="col-lg-2"><img src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=1b0c8927-642f-f117-bb6c-ae8afe6469d3" alt=""></div>
-                <div style="float: left" class="col-lg-2"><img src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=3bd1d210-023a-194e-de3b-43199e0c1c8c" alt=""></div>
-                <div style="float: left" class="col-lg-2"><img src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=8891907f-ff90-1a04-2df1-250a2b11a9d4" alt=""></div>
-                <div style="float: left" class="col-lg-2"><img src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=0b6d21dd-e2a6-f1e8-cc7f-34a141514d19" alt=""></div>
-                <div style="float: left" class="col-lg-2"><img src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=7f7fcde5-bc04-155d-0718-579069414be3" alt=""></div>
-                <div style="float: left" class="col-lg-2"><img src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=abc137e7-fb77-9719-bf47-d424ec2d3614" alt=""></div>
+            <div class="col-lg-12">
+                <div class="col-lg-2"><img
+                        src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=abc137e7-fb77-9719-bf47-d424ec2d3614"
+                        alt="">
+                    <span><a href="">Why Surface</a></span>
+                </div>
+                <div class="col-lg-2"><img
+                        src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=1b0c8927-642f-f117-bb6c-ae8afe6469d3"
+                        alt="">
+                    <span><a href="">Surface for Business</a></span>
+                </div>
+                <div class="col-lg-2"><img
+                        src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=3bd1d210-023a-194e-de3b-43199e0c1c8c"
+                        alt="">
+                    <span><a href="">Surface for Education</a></span>
+                </div>
+                <div class="col-lg-2"><img
+                        src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=8891907f-ff90-1a04-2df1-250a2b11a9d4"
+                        alt="">
+                    <span><a href="">Compare devices</a></span>
+                </div>
+                <div class="col-lg-2"><img
+                        src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=0b6d21dd-e2a6-f1e8-cc7f-34a141514d19"
+                        alt="">
+                    <span><a href="">Help me choose</a></span>
+                </div>
+                <div class="col-lg-2"><img
+                        src="https://c.s-microsoft.com/en-us/CMSImages/Surface_….jpg?version=7f7fcde5-bc04-155d-0718-579069414be3"
+                        alt="">
+                    <span><a href="">Surface deals</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h2>2-in-1 PCs</h2>
+
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <a href=""><img src="https://image.thanhnien.vn/w1024/Uploaded/2022/aybunux/2022_06_02/3534-9726.jpg" height="500" width="100%" lt=""></a>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://surfaceviet.vn/wp-content/uploads/2021/09/Surface-Laptop-Studio.jpg"
+                                 class="card-img-top" height="250" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://surfacecity.vn/wp-content/uploads/Pro_7_key_i5-500x500.jpg"
+                                height="250" class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://vcdn1-sohoa.vnecdn.net/2021/09/22/Surface-1_1632287423.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=VO3EjEtJJEetHH0iHuLwMA"
+                                 height="250" class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://phucanhcdn.com/media/product/42440_surface_laptop_go_sandstone_h1.png"
+                                 height="250" class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+<script src="../../bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
 </html>
