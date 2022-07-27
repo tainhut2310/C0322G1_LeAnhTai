@@ -12,7 +12,7 @@
   </head>
   <body>
   <h2>Product Discount Calculator</h2>
-  <form action="/discount" method="get">
+  <form action="/result.jsp" method="get">
   <label>Product Description</label><br>
   <input type="text" name="txtDescribeProduct" placeholder="Enter your describe: "/><br>
   <label>List Price</label><br>
