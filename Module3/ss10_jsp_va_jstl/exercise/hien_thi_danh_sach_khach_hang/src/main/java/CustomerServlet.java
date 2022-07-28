@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "CustomerServlet", urlPatterns = {"/customer", "/"})
+@WebServlet(name = "CustomerServlet", urlPatterns = {"/customer"})
 public class CustomerServlet extends HttpServlet {
-    static List<Customer> customerList = new ArrayList<>();
+    private static List<Customer> customerList = new ArrayList<>();
 
     static {
         customerList.add(new Customer("Mai Văn Hoàn", "1983-08-20", "Hà Nội", "https://anhdep123.com/wp-content/uploads/2020/05/anh-dai-dien-731x1024.jpg"));
@@ -26,6 +26,6 @@ public class CustomerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("customerList", customerList);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("view/listCustomer.jsp").forward(request, response);
     }
 }
