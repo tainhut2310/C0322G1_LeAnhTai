@@ -13,8 +13,6 @@ public interface IProductService {
 
     void delete(int id);
 
-    Product seeProductDetails();
-
     List<Product> findByName(String name);
 
     Product findById(int id);

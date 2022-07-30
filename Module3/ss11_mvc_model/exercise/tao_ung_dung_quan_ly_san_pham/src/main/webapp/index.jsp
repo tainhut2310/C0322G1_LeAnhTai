@@ -6,16 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<table border="1">
-    <tr>
-        <th><a href="/product">Danh sách Product</a></th>
-        <th><a href="/product?action=create">Thêm mới Product</a></th>
-    </tr>
-</table>
+<%--<c:redirect url="/product"></c:redirect>--%>
 </body>
 </html>

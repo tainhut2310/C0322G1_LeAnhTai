@@ -27,12 +27,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public void delete(int id) {
-        productRepository.delete(id);
-    }
-
-    @Override
-    public Product seeProductDetails() {
-        return null;
+         productRepository.delete(id);
     }
 
     @Override

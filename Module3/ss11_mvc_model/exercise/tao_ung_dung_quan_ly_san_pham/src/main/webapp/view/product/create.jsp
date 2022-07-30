@@ -16,6 +16,7 @@
 <body>
 <div class="container">
     <form method="post" action="/product?action=create">
+        <h1 style="text-align: center">Thêm mới Product</h1>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Id</label>
             <input name="id" type="number" class="form-control" id="exampleInputEmail1">
