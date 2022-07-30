@@ -12,15 +12,20 @@
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        form, h1, p {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <h1>Student List</h1>
-    <form action="/product">
+    <form style="text-align: center" action="/product">
         <input type="text" name="nameSearch">
         <input type="submit" name="action" value="search">
     </form>
-    <th><a href="/product?action=create">Thêm mới Product</a></th>
+    <p><a href="/product?action=create">Thêm mới Product</a></p>
 <table class="table">
     <tr>
         <th>ID</th>

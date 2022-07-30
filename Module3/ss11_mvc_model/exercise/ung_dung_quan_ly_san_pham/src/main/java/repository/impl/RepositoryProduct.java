@@ -27,9 +27,9 @@ public class RepositoryProduct implements IRepositoryProduct {
 
     @Override
     public Product findById(int id) {
-        for (int i = 0; i < productList.size() ; i++) {
-            if(productList.get(i).getId() == id) {
-                return productList.get(i);
+        for (Product item : productList) {
+            if(item.getId() == id) {
+                return item;
             }
         }
         return null;
@@ -38,9 +38,9 @@ public class RepositoryProduct implements IRepositoryProduct {
     @Override
     public List<Product> findByName(String name) {
         List<Product> list = new ArrayList<>();
-        for (int i = 0; i < productList.size() ; i++) {
-            if (productList.get(i).getName().contains(name)) {
-                list.add(productList.get(i));
+        for (Product item : productList) {
+            if (item.getName().contains(name)) {
+                list.add(item);
             }
         }
         return list;
