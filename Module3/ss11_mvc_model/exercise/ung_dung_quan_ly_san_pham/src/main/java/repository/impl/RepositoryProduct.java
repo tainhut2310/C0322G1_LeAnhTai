@@ -12,7 +12,7 @@ public class RepositoryProduct implements IRepositoryProduct {
         productList.add( new Product(1, "iPhone 12Pro", 1500, "Hàng chính hãng 100%", "Apple"));
         productList.add( new Product(2, "A15", 500, "Hàng xách tay", "Samsung"));
         productList.add( new Product(3, "iPhone 12", 1000, "Hàng 99%", "Apple"));
-        productList.add( new Product(4, "Astra", 1000, "Hàng chính hãng 100%", "Samsung"));
+        productList.add( new Product(4, "Ultra", 1000, "Hàng chính hãng 100%", "Samsung"));
         productList.add( new Product(5, "iPhone 12Pro", 1500, "Hàng chính hãng 100%", "Apple"));
     }
     @Override
