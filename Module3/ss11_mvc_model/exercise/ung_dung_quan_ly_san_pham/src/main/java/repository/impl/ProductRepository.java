@@ -39,7 +39,7 @@ public class ProductRepository implements IProductRepository {
     public List<Product> findByName(String name) {
         List<Product> list = new ArrayList<>();
         for (Product item : productList) {
-            if (item.getName().contains(name)) {
+            if (item.getName().toLowerCase().contains(name.toLowerCase())) {
                 list.add(item);
             }
         }
