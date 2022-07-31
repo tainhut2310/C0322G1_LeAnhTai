@@ -4,7 +4,7 @@ import model.Product;
 
 import java.util.List;
 
-public interface IServiceProduct {
+public interface IProductService {
     List<Product> fillAll();
 
     void save(Product product);

@@ -1,8 +1,8 @@
 package controller;
 
 import model.Product;
-import service.IServiceProduct;
-import service.impl.ServiceProduct;
+import service.IProductService;
+import service.impl.ProductService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @WebServlet(name = "ProductServlet", urlPatterns = {"", "/product"})
 public class ProductServlet extends HttpServlet {
-    private IServiceProduct serviceProduct = new ServiceProduct();
+    private IProductService serviceProduct = new ProductService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -193,7 +193,7 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("idDelete"));
 
         Product product = serviceProduct.findById(id);
 

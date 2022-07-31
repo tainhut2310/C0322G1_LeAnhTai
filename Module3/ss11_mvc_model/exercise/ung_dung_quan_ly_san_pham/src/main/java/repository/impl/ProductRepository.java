@@ -1,12 +1,12 @@
 package repository.impl;
 
 import model.Product;
-import repository.IRepositoryProduct;
+import repository.IProductRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositoryProduct implements IRepositoryProduct {
+public class ProductRepository implements IProductRepository {
     static List<Product> productList = new ArrayList<>();
     static {
         productList.add( new Product(1, "iPhone 12Pro", 1500, "Hàng chính hãng 100%", "Apple"));
