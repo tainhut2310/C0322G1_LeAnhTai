@@ -43,7 +43,7 @@ public class UserRepositoryImpl implements IUserRepository {
 
             + ")";
 
-    private static final String SQL_TABLE_DROP = "DROP TABLE IF EXISTS EMPLOYEE";
+    private static final String SQL_TABLE_DROP = "DROP TABLE IF EXISTS EMPLOYEE;";
 
     private static final String PROCEDURE_SELECT_ALL_USERS = "call show_list();";
 
@@ -82,7 +82,6 @@ public class UserRepositoryImpl implements IUserRepository {
             printSQLException(e);
         }
     }
-
 
     @Override
     public User selectUser(int id) {
