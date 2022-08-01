@@ -143,7 +143,7 @@ public class UserRepository implements IUserRepository {
         List<User> userList = new ArrayList<>();
         try (Connection connection = getConnection();
         PreparedStatement statement = connection.prepareStatement(FIND_BY_COUNTRY);) {
-            statement.setString(1, nameCountry);
+            statement.setString(1, "%" + nameCountry + "%");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -173,6 +173,25 @@ public class UserRepository implements IUserRepository {
             }
         }
         return userList;
+    }
+
+    @Override
+    public User getUserById(int id) throws SQLException {
+        User user = null;
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(FIND_BY_ID_STORE)){
+            callableStatement.setInt(1, id);
+            ResultSet resultSet = callableStatement.executeQuery();
+            while (resultSet.next()) {
+
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void insertUserStore(User user) {
+
     }
 
     private void printSQLException(SQLException ex) {

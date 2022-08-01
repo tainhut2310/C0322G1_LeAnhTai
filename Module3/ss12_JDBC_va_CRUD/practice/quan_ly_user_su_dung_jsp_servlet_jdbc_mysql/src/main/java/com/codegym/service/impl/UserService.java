@@ -48,7 +48,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User getUserById(int id) {
+    public User getUserById(int id) throws SQLException {
         return userRepository.getUserById(id);
     }
 

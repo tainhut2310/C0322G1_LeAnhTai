@@ -20,7 +20,7 @@ public interface IUserService {
 
     public List<User> sortByName() throws SQLException;
 
-    public User getUserById(int id);
+    public User getUserById(int id) throws SQLException;
 
     public void insertUserStore(User user);
 
