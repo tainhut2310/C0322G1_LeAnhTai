@@ -46,4 +46,14 @@ public class UserService implements IUserService {
     public List<User> sortByName() throws SQLException {
         return userRepository.sortByName();
     }
+
+    @Override
+    public User getUserById(int id) {
+        return userRepository.getUserById(id);
+    }
+
+    @Override
+    public void insertUserStore(User user) {
+        userRepository.insertUserStore(user);
+    }
 }

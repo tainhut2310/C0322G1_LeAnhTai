@@ -20,4 +20,8 @@ public interface IUserService {
 
     public List<User> sortByName() throws SQLException;
 
+    public User getUserById(int id);
+
+    public void insertUserStore(User user);
+
 }

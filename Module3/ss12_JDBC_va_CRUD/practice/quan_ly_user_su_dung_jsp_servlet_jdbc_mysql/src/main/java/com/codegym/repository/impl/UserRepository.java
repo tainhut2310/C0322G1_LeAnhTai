@@ -22,6 +22,8 @@ public class UserRepository implements IUserRepository {
     private static final String FIND_BY_COUNTRY = "select * from users where country like ?;";
     private static final String SORT_BY_NAME = "select * from users order by `name` desc;";
 
+    private static final String FIND_BY_ID_STORE = "call get_user_by_id(?);";
+
     public UserRepository() {
     }
 
@@ -143,14 +145,12 @@ public class UserRepository implements IUserRepository {
         PreparedStatement statement = connection.prepareStatement(FIND_BY_COUNTRY);) {
             statement.setString(1, nameCountry);
             ResultSet resultSet = statement.executeQuery();
-            User user;
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String email = resultSet.getString("email");
                 String country = resultSet.getString("country");
-                user = new User(id, name, email, country);
-                userList.add(user);
+                userList.add(new User(id, name, email, country));
             }
         }
         return userList;
@@ -164,14 +164,12 @@ public class UserRepository implements IUserRepository {
         try (Connection connection = getConnection();
         PreparedStatement statement = connection.prepareStatement(SORT_BY_NAME);){
             ResultSet resultSet = statement.executeQuery();
-            User user;
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String email = resultSet.getString("email");
                 String country = resultSet.getString("country");
-                user = new User(id, name, email, country);
-                userList.add(user);
+                userList.add(new User(id, name, email, country));
             }
         }
         return userList;
