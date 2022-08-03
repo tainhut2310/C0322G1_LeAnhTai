@@ -257,7 +257,8 @@ public class UserRepository implements IUserRepository {
                 pstmtAssignment = connection.prepareStatement(sqlVivot);
 
                 for (int permisionId : permision) {
-                    pstmtAssignment.setInt(1, userId);
+//                    pstmtAssignment.setInt(1, userId);
+                    pstmtAssignment.setInt(2, userId);
                     pstmtAssignment.setInt(2, permisionId);
                     pstmtAssignment.executeUpdate();
                 }
