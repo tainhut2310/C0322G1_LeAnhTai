@@ -65,6 +65,15 @@ public class UserServlet extends HttpServlet {
                 case "sort":
                     sortByName(request, response);
                     break;
+                case "permision":
+                    addUserPermision(request, response);
+                    break;
+                case "test-without-tran":
+                    testWithoutTran(request, response);
+                    break;
+                case "test-use-tran":
+                    testUseTran(request, response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -74,8 +83,12 @@ public class UserServlet extends HttpServlet {
         }
     }
 
-    private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> listUser = userService.selectAllUsers();
+    private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+//        List<User> listUser = userService.selectAllUsers();
+
+//    [Bài tập_ss13] Gọi MySql Stored Procedures từ JDBC
+        //    1. Gọi Stored Procedures từ JDBC sử dụng CallableStatement cho chức năng hiển thị danh sách users
+        List<User> listUser = userService.selectAllUserStore();
 
         request.setAttribute("listUser", listUser);
 
@@ -88,10 +101,12 @@ public class UserServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         int idEdit = Integer.parseInt(request.getParameter("id"));
 
-        User user = userService.selectUser(idEdit);
+//        User user = userService.selectUser(idEdit);
+
+        User user = userService.getUserByIdStore(idEdit);
 
         request.setAttribute("user", user);
 
@@ -109,8 +124,11 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
 
         User book = new User(id, name, email, country);
+        //   userService.updateUser(book);
 
-        userService.updateUser(book);
+        //    [Bài tập_ss13] Gọi MySql Stored Procedures từ JDBC
+        //    2.Gọi Stored Procedures từ JDBC sử dụng CallableStatement cho chức năng sửa thông tin user
+        userService.updateUserStore(book);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/edit.jsp");
         dispatcher.forward(request, response);
@@ -126,7 +144,8 @@ public class UserServlet extends HttpServlet {
 
         User newUser = new User(name, email, country);
 
-        userService.insertUser(newUser);
+//        userService.insertUser(newUser);
+        userService.insertUserStore(newUser);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/create.jsp");
         dispatcher.forward(request, response);
@@ -135,12 +154,16 @@ public class UserServlet extends HttpServlet {
     private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
 
-        userService.deleteUser(id);
+       //  userService.deleteUser(id);
+
+        //    [Bài tập_ss13] Gọi MySql Stored Procedures từ JDBC
+        //    3. Gọi Stored Procedures từ JDBC sử dụng CallableStatement cho chức năng xoá user
+        userService.deleteUserByIdStore(id);
 
         response.sendRedirect("/users");
     }
 
-//    Bài tập: 1. Tìm kiếm theo country
+//    [Bài tập_ss12] 1: Cập nhật ứng dụng quản lý User
     private void findByCountry(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         String nameCountry = request.getParameter("countrySearch");
 
@@ -152,7 +175,7 @@ public class UserServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-//     2. Sắp xếp theo tên
+//  [Bài tập_ss12] 2. Sắp xếp theo tên
     private void sortByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         List<User> listUser = userService.sortByName();
 
@@ -160,5 +183,22 @@ public class UserServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/list.jsp");
         dispatcher.forward(request, response);
+    }
+
+//    [Thực hành_ss13] MySql JDBC Transaction
+    private void addUserPermision(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        User user = new User("hung", "hung.nguyen@codegym.com", "Viet Nam");
+        int[] permision = {1, 2, 4};
+        userService.addUserTransaction(user, permision);
+    }
+
+//    [Thực hành_ss13] Thực thi SQL không sử dụng Transaction
+    private void testWithoutTran(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        userService.insertUpdateWithoutTransaction();
+    }
+
+//    [Thực hành_ss13] Thực thi SQL có sử dụng Transaction
+    private void testUseTran(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        userService.insertUpdateUseTransaction();
     }
 }

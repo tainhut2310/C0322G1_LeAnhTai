@@ -48,12 +48,42 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User getUserById(int id) throws SQLException {
-        return userRepository.getUserById(id);
+    public User getUserByIdStore(int id) throws SQLException {
+        return userRepository.getUserByIdStore(id);
     }
 
     @Override
-    public void insertUserStore(User user) {
+    public void insertUserStore(User user) throws SQLException {
         userRepository.insertUserStore(user);
+    }
+
+    @Override
+    public void addUserTransaction(User user, int[] permision) throws SQLException {
+        userRepository.addUserTransaction(user, permision);
+    }
+
+    @Override
+    public void insertUpdateWithoutTransaction() throws SQLException {
+        userRepository.insertUpdateWithoutTransaction();
+    }
+
+    @Override
+    public void insertUpdateUseTransaction() throws SQLException {
+        userRepository.insertUpdateUseTransaction();
+    }
+
+    @Override
+    public List<User> selectAllUserStore() throws SQLException {
+        return userRepository.selectAllUserStore();
+    }
+
+    @Override
+    public void updateUserStore(User user) throws SQLException {
+        userRepository.updateUserStore(user);
+    }
+
+    @Override
+    public void deleteUserByIdStore(int id) throws SQLException {
+        userRepository.deleteUserByIdStore(id);
     }
 }

@@ -20,8 +20,20 @@ public interface IUserService {
 
     public List<User> sortByName() throws SQLException;
 
-    public User getUserById(int id) throws SQLException;
+    public User getUserByIdStore(int id) throws SQLException;
 
-    public void insertUserStore(User user);
+    public void insertUserStore(User user) throws SQLException;
+
+    public void addUserTransaction(User user, int[] permision) throws SQLException;
+
+    public void insertUpdateWithoutTransaction() throws SQLException;
+
+    public void insertUpdateUseTransaction() throws SQLException;
+
+    public List<User> selectAllUserStore() throws SQLException;
+
+    public void updateUserStore(User user) throws SQLException;
+
+    public void deleteUserByIdStore(int id) throws SQLException;
 
 }

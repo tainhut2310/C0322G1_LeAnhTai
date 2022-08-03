@@ -3,7 +3,9 @@ package com.codegym.repository.impl;
 import com.codegym.model.User;
 import com.codegym.repository.IUserRepository;
 
+import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,16 +15,37 @@ public class UserRepository implements IUserRepository {
     private String jdbcUsername = "root";
     private String jdbcPassword = "Kc332200490440";
 
-    private static final String INSERT_USERS_SQL = "insert into users (name, email, country) values (?, ?, ?);";
-    private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
+    private static final String INSERT_USERS_SQL = "insert into users (`name`, email, country) values (?, ?, ?);";
+    private static final String SELECT_USER_BY_ID = "select id,`name`,email,country from users where id =?";
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
-    private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
+    private static final String UPDATE_USERS_SQL = "update users set `name` = ?,email= ?, country =? where id = ?;";
 
     private static final String FIND_BY_COUNTRY = "select * from users where country like ?;";
-    private static final String SORT_BY_NAME = "select * from users order by `name` desc;";
+    private static final String SORT_BY_NAME = "select * from users order by `name` asc;";
 
     private static final String FIND_BY_ID_STORE = "call get_user_by_id(?);";
+
+    private static final String INSERT_USER_STORE = "call insert_user(?,?,?);";
+
+    private static final String SQL_INSERT = "insert into employee (`name`, salary, created_date) values (?,?,?)";
+
+    private static final String SQL_UPDATE = "update employee set salary=? where `name`=?";
+
+    private static final String SQL_TABLE_CREATE = "create table employee(" +
+            " id serial primary key, " +
+            " `name` varchar(100) not null, " +
+            " salary numeric(15, 2) not null, " +
+            " created_date timestamp " +
+            " );";
+
+    private static final String SQL_TABLE_DROP = "drop table if exists employee;";
+
+    private static final String SELECT_ALL_USERS_STORE = "call select_users;";
+
+    private static final String UPDATE_USER_STORE = "call update_user(?,?,?,?);";
+
+    private static final String DELETE_USER_BY_ID_STORE = "call delete_user_by_id(?);";
 
     public UserRepository() {
     }
@@ -137,12 +160,12 @@ public class UserRepository implements IUserRepository {
         return rowUpdated;
     }
 
-//Bài tập: 1. Tìm kiếm theo Country
+    //Bài tập_ss12: 1. Tìm kiếm theo Country
     @Override
     public List<User> findByCountry(String nameCountry) throws SQLException {
         List<User> userList = new ArrayList<>();
         try (Connection connection = getConnection();
-        PreparedStatement statement = connection.prepareStatement(FIND_BY_COUNTRY);) {
+             PreparedStatement statement = connection.prepareStatement(FIND_BY_COUNTRY);) {
             statement.setString(1, "%" + nameCountry + "%");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -156,13 +179,13 @@ public class UserRepository implements IUserRepository {
         return userList;
     }
 
-//    2.Sắp xếp theo tên
+    //    2.Sắp xếp theo tên
     @Override
     public List<User> sortByName() throws SQLException {
         List<User> userList = new ArrayList<>();
 
         try (Connection connection = getConnection();
-        PreparedStatement statement = connection.prepareStatement(SORT_BY_NAME);){
+             PreparedStatement statement = connection.prepareStatement(SORT_BY_NAME);) {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -173,6 +196,196 @@ public class UserRepository implements IUserRepository {
             }
         }
         return userList;
+    }
+
+    @Override
+    public User getUserByIdStore(int id) throws SQLException {
+        User user = null;
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(FIND_BY_ID_STORE)) {
+            callableStatement.setInt(1, id);
+            ResultSet resultSet = callableStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                user = new User(id, name, email, country);
+            }
+        }
+        return user;
+    }
+
+    @Override
+    public void insertUserStore(User user) throws SQLException {
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(INSERT_USER_STORE)) {
+            callableStatement.setString(1, user.getName());
+            callableStatement.setString(2, user.getEmail());
+            callableStatement.setString(3, user.getCountry());
+
+            callableStatement.executeUpdate();
+        }
+    }
+
+    //    [Thực hành_ss13] MySql JDBC Transaction
+    @Override
+    public void addUserTransaction(User user, int[] permision) throws SQLException {
+        Connection connection = null;
+        PreparedStatement pstmt = null;
+        PreparedStatement pstmtAssignment = null;
+        ResultSet resultSet = null;
+        try {
+            connection = getConnection();
+            connection.setAutoCommit(false);
+
+            pstmt = connection.prepareStatement(INSERT_USERS_SQL, Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, user.getName());
+            pstmt.setString(2, user.getEmail());
+            pstmt.setString(3, user.getCountry());
+            int rowAffected = pstmt.executeUpdate();
+
+            resultSet = pstmt.getGeneratedKeys();
+
+            int userId = 0;
+
+            if (resultSet.next()) {
+                userId = resultSet.getInt(1);
+            }
+
+            if (rowAffected == 1) {
+                String sqlVivot = "insert into user_permision(user_id, permision_id) value(?,?);";
+                pstmtAssignment = connection.prepareStatement(sqlVivot);
+
+                for (int permisionId : permision) {
+                    pstmtAssignment.setInt(1, userId);
+                    pstmtAssignment.setInt(2, permisionId);
+                    pstmtAssignment.executeUpdate();
+                }
+                connection.commit();
+            } else {
+                connection.rollback();
+            }
+        } catch (SQLException ex) {
+            try {
+                if (connection != null) {
+                    connection.rollback();
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (pstmt != null) pstmt.close();
+                if (pstmtAssignment != null) pstmtAssignment.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    //[Thực hành_ss13] Thực thi SQL không sử dụng Transaction
+    @Override
+    public void insertUpdateWithoutTransaction() throws SQLException {
+        try (Connection connection = getConnection();
+             Statement statement = connection.createStatement();
+             PreparedStatement psInsert = connection.prepareStatement(SQL_INSERT);
+             PreparedStatement psUpdate = connection.prepareStatement(SQL_UPDATE)) {
+            statement.execute(SQL_TABLE_DROP);
+            statement.execute(SQL_TABLE_CREATE);
+
+            psInsert.setString(1, "Quynh");
+            psInsert.setBigDecimal(2, new BigDecimal(10));
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            psInsert.execute();
+
+            psUpdate.setBigDecimal(2, new BigDecimal(999.99));
+
+            psUpdate.setString(2, "Quynh");
+
+            psUpdate.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //    [Thực hành_ss13] Thực thi SQL có sử dụng Transaction
+    @Override
+    public void insertUpdateUseTransaction() throws SQLException {
+        try (Connection connection = getConnection();
+             Statement statement = connection.createStatement();
+             PreparedStatement psInsert = connection.prepareStatement(SQL_INSERT);
+             PreparedStatement psUpdate = connection.prepareStatement(SQL_UPDATE)) {
+            statement.execute(SQL_TABLE_DROP);
+            statement.execute(SQL_TABLE_CREATE);
+
+            connection.setAutoCommit(false);
+
+            psInsert.setString(1, "Quynh");
+            psInsert.setBigDecimal(2, new BigDecimal(10));
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            psInsert.execute();
+
+            psInsert.setString(1, "Ngan");
+            psInsert.setBigDecimal(2, new BigDecimal(20));
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            psInsert.execute();
+
+            psUpdate.setBigDecimal(1, new BigDecimal(999.99));
+            psUpdate.setString(2, "Quynh");
+            psUpdate.execute();
+
+            connection.commit();
+
+            connection.setAutoCommit(true);
+        } catch (Exception e) {
+            System.out.println();
+        }
+    }
+
+    //    [Bài tập_ss13] Gọi MySql Stored Procedures từ JDBC
+//    1. Gọi Stored Procedures từ JDBC sử dụng CallableStatement cho chức năng hiển thị danh sách users
+    @Override
+    public List<User> selectAllUserStore() throws SQLException {
+        List<User> userList = new ArrayList<>();
+        try (Connection connection = getConnection();
+             CallableStatement callableStatement = connection.prepareCall(SELECT_ALL_USERS_STORE)) {
+            ResultSet resultSet = callableStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = Integer.parseInt(resultSet.getString("id"));
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                userList.add(new User(id, name, email, country));
+            }
+        }
+        return userList;
+    }
+
+    //    2.Gọi Stored Procedures từ JDBC sử dụng CallableStatement cho chức năng sửa thông tin user
+    @Override
+    public void updateUserStore(User user) throws SQLException {
+        try (Connection connection = getConnection();
+        CallableStatement callableStatement = connection.prepareCall(UPDATE_USER_STORE)){
+            callableStatement.setInt(1, user.getId());
+            callableStatement.setString(2,user.getName());
+            callableStatement.setString(3,user.getEmail());
+            callableStatement.setString(4,user.getCountry());
+            callableStatement.executeUpdate();
+        }
+    }
+
+    //    3. Gọi Stored Procedures từ JDBC sử dụng CallableStatement cho chức năng xoá user
+    @Override
+    public void deleteUserByIdStore(int id) throws SQLException {
+        try (Connection connection = getConnection();
+        CallableStatement callableStatement = connection.prepareCall(DELETE_USER_BY_ID_STORE)){
+            callableStatement.setInt(1, id);
+            callableStatement.executeUpdate();
+        }
     }
 
     private void printSQLException(SQLException ex) {
