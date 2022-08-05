@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,241 +19,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        [class*="col-"] {
-            float: left;
-            padding: 10px;
-        }
-
-        .row::after {
-            clear: both;
-            content: "";
-            display: block;
-        }
-
-        body {
-            color: #566787;
-            background: #f5f5f5;
-            font-family: 'Varela Round', sans-serif;
-            font-size: 13px;
-        }
-
-        .table-responsive {
-            margin: 30px 0;
-        }
-
-        .table-wrapper {
-            min-width: 1000px;
-            background: #fff;
-            padding: 20px 25px;
-            border-radius: 3px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-        }
-
-        .table-title {
-            padding-bottom: 15px;
-            background: #435d7d;
-            color: #fff;
-            padding: 16px 30px;
-            margin: -20px -25px 10px;
-            border-radius: 3px 3px 0 0;
-        }
-
-        .table-title h2 {
-            margin: 5px 0 0;
-            font-size: 24px;
-        }
-
-        .table-title .btn {
-            color: #fff;
-            float: right;
-            font-size: 13px;
-            border: none;
-            min-width: 50px;
-            border-radius: 2px;
-            border: none;
-            outline: none !important;
-            margin-left: 10px;
-        }
-
-        .table-title .btn i {
-            float: left;
-            font-size: 21px;
-            margin-right: 5px;
-        }
-
-        .table-title .btn span {
-            float: left;
-            margin-top: 2px;
-        }
-
-        table.table tr th, table.table tr td {
-            border-color: #e9e9e9;
-            padding: 12px 15px;
-            vertical-align: middle;
-        }
-
-        table.table tr th:first-child {
-            width: 60px;
-        }
-
-        table.table tr th:last-child {
-            width: 100px;
-        }
-
-        table.table-striped tbody tr:nth-of-type(odd) {
-            background-color: #fcfcfc;
-        }
-
-        table.table-striped.table-hover tbody tr:hover {
-            background: #f5f5f5;
-        }
-
-        table.table th i {
-            font-size: 13px;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
-        table.table td:last-child i {
-            opacity: 0.9;
-            font-size: 22px;
-            margin: 0 5px;
-        }
-
-        table.table td a {
-            font-weight: bold;
-            color: #566787;
-            display: inline-block;
-            text-decoration: none;
-            outline: none !important;
-        }
-
-        table.table td a:hover {
-            color: #2196F3;
-        }
-
-        table.table td a.edit {
-            color: #FFC107;
-        }
-
-        table.table td a.delete {
-            color: #F44336;
-        }
-
-        table.table td i {
-            font-size: 19px;
-        }
-
-        table.table .avatar {
-            border-radius: 50%;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-
-        .pagination li a {
-            border: none;
-            font-size: 13px;
-            min-width: 30px;
-            min-height: 30px;
-            color: #999;
-            margin: 0 2px;
-            line-height: 30px;
-            border-radius: 2px !important;
-            text-align: center;
-            padding: 0 6px;
-        }
-
-        .pagination li a:hover {
-            color: #666;
-        }
-
-        .pagination li.active a, .pagination li.active a.page-link {
-            background: #03A9F4;
-        }
-
-        .pagination li.active a:hover {
-            background: #0397d6;
-        }
-
-        .pagination li.disabled i {
-            color: #ccc;
-        }
-
-        .pagination li i {
-            font-size: 16px;
-            padding-top: 6px
-        }
-
-        .custom-checkbox input[type="checkbox"] {
-            opacity: 0;
-            position: absolute;
-            margin: 5px 0 0 3px;
-            z-index: 9;
-        }
-
-        .custom-checkbox label:before {
-            width: 18px;
-            height: 18px;
-        }
-
-        .custom-checkbox label:before {
-            content: '';
-            margin-right: 10px;
-            display: inline-block;
-            vertical-align: text-top;
-            background: white;
-            border: 1px solid #bbb;
-            border-radius: 2px;
-            box-sizing: border-box;
-            z-index: 2;
-        }
-
-        .custom-checkbox input[type="checkbox"]:checked + label:after {
-            content: '';
-            position: absolute;
-            left: 6px;
-            top: 3px;
-            width: 6px;
-            height: 11px;
-            border: solid #000;
-            border-width: 0 3px 3px 0;
-            transform: inherit;
-            z-index: 3;
-            transform: rotateZ(45deg);
-        }
-
-        .custom-checkbox input[type="checkbox"]:checked + label:before {
-            border-color: #03A9F4;
-            background: #03A9F4;
-        }
-
-        .custom-checkbox input[type="checkbox"]:checked + label:after {
-            border-color: #fff;
-        }
-
-        .custom-checkbox input[type="checkbox"]:disabled + label:before {
-            color: #b8b8b8;
-            cursor: auto;
-            box-shadow: none;
-            background: #ddd;
-        }
-
-        /* Modal styles */
-
-        .modal .btn {
-            border-radius: 2px;
-            min-width: 100px;
-        }
-
-        .modal form label {
-            font-weight: normal;
-        }
-    </style>
+    <link rel="stylesheet" href="/view/css/file.css">
 </head>
 <body>
 <div class="container" style="padding-left: 15px; padding-right: 15px;">
@@ -283,7 +50,8 @@
         </div>
     </div>
 </div>
-<div class="col-lg-12"; style="background-color: #046056; height: 80px">
+<div class="col-lg-12 js-header-nav sticky" ;
+     style="display: block; position: sticky; top: 0px; z-index: 1; background-color: #046056; height: 80px;">
     <div class="container">
         <nav style="padding-left: 80px;" class="navbar navbar-expand-lg navbar-light">
             <a style="color: white" class="navbar-brand" href="/index.jsp">HOME</a>
@@ -295,14 +63,10 @@
                 <div class="navbar-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a style="color: white" class="nav-link dropdown-toggle" href="\view\employee\list.jsp" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 EMPLOYEE
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\employee\list.jsp">Employee List</a></li>
-                                <li><a class="dropdown-item" href="\view\employee\create.jsp">Add new employee</a></li>
-                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
@@ -325,7 +89,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
                                 CONTRACT
                             </a>
                             <ul class="dropdown-menu">
@@ -339,161 +104,260 @@
         </nav>
     </div>
 </div>
-<div class="col-lg-2"></div>
-<div class="col-lg-10">
+
+<div class="container-fluid">
     <div class="row">
-        <div class="container-fluid">
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <h2>Manage <b>Employee</b></h2>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-10">
+            <div class="row">
+                <div class="container-fluid">
+                    <div class="table-responsive">
+                        <div class="table-wrapper">
+                            <div class="table-title">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h2>Manage <b>Employee</b></h2>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
+                                                class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-xs-6">
-                                <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
-                                        class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-                            </div>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Ngày sinh</th>
+                                    <th>CMND</th>
+                                    <th>Lương</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Email</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Vị trí</th>
+                                    <th>Trình độ</th>
+                                    <th>Bộ phận</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Thomas Hardy</td>
+                                    <td>thomashardy@mail.com</td>
+                                    <td>89 Chiaroscuro Rd, Portland, USA</td>
+                                    <td>(171) 555-2222</td>
+                                    <td>(171) 555-2222</td>
+                                    <td>(171) 555-2222</td>
+                                    <td>(171) 555-2222</td>
+                                    <td>(171) 555-2222</td>
+                                    <td>(171) 555-2222</td>
+                                    <td>(171) 555-2222</td>
+                                    <td>(171) 555-2222</td>
+                                    <td>
+                                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
+                                                                             data-toggle="tooltip"
+                                                                             title="Edit">&#xE254;</i></a>
+                                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
+                                                class="material-icons"
+                                                data-toggle="tooltip"
+                                                title="Delete">&#xE872;</i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Ngày sinh</th>
-                            <th>CMND</th>
-                            <th>Lương</th>
-                            <th>Số điện thoại</th>
-                            <th>Email</th>
-                            <th>Địa chỉ</th>
-                            <th>Vị trí</th>
-                            <th>Trình độ</th>
-                            <th>Bộ phận</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Thomas Hardy</td>
-                            <td>thomashardy@mail.com</td>
-                            <td>89 Chiaroscuro Rd, Portland, USA</td>
-                            <td>(171) 555-2222</td>
-                            <td>(171) 555-2222</td>
-                            <td>(171) 555-2222</td>
-                            <td>(171) 555-2222</td>
-                            <td>(171) 555-2222</td>
-                            <td>(171) 555-2222</td>
-                            <td>(171) 555-2222</td>
-                            <td>(171) 555-2222</td>
-                            <td>
-                                <a href="update.jsp" class="edit"><i class="material-icons"
-                                                                     data-toggle="tooltip"
-                                                                     title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons"
-                                        data-toggle="tooltip"
-                                        title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Dominique Perrier</td>
-                            <td>dominiqueperrier@mail.com</td>
-                            <td>Obere Str. 57, Berlin, Germany</td>
-                            <td>(313) 555-5735</td>
-                            <td>(313) 555-5735</td>
-                            <td>(313) 555-5735</td>
-                            <td>(313) 555-5735</td>
-                            <td>(313) 555-5735</td>
-                            <td>(313) 555-5735</td>
-                            <td>(313) 555-5735</td>
-                            <td>(313) 555-5735</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                                                                                 data-toggle="tooltip"
-                                                                                                 title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons"
-                                        data-toggle="tooltip"
-                                        title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Maria Anders</td>
-                            <td>mariaanders@mail.com</td>
-                            <td>25, rue Lauriston, Paris, France</td>
-                            <td>(503) 555-9931</td>
-                            <td>(503) 555-9931</td>
-                            <td>(503) 555-9931</td>
-                            <td>(503) 555-9931</td>
-                            <td>(503) 555-9931</td>
-                            <td>(503) 555-9931</td>
-                            <td>(503) 555-9931</td>
-                            <td>(503) 555-9931</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                                                                                 data-toggle="tooltip"
-                                                                                                 title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons"
-                                        data-toggle="tooltip"
-                                        title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Fran Wilson</td>
-                            <td>franwilson@mail.com</td>
-                            <td>C/ Araquil, 67, Madrid, Spain</td>
-                            <td>(204) 619-5731</td>
-                            <td>(204) 619-5731</td>
-                            <td>(204) 619-5731</td>
-                            <td>(204) 619-5731</td>
-                            <td>(204) 619-5731</td>
-                            <td>(204) 619-5731</td>
-                            <td>(204) 619-5731</td>
-                            <td>(204) 619-5731</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                                                                                 data-toggle="tooltip"
-                                                                                                 title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons"
-                                        data-toggle="tooltip"
-                                        title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Martin Blank</td>
-                            <td>martinblank@mail.com</td>
-                            <td>Via Monte Bianco 34, Turin, Italy</td>
-                            <td>(480) 631-2097</td>
-                            <td>(480) 631-2097</td>
-                            <td>(480) 631-2097</td>
-                            <td>(480) 631-2097</td>
-                            <td>(480) 631-2097</td>
-                            <td>(480) 631-2097</td>
-                            <td>(480) 631-2097</td>
-                            <td>(480) 631-2097</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                                                                                 data-toggle="tooltip"
-                                                                                                 title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons"
-                                        data-toggle="tooltip"
-                                        title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
+                         <%--           DeleteModal--%>
+<div id="deleteEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Employee</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-<div class="footer">
-    <div style="border: solid 1px beige; height: 100px" class="col-12"></div>
+<!-- Add Modal HTML -->
+<div id="addEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Employee</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Tên nhân viên</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày sinh</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Lương</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ</label>
+                        <textarea class="form-control" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Vị trí:</label>
+                        <select name="position">
+                            <option value="">Chọn vị trí</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Trình độ:</label>
+                        <select name="educationDegree">
+                            <option value="">Chọn trình độ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Bộ phận:</label>
+                        <select name="division">
+                            <option value="">Chọn bộ phận</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-success" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+                                       <%--Edit Modal--%>
+<div id="editEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Employee</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Tên nhân viên</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày sinh</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Lương</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ</label>
+                        <textarea class="form-control" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Vị trí:</label>
+                        <select name="position">
+                            <option value="">Chọn vị trí</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Trình độ:</label>
+                        <select name="educationDegree">
+                            <option value="">Chọn trình độ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Bộ phận:</label>
+                        <select name="division">
+                            <option value="">Chọn bộ phận</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-info" value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <footer class="text-center text-lg-start bg-white text-muted">
+                <section class="">
+                    <div class="container-fluid text-center text-md-start mt-5">
+                        <div class="row mt-3">
+                            <div class=" col-lg-7">
+                                <!-- Content -->
+                                <h2 class="text-uppercase fw-bold mb-4">
+                                    <i class="fas fa-gem me-3 text-grayish"></i>Hướng dẫn di chuyển
+                                </h2>
+                                <p>
+                                    Khu nghỉ dưỡng Furama là cơ sở hàng đầu để khám phá một trong những điểm đến hấp dẫn nhất Châu Á.
+                                    Chỉ cách Đà Nẵng một quãng lái xe ngắn là bốn Di sản Văn hóa Thế giới được UNESCO công nhận:
+                                </p>
+                            </div>
+
+                            <div class="col-lg-5 ">
+                                <h6 class="text-uppercase fw-bold mb-4">Liên hệ</h6>
+                                <p><i class="fas fa-home me-3 text-grayish"></i>103-105 Vo Nguyen Giap Street, Khue My ward,
+                                    Ngu Hanh Son District, Danang City, Vietnam</p>
+                                <p><i class="fas fa-phone me-3 text-grayish"></i>Tel: + 01 234 567 88* Fax:84-236-3847-666</p>
+                                <p><i class="fas fa-print me-3 text-grayish"></i>Email: reservation@furamavietnam.com</p>
+                                <p><i class="fas fa-print me-3 text-grayish"></i>GDS Codes: Amadeus-GD DADFUR, Galieo/Apol-GD 16236lo</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+                    © 2018 Copyright:
+                    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Furama Resort Danang.</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+        </div>
+    </div>
 </div>
 
 <!-- JavaScript Bundle with Popper -->
