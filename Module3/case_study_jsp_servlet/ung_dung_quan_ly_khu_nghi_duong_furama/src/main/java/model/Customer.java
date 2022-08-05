@@ -6,7 +6,7 @@ public class Customer {
     private String dateOfBirthday;
     private int gender;
     private String idCard;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
     private String address;
     private int customerTypeId;
@@ -17,8 +17,9 @@ public class Customer {
     public Customer(int id,
                     String name,
                     String dateOfBirthday,
-                    int gender, String idCard,
-                    int phoneNumber,
+                    int gender,
+                    String idCard,
+                    String phoneNumber,
                     String email,
                     String address,
                     int customerTypeId) {
@@ -73,11 +74,11 @@ public class Customer {
         this.idCard = idCard;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

@@ -1,7 +1,7 @@
 package model;
 
 public class Facility {
-    private String id;
+    private int id;
     private String name;
     private int area;
     private double cost;
@@ -17,7 +17,7 @@ public class Facility {
     public Facility() {
     }
 
-    public Facility(String id,
+    public Facility(int id,
                     String name,
                     int area,
                     double cost,
@@ -43,11 +43,11 @@ public class Facility {
         this.facilityTypeId = facilityTypeId;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

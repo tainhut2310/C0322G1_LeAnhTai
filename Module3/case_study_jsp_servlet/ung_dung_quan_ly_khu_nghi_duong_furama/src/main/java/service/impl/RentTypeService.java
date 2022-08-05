@@ -11,7 +11,7 @@ import java.util.List;
 public class RentTypeService implements IRentTypeService {
     private IRentTypeRepository rentTypeRepository = new RentTypeRepository();
     @Override
-    public List<RentType> selectAllRentType() throws SQLException {
-        return rentTypeRepository.selectAllRentType();
+    public List<RentType> selectAll() throws SQLException {
+        return rentTypeRepository.selectAll();
     }
 }

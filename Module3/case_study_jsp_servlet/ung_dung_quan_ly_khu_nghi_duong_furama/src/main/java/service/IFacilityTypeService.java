@@ -6,5 +6,5 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface IFacilityTypeService {
-    public List<FacilityType> selectAllFacilityType() throws SQLException;
+    public List<FacilityType> selectAll() throws SQLException;
 }

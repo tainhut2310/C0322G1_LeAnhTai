@@ -54,11 +54,11 @@ public class FacilityServlet extends HttpServlet {
     }
 
     private void listFacility(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        List<Facility> facilityList = facilityService.selectAllFacility();
+        List<Facility> facilityList = facilityService.selectAll();
         request.setAttribute("facilityList", facilityList);
-        List<RentType> rentTypeList = rentTypeService.selectAllRentType();
+        List<RentType> rentTypeList = rentTypeService.selectAll();
         request.setAttribute("rentTypeList", rentTypeList);
-        List<FacilityType> facilityTypeList = facilityTypeService.selectAllFacilityType();
+        List<FacilityType> facilityTypeList = facilityTypeService.selectAll();
         request.setAttribute("facilityTypeList", facilityTypeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/facility/list.jsp");
         dispatcher.forward(request, response);

@@ -2,16 +2,17 @@ package repository;
 
 import model.Customer;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ICustomerRepository {
-    public void insertCustomer(Customer customer);
+    public void insert(Customer customer);
 
-    public Customer selectCustomer(int id);
+    public Customer selectById(int id);
 
-    public List<Customer> selectAllCustomer();
+    public List<Customer> selectAll() throws SQLException;
 
-    public boolean deleteCustomer(int id);
+    public boolean delete(int id);
 
-    public boolean updateCustomer(Customer customer);
+    public boolean update(Customer customer);
 }

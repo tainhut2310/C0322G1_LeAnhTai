@@ -16,23 +16,23 @@ public class FacilityRepository implements IFacilityRepository {
     private static final String SELECT_ALL_FACILITY = "select * from facility;";
 
     @Override
-    public void insertFacility(Facility facility) {
+    public void insert(Facility facility) {
 
     }
 
     @Override
-    public Facility selectFacility(int id) {
+    public Facility selectById(int id) {
         return null;
     }
 
     @Override
-    public List<Facility> selectAllFacility() throws SQLException {
+    public List<Facility> selectAll() throws SQLException {
         List<Facility> facilityList = new ArrayList<>();
         try (Connection connection = new BaseRepository().getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_FACILITY)){
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String id = resultSet.getString("id");
+                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 int area = resultSet.getInt("area");
                 double cost = resultSet.getDouble("cost");
@@ -51,12 +51,12 @@ public class FacilityRepository implements IFacilityRepository {
     }
 
     @Override
-    public boolean deleteFacility(int id) {
+    public boolean delete(int id) {
         return false;
     }
 
     @Override
-    public boolean updateFacility(Facility facility) {
+    public boolean update(Facility facility) {
         return false;
     }
 }

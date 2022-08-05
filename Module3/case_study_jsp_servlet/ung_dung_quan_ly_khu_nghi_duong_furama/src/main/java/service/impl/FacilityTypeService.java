@@ -11,7 +11,7 @@ import java.util.List;
 public class FacilityTypeService implements IFacilityTypeService {
     private IFacilityTypeRepository facilityTypeRepository = new FacilityTypeRepository();
     @Override
-    public List<FacilityType> selectAllFacilityType() throws SQLException {
-        return facilityTypeRepository.selectAllFacilityType();
+    public List<FacilityType> selectAll() throws SQLException {
+        return facilityTypeRepository.selectAll();
     }
 }

@@ -15,6 +15,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
           crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -122,16 +124,16 @@
                                         <h2>Manage <b>Customer</b></h2>
                                     </div>
                                     <div class="col-xs-6">
-                                        <a href="#addCustomerModal" class="btn btn-success" data-toggle="modal"><i
+                                        <a href="/customer?action=create" class="btn btn-success" data-toggle="modal"><i
                                                 class="material-icons">&#xE147;</i> <span>Add New Customer</span></a>
                                     </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-hover">
+                            <table id="tableCustomer" class="table table-striped table-bordered" style="width:100%"
+                                   class="table" border="1">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Kiểu khách hàng</th>
                                     <th>Name</th>
                                     <th>Ngày sinh</th>
                                     <th>Giới tính</th>
@@ -139,20 +141,26 @@
                                     <th>Số điên thoại</th>
                                     <th>Email</th>
                                     <th>Địa chỉ</th>
+                                    <th>Kiểu khách hàng</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach var="Customer" items="${customerList}">
                                 <tr>
-                                    <td>Thomas Hardy</td>
-                                    <td>thomashardy@mail.com</td>
-                                    <td>89 Chiaroscuro Rd, Portland, USA</td>
-                                    <td>(171) 555-2222</td>
-                                    <td>(171) 555-2222</td>
-                                    <td>(171) 555-2222</td>
-                                    <td>(171) 555-2222</td>
-                                    <td>(171) 555-2222</td>
-                                    <td>(171) 555-2222</td>
+                                    <td>${Customer.id}</td>
+                                    <td>${Customer.name}</td>
+                                    <td>${Customer.dateOfBirthday}</td>
+                                    <td>${Customer.gender == 1 ? "Nam" : "Nữ"}</td>
+                                    <td>${Customer.idCard}</td>
+                                    <td>${Customer.phoneNumber}</td>
+                                    <td>${Customer.email}</td>
+                                    <td>${Customer.address}</td>
+                                    <c:forEach var="CustomerType" items="${customerTypeList}">
+                                        <c:if test="${CustomerType.id==Customer.customerTypeId}">
+                                            <td>${CustomerType.name}</td>
+                                        </c:if>
+                                    </c:forEach>
                                     <td>
                                         <a href="update.jsp" class="edit"><i class="material-icons"
                                                                              data-toggle="tooltip"
@@ -163,6 +171,7 @@
                                                 title="Delete">&#xE872;</i></a>
                                     </td>
                                 </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
@@ -239,7 +248,19 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="datatables/js/jquery.dataTables.min.js"></script>
+<script src="datatables/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#tableCustomer').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
+</script>
 </body>
 </html>

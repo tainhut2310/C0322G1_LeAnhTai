@@ -93,7 +93,7 @@
                                 CUSTOMER
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\customer\list.jsp">Customer List</a></li>
+                                <li><a class="dropdown-item" href="/customer">Customer List</a></li>
                                 <li><a class="dropdown-item" href="\view\customer\create.jsp">Add new customer</a></li>
                             </ul>
                         </li>

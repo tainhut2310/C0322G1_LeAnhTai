@@ -14,7 +14,7 @@ import java.util.List;
 public class FacilityTypeRepository implements IFacilityTypeRepository {
     private static final String SELECT_ALL_FACILITY_TYPE = "select * from facility_type;";
     @Override
-    public List<FacilityType> selectAllFacilityType() throws SQLException {
+    public List<FacilityType> selectAll() throws SQLException {
         List<FacilityType> facilityTypeList = new ArrayList<>();
         try (Connection connection = new BaseRepository().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_FACILITY_TYPE)){
