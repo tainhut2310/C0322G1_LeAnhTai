@@ -11,13 +11,18 @@ import java.util.List;
 public class CustomerService implements ICustomerService {
     private ICustomerRepository customerRepository = new CustomerRepository();
     @Override
-    public void insert(Customer customer) {
-        customerRepository.insert(customer);
+    public boolean insert(Customer customer) throws SQLException {
+        return customerRepository.insert(customer);
     }
 
     @Override
-    public Customer selectById(int id) {
+    public Customer selectById(int id) throws SQLException {
         return customerRepository.selectById(id);
+    }
+
+    @Override
+    public List<Customer> selectByName(String nameSearch) throws SQLException {
+        return customerRepository.selectByName(nameSearch);
     }
 
     @Override
@@ -26,12 +31,12 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(int id) throws SQLException {
         return customerRepository.delete(id);
     }
 
     @Override
-    public boolean update(Customer customer) {
+    public boolean update(Customer customer) throws SQLException {
         return customerRepository.update(customer);
     }
 }

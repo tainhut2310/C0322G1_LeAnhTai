@@ -72,7 +72,7 @@
         </div>
     </div>
 </div>
-<div class="col-lg-12 js-header-nav sticky" ;
+<div class="col-lg-12 js-header-nav sticky";
      style="display: block; position: sticky; top: 0px; z-index: 1; background-color: #046056; height: 80px;">
     <div class="container">
         <nav style="padding-left: 80px;" class="navbar navbar-expand-lg navbar-light">
@@ -84,15 +84,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item">
+                            <a style="color: white" class="nav-link" href="/employee" role="button">
                                 EMPLOYEE
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\employee\list.jsp">Employee List</a></li>
-                                <li><a class="dropdown-item" href="\view\employee\create.jsp">Add new employee</a></li>
-                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
@@ -100,7 +95,7 @@
                                 CUSTOMER
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\customer\list.jsp">Customer List</a></li>
+                                <li><a class="dropdown-item" href="/customer">Customer List</a></li>
                                 <li><a class="dropdown-item" href="\view\customer\create.jsp">Add new customer</a></li>
                             </ul>
                         </li>
@@ -110,7 +105,7 @@
                                 FACILITY
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\facility\list.jsp">Facility List</a></li>
+                                <li><a class="dropdown-item" href="/facility">Facility List</a></li>
                                 <li><a class="dropdown-item" href="\view\facility\create.jsp">Add new Employee</a></li>
                             </ul>
                         </li>
@@ -119,7 +114,7 @@
                                 CONTRACT
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\contract\list.jsp">Contract List</a></li>
+                                <li><a class="dropdown-item" href="/contract">Contract List</a></li>
                                 <li><a class="dropdown-item" href="\view\contract\create.jsp">Add new contract</a></li>
                             </ul>
                         </li>
@@ -133,12 +128,8 @@
 <div class="col-lg-10">
     <div class="row">
         <div class="container-fluid">
-            <h3 style="text-align: center">THÊM MỚI HỢP ĐỒNG</h3>
+            <h3 style="text-align: center">TẠO HỢP ĐỒNG</h3>
             <form method="post" action="/contract?action=create">
-                <div class="mb-2">
-                    <label class="form-label">ID</label>
-                    <input name="id" type="text" class="form-control">
-                </div>
                 <div class="mb-2">
                     <label class="form-label">Ngày bắt đầu</label>
                     <input name="startDate" type="date" class="form-control">
@@ -156,17 +147,57 @@
                     <input name="deposit" type="text" class="form-control">
                 </div>
                 <div class="mb-2">
-                    <label class="form-label">Mã nhân viên</label>
+                    <label class="form-label">Tên nhân viên</label>
                 </div>
                 <div class="mb-2">
-                    <label class="form-label">Mã khách hàng</label>
+                    <label class="form-label">Tên khách hàng</label>
                 </div>
                 <div class="mb-2">
-                    <label class="form-label">Mã dịch vụ</label>
+                    <label class="form-label">Tên dịch vụ</label>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Dịch vụ đi kèm: </label>
+                    <a href="#addContractDetailModal" data-toggle="modal">
+                        <button type="button" class="btn btn-primary">
+                            +
+                        </button>
+                    </a>
                 </div>
                 <div style="text-align: center">
-                    <a href="\view\contract\list.jsp"><input class="btn btn-primary" type="button" value="Quay lại"></a>
-                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <a href="\view\contract\list.jsp"><input class="btn btn-primary" type="button" value="Hủy bỏ"></a>
+                    <button type="submit" class="btn btn-primary">Tạo hợp động</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Add Modal Contract Detail HTML -->
+<div id="addContractDetailModal" class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Tạo hợp đồng chi tiết</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mã hợp đồng</label>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Tên dịch vụ đi kèm</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Số lượng</label>
+                        <input type="number" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="HỦy bỏ">
+                    <input type="submit" class="btn btn-success" value="Tạo hợp đồng chi tiết">
                 </div>
             </form>
         </div>

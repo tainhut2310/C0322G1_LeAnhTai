@@ -84,15 +84,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item">
+                            <a style="color: white" class="nav-link" href="/employee" role="button">
                                 EMPLOYEE
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\employee\list.jsp">Employee List</a></li>
-                                <li><a class="dropdown-item" href="\view\employee\create.jsp">Add new employee</a></li>
-                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
@@ -100,7 +95,7 @@
                                 CUSTOMER
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\customer\list.jsp">Customer List</a></li>
+                                <li><a class="dropdown-item" href="/customer">Customer List</a></li>
                                 <li><a class="dropdown-item" href="\view\customer\create.jsp">Add new customer</a></li>
                             </ul>
                         </li>
@@ -110,7 +105,7 @@
                                 FACILITY
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\facility\list.jsp">Facility List</a></li>
+                                <li><a class="dropdown-item" href="/facility">Facility List</a></li>
                                 <li><a class="dropdown-item" href="\view\facility\create.jsp">Add new Employee</a></li>
                             </ul>
                         </li>
@@ -119,7 +114,7 @@
                                 CONTRACT
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\contract\list.jsp">Contract List</a></li>
+                                <li><a class="dropdown-item" href="/contract">Contract List</a></li>
                                 <li><a class="dropdown-item" href="\view\contract\create.jsp">Add new contract</a></li>
                             </ul>
                         </li>
@@ -136,43 +131,63 @@
             <h3 style="text-align: center">CHỈNH SỬA THÔNG TIN KHÁCH HÀNG</h3>
             <form method="post" action="/customer?action=update">
                 <div class="mb-2">
+                    <label class="form-label">ID</label>
+                    <input name="id" type="text" class="form-control" value="${customer.id}">
+                </div>
+                <div class="mb-2">
                     <label class="form-label">Tên khách hàng</label>
-                    <input name="name" type="text" class="form-control">
+                    <input name="name" type="text" class="form-control" value="${customer.name}">
                 </div>
                 <div class="mb-2">
                     <label class="form-label">Ngày sinh</label>
-                    <input name="dateOfBirth" type="date" class="form-control">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label">Số CMND</label>
-                    <input name="idCard" type="text" class="form-control">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label">Số điện thoại</label>
-                    <input name="phoneNumber" type="text" class="form-control">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label">Email</label>
-                    <input name="email" type="text" class="form-control">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label">Địa chỉ</label>
-                    <input name="address" type="text" class="form-control">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label">Kiểu khách hàng</label>
-                    <select name="typeOfCustomer">
-                        <option value="">Chọn kiểu khách</option>
-                    </select>
+                    <input name="dateOfBirthday" type="date" class="form-control" value="${customer.dateOfBirthday}">
                 </div>
                 <div class="mb-2">
                     <label class="form-label">Giới tính: </label>
-                    <input type="radio" name="gender" value="1">Nam
-                    <input type="radio" name="gender" value="0">Nữ
+                    <select name="gender">
+                        <c:if test="${customer.gender==1}">
+                            <option value="1" selected>Nam</option>
+                            <option value="0">Nữ</option>
+                        </c:if>
+                        <c:if test="${customer.gender==0}">
+                            <option value="1">Nam</option>
+                            <option value="0" selected>Nữ</option>
+                        </c:if>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Số CMND</label>
+                    <input name="idCard" type="text" class="form-control" value="${customer.idCard}">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Số điện thoại</label>
+                    <input name="phoneNumber" type="text" class="form-control" value="${customer.phoneNumber}">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Email</label>
+                    <input name="email" type="text" class="form-control" value="${customer.email}">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Địa chỉ</label>
+                    <input name="address" type="text" class="form-control" value="${customer.address}">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Kiểu khách hàng: </label>
+                    <select name="typeOfCustomer">
+                        <c:forEach var="customerType" items="${customerTypeList}">
+                            <c:if test="${customerType.id==customer.customerTypeId}">
+                                <option value="${customerType.id}" selected>${customerType.name}</option>
+                            </c:if>
+                            <c:if test="${customerType.id!=customer.customerTypeId}">
+                                <option value="${customerType.id}">${customerType.name}</option>
+                            </c:if>
+                        </c:forEach>
+                    </select>
                 </div>
                 <br>
                 <div style="text-align: center">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="/customer"><input class="btn btn-primary" type="button" value="Quay lại"></a>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
                 </div>
             </form>
         </div>

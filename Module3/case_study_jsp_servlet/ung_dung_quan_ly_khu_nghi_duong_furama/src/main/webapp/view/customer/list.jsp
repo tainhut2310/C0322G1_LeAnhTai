@@ -64,15 +64,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item">
+                            <a style="color: white" class="nav-link" href="/employee" role="button">
                                 EMPLOYEE
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\employee\list.jsp">Employee List</a></li>
-                                <li><a class="dropdown-item" href="\view\employee\create.jsp">Add new employee</a></li>
-                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
@@ -80,7 +75,7 @@
                                 CUSTOMER
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\customer\list.jsp">Customer List</a></li>
+                                <li><a class="dropdown-item" href="/customer">Customer List</a></li>
                                 <li><a class="dropdown-item" href="\view\customer\create.jsp">Add new customer</a></li>
                             </ul>
                         </li>
@@ -90,7 +85,7 @@
                                 FACILITY
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\facility\list.jsp">Facility List</a></li>
+                                <li><a class="dropdown-item" href="/facility">Facility List</a></li>
                                 <li><a class="dropdown-item" href="\view\facility\create.jsp">Add new facility</a></li>
                             </ul>
                         </li>
@@ -100,7 +95,7 @@
                                 CONTRACT
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\contract\list.jsp">Contract List</a></li>
+                                <li><a class="dropdown-item" href="/contract">Contract List</a></li>
                                 <li><a class="dropdown-item" href="\view\contract\create.jsp">Add new contract</a></li>
                             </ul>
                         </li>
@@ -120,12 +115,21 @@
                         <div class="table-wrapper">
                             <div class="table-title">
                                 <div class="row">
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-3">
                                         <h2>Manage <b>Customer</b></h2>
                                     </div>
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-4">
                                         <a href="/customer?action=create" class="btn btn-success" data-toggle="modal"><i
                                                 class="material-icons">&#xE147;</i> <span>Add New Customer</span></a>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <form class="d-flex" role="search" action="/customer">
+                                            <input class="form-control me-2" type="search" placeholder="search"
+                                                   aria-label="Search" name="nameSearch">
+                                            <button class="btn btn-success" type="submit" name="action" value="search">
+                                                search
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -147,30 +151,30 @@
                                 </thead>
                                 <tbody>
                                 <c:forEach var="Customer" items="${customerList}">
-                                <tr>
-                                    <td>${Customer.id}</td>
-                                    <td>${Customer.name}</td>
-                                    <td>${Customer.dateOfBirthday}</td>
-                                    <td>${Customer.gender == 1 ? "Nam" : "Nữ"}</td>
-                                    <td>${Customer.idCard}</td>
-                                    <td>${Customer.phoneNumber}</td>
-                                    <td>${Customer.email}</td>
-                                    <td>${Customer.address}</td>
-                                    <c:forEach var="CustomerType" items="${customerTypeList}">
-                                        <c:if test="${CustomerType.id==Customer.customerTypeId}">
-                                            <td>${CustomerType.name}</td>
-                                        </c:if>
-                                    </c:forEach>
-                                    <td>
-                                        <a href="update.jsp" class="edit"><i class="material-icons"
-                                                                             data-toggle="tooltip"
-                                                                             title="Edit">&#xE254;</i></a>
-                                        <a href="#deleteCustomerModal" class="delete" data-toggle="modal"><i
-                                                class="material-icons"
-                                                data-toggle="tooltip"
-                                                title="Delete">&#xE872;</i></a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>${Customer.id}</td>
+                                        <td>${Customer.name}</td>
+                                        <td>${Customer.dateOfBirthday}</td>
+                                        <td>${Customer.gender == 1 ? "Nam" : "Nữ"}</td>
+                                        <td>${Customer.idCard}</td>
+                                        <td>${Customer.phoneNumber}</td>
+                                        <td>${Customer.email}</td>
+                                        <td>${Customer.address}</td>
+                                        <c:forEach var="CustomerType" items="${customerTypeList}">
+                                            <c:if test="${CustomerType.id==Customer.customerTypeId}">
+                                                <td>${CustomerType.name}</td>
+                                            </c:if>
+                                        </c:forEach>
+                                        <td>
+                                            <a href="/customer?action=update&id=${Customer.id}" class="edit"><i class="material-icons"
+                                                                                 data-toggle="tooltip"
+                                                                                 title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteCustomerModal"
+                                               class="delete" data-toggle="modal"><i onclick="infoDelete('${Customer.id}','${Customer.name}')"
+                                                    class="material-icons" data-toggle="tooltip"
+                                                    title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
@@ -181,18 +185,21 @@
         </div>
     </div>
 </div>
-
+                              <%--delete modal--%>
 <div id="deleteCustomerModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form method="post">
                 <div class="modal-header">
                     <h4 class="modal-title">Delete Employee</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to delete these Records?</p>
-                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    <span>Bạn có chắc chắn muốn xóa:  </span>
+                    <span id="nameDelete"></span>
+                    <input type="text" hidden name="idDelete" id="idDelete">
+                    <input type="text" hidden name="action" value="delete">
+                    <p class="text-warning"><small>Hành động này không thể hoàn tác.</small></p>
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -216,18 +223,24 @@
                                     <i class="fas fa-gem me-3 text-grayish"></i>Hướng dẫn di chuyển
                                 </h2>
                                 <p>
-                                    Khu nghỉ dưỡng Furama là cơ sở hàng đầu để khám phá một trong những điểm đến hấp dẫn nhất Châu Á.
-                                    Chỉ cách Đà Nẵng một quãng lái xe ngắn là bốn Di sản Văn hóa Thế giới được UNESCO công nhận:
+                                    Khu nghỉ dưỡng Furama là cơ sở hàng đầu để khám phá một trong những điểm đến hấp dẫn
+                                    nhất Châu Á.
+                                    Chỉ cách Đà Nẵng một quãng lái xe ngắn là bốn Di sản Văn hóa Thế giới được UNESCO
+                                    công nhận:
                                 </p>
                             </div>
 
                             <div class="col-lg-5 ">
                                 <h6 class="text-uppercase fw-bold mb-4">Liên hệ</h6>
-                                <p><i class="fas fa-home me-3 text-grayish"></i>103-105 Vo Nguyen Giap Street, Khue My ward,
+                                <p><i class="fas fa-home me-3 text-grayish"></i>103-105 Vo Nguyen Giap Street, Khue My
+                                    ward,
                                     Ngu Hanh Son District, Danang City, Vietnam</p>
-                                <p><i class="fas fa-phone me-3 text-grayish"></i>Tel: + 01 234 567 88* Fax:84-236-3847-666</p>
-                                <p><i class="fas fa-print me-3 text-grayish"></i>Email: reservation@furamavietnam.com</p>
-                                <p><i class="fas fa-print me-3 text-grayish"></i>GDS Codes: Amadeus-GD DADFUR, Galieo/Apol-GD 16236lo</p>
+                                <p><i class="fas fa-phone me-3 text-grayish"></i>Tel: + 01 234 567 88*
+                                    Fax:84-236-3847-666</p>
+                                <p><i class="fas fa-print me-3 text-grayish"></i>Email: reservation@furamavietnam.com
+                                </p>
+                                <p><i class="fas fa-print me-3 text-grayish"></i>GDS Codes: Amadeus-GD DADFUR,
+                                    Galieo/Apol-GD 16236lo</p>
                             </div>
                         </div>
                     </div>
@@ -254,13 +267,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#tableCustomer').dataTable( {
+    function infoDelete(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = name;
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $('#tableCustomer').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
             "pageLength": 5
-        } );
-    } );
+        });
+    });
 </script>
 </body>
 </html>

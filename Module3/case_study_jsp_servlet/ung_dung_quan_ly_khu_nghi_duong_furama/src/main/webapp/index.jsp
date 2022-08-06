@@ -77,16 +77,9 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
+                            <a style="color: white" class="nav-link" href="/employee" role="button">
                                 EMPLOYEE
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\employee\list.jsp">Employee List</a></li>
-                                <li><a class="dropdown-item" href="\view\employee\create.jsp">Add new employee</a></li>
-                            </ul>
-                        </li>
                         <li class="nav-item dropdown">
                             <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">
@@ -113,7 +106,7 @@
                                 CONTRACT
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\contract\list.jsp">Contract List</a></li>
+                                <li><a class="dropdown-item" href="/contract">Contract List</a></li>
                                 <li><a class="dropdown-item" href="\view\contract\create.jsp">Add new contract</a></li>
                             </ul>
                         </li>

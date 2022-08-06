@@ -85,15 +85,10 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item">
+                            <a style="color: white" class="nav-link" href="/employee" role="button">
                                 EMPLOYEE
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\employee\list.jsp">Employee List</a></li>
-                                <li><a class="dropdown-item" href="\view\employee\create.jsp">Add new employee</a></li>
-                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
@@ -101,7 +96,7 @@
                                 CUSTOMER
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\customer\list.jsp">Customer List</a></li>
+                                <li><a class="dropdown-item" href="/customer">Customer List</a></li>
                                 <li><a class="dropdown-item" href="\view\customer\create.jsp">Add new customer</a></li>
                             </ul>
                         </li>
@@ -111,7 +106,7 @@
                                 FACILITY
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\facility\list.jsp">Facility List</a></li>
+                                <li><a class="dropdown-item" href="/facility">Facility List</a></li>
                                 <li><a class="dropdown-item" href="\view\facility\create.jsp">Add new Employee</a></li>
                             </ul>
                         </li>
@@ -121,7 +116,7 @@
                                 CONTRACT
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="\view\contract\list.jsp">Contract List</a></li>
+                                <li><a class="dropdown-item" href="/contract">Contract List</a></li>
                                 <li><a class="dropdown-item" href="\view\contract\create.jsp">Add new contract</a></li>
                             </ul>
                         </li>
@@ -139,13 +134,23 @@
                 <div class="container-fluid">
                     <h3 style="text-align: center">THÊM MỚI THÔNG TIN KHÁCH HÀNG</h3>
                     <form method="post" action="/customer?action=create">
+                        <c:if test="${messenger != null}">
+                            <div class="mb-2">
+                                <label class="form-label">${messenger}</label>
+                            </div>
+                        </c:if>
                         <div class="mb-2">
                             <label class="form-label">Tên khách hàng</label>
                             <input name="name" type="text" class="form-control">
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Ngày sinh</label>
-                            <input name="dateOfBirth" type="date" class="form-control">
+                            <input name="dateOfBirthday" type="date" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Giới tính: </label>
+                            <input type="radio" name="gender" value="1">Nam
+                            <input type="radio" name="gender" value="0">Nữ
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Số CMND</label>
@@ -164,18 +169,16 @@
                             <input name="address" type="text" class="form-control">
                         </div>
                         <div class="mb-2">
-                            <label class="form-label">Kiểu khách hàng</label>
+                            <label class="form-label">Kiểu khách hàng: </label>
                             <select name="typeOfCustomer">
                                 <option value="">Chọn kiểu khách</option>
+                                <c:forEach var="CustomerType" items="${customerTypeList}">
+                                    <option value="${CustomerType.id}">${CustomerType.name}</option>
+                                </c:forEach>
                             </select>
                         </div>
-                        <div class="mb-2">
-                            <label class="form-label">Giới tính: </label>
-                            <input type="radio" name="gender" value="1">Nam
-                            <input type="radio" name="gender" value="0">Nữ
-                        </div>
                         <div style="text-align: center">
-                            <a href="\view\customer\list.jsp"><input class="btn btn-primary" type="button" value="Quay lại"></a>
+                            <a href="/customer"><input class="btn btn-primary" type="button" value="Quay lại"></a>
                             <button type="submit" class="btn btn-primary">Lưu</button>
                         </div>
                     </form>

@@ -3,7 +3,6 @@ package repository.impl;
 import model.Facility;
 import repository.BaseRepository;
 import repository.IFacilityRepository;
-import sun.security.krb5.internal.crypto.HmacSha1Aes128CksumType;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -39,7 +38,7 @@ public class FacilityRepository implements IFacilityRepository {
                 int maxPeople = resultSet.getInt("max_people");
                 String standardRoom = resultSet.getString("standard_room");
                 String descriptionOtherConvenience = resultSet.getString("description_other_convenience");
-                double poolArea = resultSet.getDouble("pool_area");
+                Double poolArea = resultSet.getDouble("pool_area");
                 int numberOfFloors = resultSet.getInt("number_of_floors");
                 String facilityFree = resultSet.getString("facility_free");
                 int rentTypeId = resultSet.getInt("rent_type_id");

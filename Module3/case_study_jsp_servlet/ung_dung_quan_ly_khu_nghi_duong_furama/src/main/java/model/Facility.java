@@ -24,7 +24,7 @@ public class Facility {
                     int maxPeople,
                     String standardRoom,
                     String descriptionOtherConvenience,
-                    double poolArea,
+                    Double poolArea,
                     int numberOfFloors,
                     String facilityFree,
                     int rentTypeId,
@@ -99,11 +99,11 @@ public class Facility {
         this.descriptionOtherConvenience = descriptionOtherConvenience;
     }
 
-    public double getPoolArea() {
+    public Double getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(double poolArea) {
+    public void setPoolArea(Double poolArea) {
         this.poolArea = poolArea;
     }
 

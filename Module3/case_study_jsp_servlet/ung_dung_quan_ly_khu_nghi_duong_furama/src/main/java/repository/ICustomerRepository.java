@@ -6,13 +6,15 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ICustomerRepository {
-    public void insert(Customer customer);
+    public boolean insert(Customer customer) throws SQLException;
 
-    public Customer selectById(int id);
+    public Customer selectById(int id) throws SQLException;
+
+    public List<Customer> selectByName(String nameSearch) throws SQLException;
 
     public List<Customer> selectAll() throws SQLException;
 
-    public boolean delete(int id);
+    public boolean delete(int id) throws SQLException;
 
-    public boolean update(Customer customer);
+    public boolean update(Customer customer) throws SQLException;
 }
