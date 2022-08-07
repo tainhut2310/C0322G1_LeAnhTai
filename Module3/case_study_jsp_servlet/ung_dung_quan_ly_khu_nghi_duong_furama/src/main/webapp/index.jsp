@@ -97,7 +97,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/facility">Facility List</a></li>
-                                <li><a class="dropdown-item" href="\view\facility\create.jsp">Add new facility</a></li>
+                                <li><a class="dropdown-item" href="/facility?action=create">Add new facility</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

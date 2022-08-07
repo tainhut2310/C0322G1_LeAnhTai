@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.*;
 
 public class CustomerRepository implements ICustomerRepository {
-    private static final String SELECT_ALL = "select * from customer;";
+    private static final String SELECT_ALL = "select * from customer where flag = 0;";
     private static final String INSERT = "insert into customer (`name`, date_of_birthday, " +
             " gender, id_card, phone_number, email, address, customer_type_id ) " +
             " values (?, ?, ?, ?, ?, ?, ?, ?);";
-    private static final String DELETE = "delete from customer where id = ?;";
-    private static final String SELECT_BY_ID = "select * from customer where id = ?;";
+    private static final String DELETE = "update customer set flag = 1 where id = ?;";
+    private static final String SELECT_BY_ID = "select * from customer where id = ? and flag = 0;";
     private static final String SELECT_BY_NAME = "select * from customer where `name` like ?;";
     private static final String UPDATE = "update customer set `name` = ?, date_of_birthday = ?, gender = ?, " +
-            " id_card = ?, phone_number = ?, email = ?, address = ?, customer_type_id = ? where id = ?;";
+            " id_card = ?, phone_number = ?, email = ?, address = ?, customer_type_id = ? where id = ? and flag = 0;";
 
     @Override
     public boolean insert(Customer customer) throws SQLException {

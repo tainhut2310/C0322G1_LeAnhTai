@@ -11,13 +11,18 @@ import java.util.List;
 public class FacilityService implements IFacilityService {
     private IFacilityRepository facilityRepository = new FacilityRepository();
     @Override
-    public void insert(Facility facility) {
-        facilityRepository.insert(facility);
+    public boolean insert(Facility facility) throws SQLException {
+        return facilityRepository.insert(facility);
     }
 
     @Override
-    public Facility selectById(int id) {
+    public Facility selectById(int id) throws SQLException {
         return facilityRepository.selectById(id);
+    }
+
+    @Override
+    public List<Facility> selectByName(String nameSearch) throws SQLException {
+        return facilityRepository.selectByName(nameSearch);
     }
 
     @Override
@@ -26,12 +31,12 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(int id) throws SQLException {
         return facilityRepository.delete(id);
     }
 
     @Override
-    public boolean update(Facility facility) {
+    public boolean update(Facility facility) throws SQLException {
         return facilityRepository.update(facility);
     }
 }

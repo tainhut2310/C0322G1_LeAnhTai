@@ -130,7 +130,7 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("address");
         int customerType = Integer.parseInt(request.getParameter("typeOfCustomer"));
         Customer customer = new Customer(id, name, dateOfBirthday, gender, idCard, phoneNumber, email, address, customerType);
-        boolean status = customerService.update(customer);
+        customerService.update(customer);
         response.sendRedirect("/customer");
     }
 

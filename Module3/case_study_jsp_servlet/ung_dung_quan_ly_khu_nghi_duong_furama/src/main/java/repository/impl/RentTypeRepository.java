@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RentTypeRepository implements IRentTypeRepository {
-    private static final String SELECT_ALL_RENT_TYPE = "select * from rent_type;";
+    private static final String SELECT_ALL = "select * from rent_type;";
     @Override
     public List<RentType> selectAll() throws SQLException {
         List<RentType> rentTypeList = new ArrayList<>();
         try (Connection connection = new BaseRepository().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_RENT_TYPE)){
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL)){
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");

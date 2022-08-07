@@ -107,7 +107,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/facility">Facility List</a></li>
-                                <li><a class="dropdown-item" href="\view\facility\create.jsp">Add new Employee</a></li>
+                                <li><a class="dropdown-item" href="/facility?action=create">Add new Employee</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -134,13 +134,27 @@
                 <div class="container-fluid">
                     <h3 style="text-align: center">THÊM THÔNG TIN DỊCH VỤ</h3>
                     <form method="post" action="/facility?action=create">
+                        <c:if test="${messenger != null}">
+                            <div class="mb-2">
+                                <label class="form-label">${messenger}</label>
+                            </div>
+                        </c:if>
+                        <div class="mb-2">
+                                <label class="form-label">Kiểu dịch vụ</label>
+                                <select class = "form-control" name="facilityType" id="facilityType" onchange="facilityTypeChanged(this.value)">
+                                    <option value = "">Chọn kiểu dịch vụ</option>
+                                    <c:forEach var="FacilityType" items="${facilityTypeList}">
+                                        <option value = "${FacilityType.id}">${FacilityType.name}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
                         <div class="mb-2">
                             <label class="form-label">Tên dịch vụ</label>
                             <input name="name" type="text" class="form-control">
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Diện tích sử dụng</label>
-                            <input name="area" type="date" class="form-control">
+                            <input name="area" type="text" class="form-control">
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Chi phí thuê</label>
@@ -148,38 +162,39 @@
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Số lượng người tối đa</label>
-                            <input name="maxPeople" type="text" class="form-control">
+                            <input name="maxPeople" type="number" class="form-control">
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Kiểu thuê</label>
-                            <input name="rentType" type="text" class="form-control">
+                            <select class = "form-control" name="rentTypeId">
+                                <option value = "">Chọn kiểu thuê</option>
+                                <c:forEach var="RentType" items="${rentTypeList}">
+                                    <option value = "${RentType.id}">${RentType.name}</option>
+                                </c:forEach>
+                            </select>
                         </div>
-                        <div class="mb-2">
-                            <label class="form-label">Kiểu dịch vụ</label>
-                            <input name="serviceType" type="text" class="form-control">
-                        </div>
-                        <div class="mb-2">
+                        <div class="mb-2" id="standardRoom" hidden>
                             <label class="form-label">Tiêu chuẩn phòng</label>
                             <input name="standardRoom" type="text" class="form-control">
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2" id="descriptionOtherConvenience" hidden>
                             <label class="form-label">Mô tả tiện nghi khác</label>
-                            <input name="descriptionOtherConvenience" type="text" class="form-control">
+                            <textarea name="descriptionOtherConvenience" type="text" class="form-control"></textarea>
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2" id="poolArea" hidden>
                             <label class="form-label">Diện tích hồ bơi</label>
                             <input name="poolArea" type="text" class="form-control">
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2" id="numberOfFloors" hidden>
                             <label class="form-label">Số tầng</label>
-                            <input name="numberOffFloors" type="text" class="form-control">
+                            <input name="numberOfFloors" type="number" class="form-control">
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-2" id="facilityFree" hidden>
                             <label class="form-label">Dịch vụ miễn phí đi kèm</label>
-                            <input name="" type="text" class="form-control">
+                            <input name="facilityFree" type="text" class="form-control">
                         </div>
                         <div style="text-align: center">
-                            <a href="\view\facility\list.jsp"><input class="btn btn-primary" type="button" value="Quay lại"></a>
+                            <a href="/facility"><input class="btn btn-primary" type="button" value="Quay lại"></a>
                             <button type="submit" class="btn btn-primary">Lưu</button>
                         </div>
                     </form>
@@ -228,7 +243,29 @@
         </div>
     </div>
 </div>
-
+<script>
+    function facilityTypeChanged(value) {
+        if (value == 1) {
+            document.getElementById("standardRoom").hidden = false;
+            document.getElementById("descriptionOtherConvenience").hidden = false;
+            document.getElementById("poolArea").hidden = false;
+            document.getElementById("numberOfFloors").hidden = false;
+            document.getElementById("facilityFree").hidden = true;
+        } else if (value == 2) {
+            document.getElementById("standardRoom").hidden = false;
+            document.getElementById("descriptionOtherConvenience").hidden = false;
+            document.getElementById("poolArea").hidden = true;
+            document.getElementById("numberOfFloors").hidden = false;
+            document.getElementById("facilityFree").hidden = true;
+        } else if(value == 3) {
+            document.getElementById("standardRoom").hidden = true;
+            document.getElementById("descriptionOtherConvenience").hidden = true;
+            document.getElementById("poolArea").hidden = true;
+            document.getElementById("numberOfFloors").hidden = true;
+            document.getElementById("facilityFree").hidden = false;
+        }
+    }
+</script>
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

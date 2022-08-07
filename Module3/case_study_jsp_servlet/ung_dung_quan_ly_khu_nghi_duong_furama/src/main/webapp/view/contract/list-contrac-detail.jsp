@@ -84,7 +84,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/facility">Facility List</a></li>
-                                <li><a class="dropdown-item" href="\view\facility\create.jsp">Add new Employee</a></li>
+                                <li><a class="dropdown-item" href=""/facility?action=create">Add new Employee</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

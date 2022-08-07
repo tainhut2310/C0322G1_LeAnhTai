@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FacilityTypeRepository implements IFacilityTypeRepository {
-    private static final String SELECT_ALL_FACILITY_TYPE = "select * from facility_type;";
+    private static final String SELECT_ALL = "select * from facility_type;";
     @Override
     public List<FacilityType> selectAll() throws SQLException {
         List<FacilityType> facilityTypeList = new ArrayList<>();
         try (Connection connection = new BaseRepository().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_FACILITY_TYPE)){
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL)){
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");

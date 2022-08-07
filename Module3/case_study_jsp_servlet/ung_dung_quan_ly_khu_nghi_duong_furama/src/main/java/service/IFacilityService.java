@@ -6,13 +6,15 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface IFacilityService {
-    public void insert(Facility facility);
+    public boolean insert(Facility facility) throws SQLException;
 
-    public Facility selectById(int id);
+    public Facility selectById(int id) throws SQLException;
+
+    public List<Facility> selectByName(String nameSearch) throws SQLException;
 
     public List<Facility> selectAll() throws SQLException;
 
-    public boolean delete(int id);
+    public boolean delete(int id) throws SQLException;
 
-    public boolean update(Facility facility);
+    public boolean update(Facility facility) throws SQLException;
 }

@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerTypeRepository implements ICustomerTypeRepository {
-    private static final String SELECT_ALL_CUSTOMER_TYPE = "select * from customer_type;";
+    private static final String SELECT_ALL = "select * from customer_type;";
     @Override
     public List<CustomerType> selectAll() throws SQLException {
         List<CustomerType> customerTypeList = new ArrayList<>();
         try (Connection connection = new BaseRepository().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_CUSTOMER_TYPE)){
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL)){
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
