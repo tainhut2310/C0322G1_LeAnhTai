@@ -290,7 +290,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/customer">Customer List</a></li>
-                                <li><a class="dropdown-item" href="\view\customer\create.jsp">Add new customer</a></li>
+                                <li><a class="dropdown-item" href="/customer?action=create">Add new customer</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -310,7 +310,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/contract">Contract List</a></li>
-                                <li><a class="dropdown-item" href="\view\contract\create.jsp">Add new contract</a></li>
+                                <li><a class="dropdown-item" href="/contract?action=create">Add new contract</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -373,11 +373,11 @@
                                         <td>${Facility.area}</td>
                                         <td>${Facility.cost}</td>
                                         <td>${Facility.maxPeople}</td>
-                                        <td>${Facility.standardRoom == null ? "X" : Facility.standardRoom}</td>
-                                        <td>${Facility.descriptionOtherConvenience == null ? "X" : Facility.descriptionOtherConvenience}</td>
-                                        <td>${Facility.poolArea == null ? "X" : Facility.poolArea}</td>
-                                        <td>${Facility.numberOfFloors == null ? "X" : Facility.numberOfFloors}</td>
-                                        <td>${Facility.facilityFree == null ? "X" : Facility.facilityFree}</td>
+                                        <td>${Facility.standardRoom == null ? "N/A" : Facility.standardRoom}</td>
+                                        <td>${Facility.descriptionOtherConvenience == null ? "N/A" : Facility.descriptionOtherConvenience}</td>
+                                        <td>${Facility.poolArea == 0 ? "N/A" : Facility.poolArea}</td>
+                                        <td>${Facility.numberOfFloors == 0 ? "N/A" : Facility.numberOfFloors}</td>
+                                        <td>${Facility.facilityFree == null ? "N/A" : Facility.facilityFree}</td>
                                         <c:forEach var="RentType" items="${rentTypeList}">
                                             <c:if test="${RentType.id==Facility.rentTypeId}">
                                                 <td>${RentType.name}</td>

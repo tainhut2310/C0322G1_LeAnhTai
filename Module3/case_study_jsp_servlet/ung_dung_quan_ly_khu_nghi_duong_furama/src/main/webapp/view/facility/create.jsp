@@ -97,7 +97,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/customer">Customer List</a></li>
-                                <li><a class="dropdown-item" href="\view\customer\create.jsp">Add new customer</a></li>
+                                <li><a class="dropdown-item" href="/customer?action=create">Add new customer</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -117,7 +117,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/contract">Contract List</a></li>
-                                <li><a class="dropdown-item" href="\view\contract\create.jsp">Add new contract</a></li>
+                                <li><a class="dropdown-item" href="/contract?action=create">Add new contract</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -132,7 +132,7 @@
         <div class="col-lg-10">
             <div class="row">
                 <div class="container-fluid">
-                    <h3 style="text-align: center">THÊM THÔNG TIN DỊCH VỤ</h3>
+                    <h3 style="text-align: center">THÊM MỚI DỊCH VỤ</h3>
                     <form method="post" action="/facility?action=create">
                         <c:if test="${messenger != null}">
                             <div class="mb-2">
