@@ -1,18 +1,32 @@
 package service.impl;
 
 import model.Facility;
+import model.validate.Validate;
 import repository.IFacilityRepository;
 import repository.impl.FacilityRepository;
 import service.IFacilityService;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FacilityService implements IFacilityService {
     private IFacilityRepository facilityRepository = new FacilityRepository();
     @Override
-    public boolean insert(Facility facility) throws SQLException {
-        return facilityRepository.insert(facility);
+    public Map<String, String> insert(Facility facility) throws SQLException {
+        Map<String, String> mapErrors = new HashMap<>();
+        if (!facility.getName().isEmpty()) {
+            if (!Validate.checkNameFacility(facility.getName())) {
+                mapErrors.put("name", "Nhập tên sai định dạng, các kí tự đầu tiên của mỗi từ phải viết hoa");
+            }
+        } else {
+            mapErrors.put("name", "Vui lòng nhập tên");
+        }
+        if (mapErrors.size()==0) {
+            facilityRepository.insert(facility);
+        }
+        return mapErrors;
     }
 
     @Override

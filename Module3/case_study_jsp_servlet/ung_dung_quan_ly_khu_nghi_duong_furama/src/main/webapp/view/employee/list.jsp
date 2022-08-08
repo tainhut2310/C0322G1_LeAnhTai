@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
-    <link rel="stylesheet" href="/view/css/file.css">
+    <link rel="stylesheet" href="view/css/file.css">
     <style>
         * {
             box-sizing: border-box;
@@ -44,19 +44,16 @@
             font-family: 'Varela Round', sans-serif;
             font-size: 13px;
         }
-
         .table-responsive {
             margin: 30px 0;
         }
-
         .table-wrapper {
             min-width: 1000px;
             background: #fff;
             padding: 20px 25px;
             border-radius: 3px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
         }
-
         .table-title {
             padding-bottom: 15px;
             background: #435d7d;
@@ -65,12 +62,10 @@
             margin: -20px -25px 10px;
             border-radius: 3px 3px 0 0;
         }
-
         .table-title h2 {
             margin: 5px 0 0;
             font-size: 24px;
         }
-
         .table-title .btn {
             color: #fff;
             float: right;
@@ -82,52 +77,42 @@
             outline: none !important;
             margin-left: 10px;
         }
-
         .table-title .btn i {
             float: left;
             font-size: 21px;
             margin-right: 5px;
         }
-
         .table-title .btn span {
             float: left;
             margin-top: 2px;
         }
-
         table.table tr th, table.table tr td {
             border-color: #e9e9e9;
             padding: 12px 15px;
             vertical-align: middle;
         }
-
         table.table tr th:first-child {
             width: 60px;
         }
-
         table.table tr th:last-child {
             width: 100px;
         }
-
         table.table-striped tbody tr:nth-of-type(odd) {
             background-color: #fcfcfc;
         }
-
         table.table-striped.table-hover tbody tr:hover {
             background: #f5f5f5;
         }
-
         table.table th i {
             font-size: 13px;
             margin: 0 5px;
             cursor: pointer;
         }
-
         table.table td:last-child i {
             opacity: 0.9;
             font-size: 22px;
             margin: 0 5px;
         }
-
         table.table td a {
             font-weight: bold;
             color: #566787;
@@ -135,29 +120,23 @@
             text-decoration: none;
             outline: none !important;
         }
-
         table.table td a:hover {
             color: #2196F3;
         }
-
         table.table td a.edit {
             color: #FFC107;
         }
-
         table.table td a.delete {
             color: #F44336;
         }
-
         table.table td i {
             font-size: 19px;
         }
-
         table.table .avatar {
             border-radius: 50%;
             vertical-align: middle;
             margin-right: 10px;
         }
-
         .pagination li a {
             border: none;
             font-size: 13px;
@@ -170,40 +149,32 @@
             text-align: center;
             padding: 0 6px;
         }
-
         .pagination li a:hover {
             color: #666;
         }
-
         .pagination li.active a, .pagination li.active a.page-link {
             background: #03A9F4;
         }
-
         .pagination li.active a:hover {
             background: #0397d6;
         }
-
         .pagination li.disabled i {
             color: #ccc;
         }
-
         .pagination li i {
             font-size: 16px;
             padding-top: 6px
         }
-
         .custom-checkbox input[type="checkbox"] {
             opacity: 0;
             position: absolute;
             margin: 5px 0 0 3px;
             z-index: 9;
         }
-
-        .custom-checkbox label:before {
+        .custom-checkbox label:before{
             width: 18px;
             height: 18px;
         }
-
         .custom-checkbox label:before {
             content: '';
             margin-right: 10px;
@@ -215,7 +186,6 @@
             box-sizing: border-box;
             z-index: 2;
         }
-
         .custom-checkbox input[type="checkbox"]:checked + label:after {
             content: '';
             position: absolute;
@@ -229,137 +199,47 @@
             z-index: 3;
             transform: rotateZ(45deg);
         }
-
         .custom-checkbox input[type="checkbox"]:checked + label:before {
             border-color: #03A9F4;
             background: #03A9F4;
         }
-
         .custom-checkbox input[type="checkbox"]:checked + label:after {
             border-color: #fff;
         }
-
         .custom-checkbox input[type="checkbox"]:disabled + label:before {
             color: #b8b8b8;
             cursor: auto;
             box-shadow: none;
             background: #ddd;
         }
-
         /* Modal styles */
         .modal .modal-dialog {
             max-width: 400px;
         }
-
         .modal .modal-header, .modal .modal-body, .modal .modal-footer {
             padding: 20px 30px;
         }
-
         .modal .modal-content {
             border-radius: 3px;
         }
-
         .modal .modal-footer {
             background: #ecf0f1;
             border-radius: 0 0 3px 3px;
         }
-
         .modal .modal-title {
             display: inline-block;
         }
-
         .modal .btn {
             border-radius: 2px;
             min-width: 100px;
         }
-
         .modal form label {
             font-weight: normal;
         }
     </style>
 </head>
 <body>
-<div class="container" style="padding-left: 15px; padding-right: 15px;">
-    <div class="row">
-        <div class="col-lg-3 align-items-center">
-            <span><img src="/img_icon/Logo-FURAMA-RESORT.jpg" width="100" height="100"></span>
-        </div>
-        <div class="col-lg-3">
-            <div style="padding-right: 5px; border: solid 1px #CDCDCD">
-                <span><img src="/img_icon/moovbike-tripadvisor-5.png" alt="" width="150" height="100"></span>
-            </div>
-
-        </div>
-        <div class="col-lg-3 align-items-center">
-            <p style="font-size: 13px;">103 – 105 Đường Võ Nguyên Giáp, Phường Khuê Mỹ, Quận Ngũ hành Sơn, Tp. Đà Nẵng,
-                Việt Nam</p>
-            <p class="txt-sm" style="font-size: 13px;">
-                <span>7.0 km</span> từ Sân bay Quốc tế Đà Nẵng
-            </p>
-        </div>
-        <div class="col-lg-3">
-            <div>
-                <p class="txt-lg">
-                    84-236-3847 333/888</p>
-                <a href="mailto:reservation@furamavietnam.com">
-                    reservation@furamavietnam.com</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-lg-12 js-header-nav sticky" ;
-     style="display: block; position: sticky; top: 0px; z-index: 1; background-color: #046056; height: 80px;">
-    <div class="container">
-        <nav style="padding-left: 80px;" class="navbar navbar-expand-lg navbar-light">
-            <a style="color: white" class="navbar-brand" href="/index.jsp">HOME</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a style="color: white" class="nav-link" href="/employee" role="button">
-                                EMPLOYEE
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                CUSTOMER
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/customer">Customer List</a></li>
-                                <li><a class="dropdown-item" href="/customer?action=create">Add new customer</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                FACILITY
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/facility">Facility List</a></li>
-                                <li><a class="dropdown-item" href="/facility?action=create">Add new Employee</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a style="color: white" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                CONTRACT
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/contract">Contract List</a></li>
-                                <li><a class="dropdown-item" href="/contract?action=create">Add new contract</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</div>
+<%@include file="../include/header.jsp"%>
 
 <div class="container-fluid">
     <div class="row">
@@ -646,52 +526,7 @@
         </div>
     </div>
 </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <footer class="text-center text-lg-start bg-white text-muted">
-                <section class="">
-                    <div class="container-fluid text-center text-md-start mt-5">
-                        <div class="row mt-3">
-                            <div class=" col-lg-7">
-                                <!-- Content -->
-                                <h2 class="text-uppercase fw-bold mb-4">
-                                    <i class="fas fa-gem me-3 text-grayish"></i>Hướng dẫn di chuyển
-                                </h2>
-                                <p>
-                                    Khu nghỉ dưỡng Furama là cơ sở hàng đầu để khám phá một trong những điểm đến hấp dẫn
-                                    nhất Châu Á.
-                                    Chỉ cách Đà Nẵng một quãng lái xe ngắn là bốn Di sản Văn hóa Thế giới được UNESCO
-                                    công nhận:
-                                </p>
-                            </div>
-
-                            <div class="col-lg-5 ">
-                                <h6 class="text-uppercase fw-bold mb-4">Liên hệ</h6>
-                                <p><i class="fas fa-home me-3 text-grayish"></i>103-105 Vo Nguyen Giap Street, Khue My
-                                    ward,
-                                    Ngu Hanh Son District, Danang City, Vietnam</p>
-                                <p><i class="fas fa-phone me-3 text-grayish"></i>Tel: + 01 234 567 88*
-                                    Fax:84-236-3847-666</p>
-                                <p><i class="fas fa-print me-3 text-grayish"></i>Email: reservation@furamavietnam.com
-                                </p>
-                                <p><i class="fas fa-print me-3 text-grayish"></i>GDS Codes: Amadeus-GD DADFUR,
-                                    Galieo/Apol-GD 16236lo</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-                    © 2018 Copyright:
-                    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Furama Resort Danang.</a>
-                </div>
-                <!-- Copyright -->
-            </footer>
-        </div>
-    </div>
-</div>
+<%@include file="../include/footer.jsp"%>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"

@@ -4,9 +4,10 @@ import model.Customer;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public interface ICustomerService {
-    public boolean insert(Customer customer) throws SQLException;
+    public Map<String, String> insert(Customer customer) throws SQLException;
 
     public Customer selectById(int id) throws SQLException;
 

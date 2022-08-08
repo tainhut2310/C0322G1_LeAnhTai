@@ -4,9 +4,10 @@ import model.Facility;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public interface IFacilityService {
-    public boolean insert(Facility facility) throws SQLException;
+    public Map<String, String> insert(Facility facility) throws SQLException;
 
     public Facility selectById(int id) throws SQLException;
 

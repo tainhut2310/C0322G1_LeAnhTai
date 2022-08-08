@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet", urlPatterns = {"/customer"})
 public class CustomerServlet extends HttpServlet {
@@ -98,15 +99,27 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("address");
         int customerType = Integer.parseInt(request.getParameter("typeOfCustomer"));
         Customer customer = new Customer(name, dateOfBirthday, gender, idCard, phoneNumber, email, address, customerType);
-        boolean status = customerService.insert(customer);
+        Map<String, String> errorsMap = customerService.insert(customer);
         String messenger = "THÊM MỚI KHÔNG THÀNH CÔNG";
-        if (status) {
-            messenger = "THÊM MỚI THÀNH CÔNG";
-        }
-        request.setAttribute("messenger", messenger);
+        if (errorsMap.size() > 0) {
+            List<CustomerType> customerTypeList = customerTypeService.selectAll();
+            request.setAttribute("customerTypeList", customerTypeList);
+            request.setAttribute("customer", customer);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
-        dispatcher.forward(request, response);
+            request.setAttribute("errorsMap", errorsMap);
+            request.setAttribute("messenger", messenger);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            List<CustomerType> customerTypeList = customerTypeService.selectAll();
+            request.setAttribute("customerTypeList", customerTypeList);
+
+            messenger = "THÊM MỚI THÀNH CÔNG";
+            request.setAttribute("messenger", messenger);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {

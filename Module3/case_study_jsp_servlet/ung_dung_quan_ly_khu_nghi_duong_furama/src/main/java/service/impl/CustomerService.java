@@ -1,18 +1,48 @@
 package service.impl;
 
 import model.Customer;
+import model.validate.Validate;
 import repository.ICustomerRepository;
 import repository.impl.CustomerRepository;
 import service.ICustomerService;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CustomerService implements ICustomerService {
     private ICustomerRepository customerRepository = new CustomerRepository();
+
     @Override
-    public boolean insert(Customer customer) throws SQLException {
-        return customerRepository.insert(customer);
+    public Map<String, String> insert(Customer customer) throws SQLException {
+        Map<String, String> mapErrors = new HashMap<>();
+        if (!customer.getName().isEmpty()) {
+            if (!Validate.checkNameCustomer(customer.getName())) {
+                mapErrors.put("name", "Nhập tên sai định dạng, tên không được chứa số và các ký tự đầu phải viết hoa");
+            }
+        } else {
+            mapErrors.put("name", "Vui lòng nhập tên");
+        }
+
+        if (!customer.getPhoneNumber().isEmpty()) {
+            if (!Validate.checkPhoneNumber(customer.getPhoneNumber())) {
+                mapErrors.put("phoneNumber", "Nhập số điện thoại sai định dạng, phải bắt đầu 090 hoặc 091 và 10 số ");
+            }
+        } else {
+            mapErrors.put("phoneNumber", "Vui lòng nhập số điện thoại");
+        }
+        if (!customer.getIdCard().isEmpty()) {
+            if (!Validate.checkIdCard(customer.getIdCard())) {
+                mapErrors.put("idCard", "Nhập số CMND sai định dạng, CMND gồm 9 hoặc 12 số không chứa ký tự ");
+            }
+        } else {
+            mapErrors.put("idCard", "Vui lòng nhập số CMND");
+        }
+        if (mapErrors.size()==0) {
+            customerRepository.insert(customer);
+        }
+        return mapErrors;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package controllers;
 
+import model.CustomerType;
 import model.Facility;
 import model.FacilityType;
 import model.RentType;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "FacilityServlet", urlPatterns = "/facility")
 public class FacilityServlet extends HttpServlet {
@@ -125,19 +127,31 @@ public class FacilityServlet extends HttpServlet {
         } else {
             facilityFree = request.getParameter("facilityFree");
         }
-        boolean status = facilityService.insert(new Facility(name, area, cost, maxPeople, standardRoom, descriptionOtherConvenience,
+        Map<String, String> errorsMap = facilityService.insert(new Facility(name, area, cost, maxPeople, standardRoom, descriptionOtherConvenience,
                 poolArea, numberOfFloors, facilityFree, rentTypeId, facilityTypeId));
         String messenger = "THÊM MỚI KHÔNG THÀNH CÔNG";
-        if (status) {
+        if (errorsMap.size() > 0) {
+            List<RentType> rentTypeList = rentTypeService.selectAll();
+            request.setAttribute("rentTypeList", rentTypeList);
+            List<FacilityType> facilityTypeList = facilityTypeService.selectAll();
+            request.setAttribute("facilityTypeList", facilityTypeList);
+
+            request.setAttribute("errorsMap", errorsMap);
+            request.setAttribute("messenger", messenger);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("view/facility/create.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            List<RentType> rentTypeList = rentTypeService.selectAll();
+            request.setAttribute("rentTypeList", rentTypeList);
+            List<FacilityType> facilityTypeList = facilityTypeService.selectAll();
+            request.setAttribute("facilityTypeList", facilityTypeList);
+
             messenger = "THÊM MỚI THÀNH CÔNG";
+            request.setAttribute("messenger", messenger);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("view/facility/create.jsp");
+            dispatcher.forward(request, response);
         }
-        request.setAttribute("messenger", messenger);
-        List<RentType> rentTypeList = rentTypeService.selectAll();
-        request.setAttribute("rentTypeList", rentTypeList);
-        List<FacilityType> facilityTypeList = facilityTypeService.selectAll();
-        request.setAttribute("facilityTypeList", facilityTypeList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/facility/create.jsp");
-        dispatcher.forward(request, response);
     }
 
     private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
