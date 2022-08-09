@@ -6,8 +6,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface IContractService {
-    public boolean insert(Contract contract) throws SQLException;
+    boolean insert(Contract contract) throws SQLException;
 
-    public List<Contract> selectAll() throws SQLException;
+    List<Contract> selectAll() throws SQLException;
+
+    List<Double> getMoney() throws SQLException;
 
 }

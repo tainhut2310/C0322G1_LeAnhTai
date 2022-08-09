@@ -18,10 +18,18 @@ public class FacilityService implements IFacilityService {
         Map<String, String> mapErrors = new HashMap<>();
         if (!facility.getName().isEmpty()) {
             if (!Validate.checkNameFacility(facility.getName())) {
-                mapErrors.put("name", "Nhập tên sai định dạng, các kí tự đầu tiên của mỗi từ phải viết hoa");
+                mapErrors.put("name", "*Nhập tên sai định dạng, các kí tự đầu tiên của mỗi từ phải viết hoa");
             }
         } else {
-            mapErrors.put("name", "Vui lòng nhập tên");
+            mapErrors.put("name", "*Vui lòng nhập tên");
+        }
+        String amount = String.valueOf(facility.getMaxPeople());
+            if (!Validate.checkPositive(amount)) {
+                mapErrors.put("amount", "*Nhập số lượng sai định dạng, số lượng phải là số nguyên dương");
+            }
+        String numberOflFoors = String.valueOf(facility.getNumberOfFloors());
+        if (!Validate.checkPositive(numberOflFoors)) {
+            mapErrors.put("numberOfFloors", "*Nhập số lượng sai định dạng, số tầng phải là số nguyên dương");
         }
         if (mapErrors.size()==0) {
             facilityRepository.insert(facility);

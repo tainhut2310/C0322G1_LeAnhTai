@@ -67,6 +67,7 @@
                         <div class="mb-2">
                             <label class="form-label">Ngày sinh</label>
                             <input name="dateOfBirthday" type="date" class="form-control">
+                            <p class="text-danger">${errorsMap.get("dateOfBirthday")}</p>
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Giới tính: </label>
@@ -86,10 +87,12 @@
                         <div class="mb-2">
                             <label class="form-label">Email</label>
                             <input name="email" type="text" class="form-control">
+                            <p class="text-danger">${errorsMap.get("email")}</p>
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Địa chỉ</label>
                             <input name="address" type="text" class="form-control">
+                            <p class="text-danger">${errorsMap.get("address")}</p>
                         </div>
 
                         <div class="mb-2">

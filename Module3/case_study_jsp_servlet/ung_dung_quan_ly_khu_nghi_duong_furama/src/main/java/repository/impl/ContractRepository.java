@@ -12,13 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContractRepository implements IContractRepository {
-    private static final String SELECT_ALL = "select c.`name` as name_customer, f.`name`, ct.start_date, " +
-            "ct.end_date, ct.deposit, (f.cost + ifnull((cd.quantity * af.cost),0)) as total_money from contract ct " +
-            " left join customer c on ct.customer_id = c.id " +
-            " left join facility f on ct.facility_id = f.id " +
-            " left join contract_detail cd on ct.id = cd.contract_id " +
-            " left join attach_facility af on cd.attach_facility_id = af.id " +
-            " group by cd.contract_id;";
+    private static final String SELECT_ALL = "select * from contract;";
     @Override
     public boolean insert(Contract contract) throws SQLException {
         return false;
@@ -31,13 +25,14 @@ public class ContractRepository implements IContractRepository {
              PreparedStatement statement = connection.prepareStatement(SELECT_ALL)){
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                String nameCustomer = resultSet.getString("name");
-                String nameFacility = resultSet.getString("name_customer");
+                int id = resultSet.getInt("id");
                 String startDate = resultSet.getString("start_date");
                 String endDate = resultSet.getString("end_date");
                 double deposit = resultSet.getDouble("deposit");
-                double totalMoney = resultSet.getDouble("total_money");
-                contractList.add(new Contract(nameCustomer, nameFacility, startDate, endDate, deposit, totalMoney));
+                int employeeId = resultSet.getInt("employee_id");
+                int customerId = resultSet.getInt("customer_id");
+                int facilityId = resultSet.getInt("facility_id");
+                contractList.add(new Contract(id, startDate, endDate, deposit, employeeId, customerId, facilityId));
             }
         }
         return contractList;

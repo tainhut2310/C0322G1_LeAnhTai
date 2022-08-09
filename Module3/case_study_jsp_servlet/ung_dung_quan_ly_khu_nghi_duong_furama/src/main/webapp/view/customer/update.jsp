@@ -54,7 +54,7 @@
             <form method="post" action="/customer?action=update">
                 <div class="mb-2">
                     <label class="form-label">ID</label>
-                    <input name="id" type="text" class="form-control" value="${customer.id}">
+                    <input readonly name="id" type="text" class="form-control" value="${customer.id}">
                 </div>
                 <div class="mb-2">
                     <label class="form-label">Tên khách hàng</label>

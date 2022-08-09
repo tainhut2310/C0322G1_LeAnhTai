@@ -83,7 +83,8 @@
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Số lượng người tối đa</label>
-                            <input name="maxPeople" type="number" class="form-control">
+                            <input name="maxPeople" type="number" class="form-control" value="0">
+                            <p class="text-danger">${errorsMap.get("amount")}</p>
                         </div>
                         <div class="mb-2">
                             <label class="form-label">Kiểu thuê</label>
@@ -109,6 +110,7 @@
                         <div class="mb-2" id="numberOfFloors" hidden>
                             <label class="form-label">Số tầng</label>
                             <input name="numberOfFloors" type="number" class="form-control">
+                            <p class="text-danger">${errorsMap.get("numberOfFloors")}</p>
                         </div>
                         <div class="mb-2" id="facilityFree" hidden>
                             <label class="form-label">Dịch vụ miễn phí đi kèm</label>

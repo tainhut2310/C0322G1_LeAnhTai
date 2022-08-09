@@ -14,4 +14,9 @@ public class ContractDetailService implements IContractDetailService {
     public List<ContractDetail> selectAll() throws SQLException {
         return contractDetailRepository.selectAll();
     }
+
+    @Override
+    public boolean insert(ContractDetail contractDetail) throws SQLException {
+        return contractDetailRepository.insert(contractDetail);
+    }
 }

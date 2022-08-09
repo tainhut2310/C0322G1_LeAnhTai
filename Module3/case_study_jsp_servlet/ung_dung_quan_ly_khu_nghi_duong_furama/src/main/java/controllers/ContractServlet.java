@@ -1,14 +1,8 @@
 package controllers;
 
-import model.AttachFacility;
-import model.Contract;
-import model.ContractDetail;
-import service.IAttachFacilityService;
-import service.IContractDetailService;
-import service.IContractService;
-import service.impl.AttachFacilityService;
-import service.impl.ContractDetailService;
-import service.impl.ContractService;
+import model.*;
+import service.*;
+import service.impl.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,8 +17,11 @@ import java.util.List;
 @WebServlet(name = "ContractServlet", urlPatterns = "/contract")
 public class ContractServlet extends HttpServlet {
     private IContractService contractService = new ContractService();
+    private ICustomerService customerService = new CustomerService();
+    private IFacilityService facilityService = new FacilityService();
     private IContractDetailService contractDetailService = new ContractDetailService();
     private IAttachFacilityService attachFacilityService = new AttachFacilityService();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -32,9 +29,9 @@ public class ContractServlet extends HttpServlet {
         }
         try {
             switch (action) {
-//                case "create":
-//                    save(request, response);
-//                    break;
+                case "createContractDetail":
+                    saveContractDetail(request, response);
+                    break;
                 default:
                     listContract(request, response);
                     break;
@@ -51,9 +48,6 @@ public class ContractServlet extends HttpServlet {
         }
         try {
             switch (action) {
-//                case "create":
-//                    save(request, response);
-//                    break;
                 default:
                     listContract(request, response);
                     break;
@@ -66,10 +60,25 @@ public class ContractServlet extends HttpServlet {
     private void listContract(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         List<Contract> contractList = contractService.selectAll();
         request.setAttribute("contractList", contractList);
+        List<Facility> facilityList = facilityService.selectAll();
+        request.setAttribute("facilityList", facilityList);
+        List<Customer> customerList = customerService.selectAll();
+        request.setAttribute("customerList", customerList);
+        List<ContractDetail> contractDetailList = contractDetailService.selectAll();
+        request.setAttribute("contractDetailList", contractDetailList);
         List<AttachFacility> attachFacilityList = attachFacilityService.selectAll();
         request.setAttribute("attachFacilityList", attachFacilityList);
-
+        List<Double> totalMoneyList = contractService.getMoney();
+        request.setAttribute("totalMoneyList", totalMoneyList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/contract/list.jsp");
         dispatcher.forward(request, response);
+    }
+
+    private void saveContractDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
+        int idContract = Integer.parseInt(request.getParameter("contractId"));
+        int idAttachFacility = Integer.parseInt(request.getParameter("idAttachFacility"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        contractDetailService.insert(new ContractDetail(idContract, idAttachFacility, quantity));
+        listContract(request, response);
     }
 }

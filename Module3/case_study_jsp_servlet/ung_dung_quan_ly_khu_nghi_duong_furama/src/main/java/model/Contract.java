@@ -2,33 +2,33 @@ package model;
 
 public class Contract {
     private int id;
-    String nameFacility;
-    String nameCustomer;
     private String startDate;
     private String endDate;
     private double deposit;
-    private double totalMoney;
+    private int employeeId;
+    private int customerId;
+    private int facilityId;
 
     public Contract() {
     }
 
-    public Contract(String nameFacility, String nameCustomer, String startDate, String endDate, double deposit, double totalMoney) {
-        this.nameFacility = nameFacility;
-        this.nameCustomer = nameCustomer;
+    public Contract(String startDate, String endDate, double deposit, int employeeId, int customerId, int facilityId) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.deposit = deposit;
-        this.totalMoney = totalMoney;
+        this.employeeId = employeeId;
+        this.customerId = customerId;
+        this.facilityId = facilityId;
     }
 
-    public Contract(int id, String nameFacility, String nameCustomer, String startDate, String endDate, double deposit, double totalMoney) {
+    public Contract(int id, String startDate, String endDate, double deposit, int employeeId, int customerId, int facilityId) {
         this.id = id;
-        this.nameFacility = nameFacility;
-        this.nameCustomer = nameCustomer;
         this.startDate = startDate;
         this.endDate = endDate;
         this.deposit = deposit;
-        this.totalMoney = totalMoney;
+        this.employeeId = employeeId;
+        this.customerId = customerId;
+        this.facilityId = facilityId;
     }
 
     public int getId() {
@@ -37,22 +37,6 @@ public class Contract {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNameFacility() {
-        return nameFacility;
-    }
-
-    public void setNameFacility(String nameFacility) {
-        this.nameFacility = nameFacility;
-    }
-
-    public String getNameCustomer() {
-        return nameCustomer;
-    }
-
-    public void setNameCustomer(String nameCustomer) {
-        this.nameCustomer = nameCustomer;
     }
 
     public String getStartDate() {
@@ -79,11 +63,27 @@ public class Contract {
         this.deposit = deposit;
     }
 
-    public double getTotalMoney() {
-        return totalMoney;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setTotalMoney(double totalMoney) {
-        this.totalMoney = totalMoney;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public int getFacilityId() {
+        return facilityId;
+    }
+
+    public void setFacilityId(int facilityId) {
+        this.facilityId = facilityId;
     }
 }

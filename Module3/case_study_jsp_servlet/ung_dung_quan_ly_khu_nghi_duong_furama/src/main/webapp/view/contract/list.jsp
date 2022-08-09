@@ -42,16 +42,19 @@
             font-family: 'Varela Round', sans-serif;
             font-size: 13px;
         }
+
         .table-responsive {
             margin: 30px 0;
         }
+
         .table-wrapper {
             min-width: 1000px;
             background: #fff;
             padding: 20px 25px;
             border-radius: 3px;
-            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
         }
+
         .table-title {
             padding-bottom: 15px;
             background: #435d7d;
@@ -60,10 +63,12 @@
             margin: -20px -25px 10px;
             border-radius: 3px 3px 0 0;
         }
+
         .table-title h2 {
             margin: 5px 0 0;
             font-size: 24px;
         }
+
         .table-title .btn {
             color: #fff;
             float: right;
@@ -75,42 +80,52 @@
             outline: none !important;
             margin-left: 10px;
         }
+
         .table-title .btn i {
             float: left;
             font-size: 21px;
             margin-right: 5px;
         }
+
         .table-title .btn span {
             float: left;
             margin-top: 2px;
         }
+
         table.table tr th, table.table tr td {
             border-color: #e9e9e9;
             padding: 12px 15px;
             vertical-align: middle;
         }
+
         table.table tr th:first-child {
             width: 60px;
         }
+
         table.table tr th:last-child {
             width: 100px;
         }
+
         table.table-striped tbody tr:nth-of-type(odd) {
             background-color: #fcfcfc;
         }
+
         table.table-striped.table-hover tbody tr:hover {
             background: #f5f5f5;
         }
+
         table.table th i {
             font-size: 13px;
             margin: 0 5px;
             cursor: pointer;
         }
+
         table.table td:last-child i {
             opacity: 0.9;
             font-size: 22px;
             margin: 0 5px;
         }
+
         table.table td a {
             font-weight: bold;
             color: #566787;
@@ -118,12 +133,15 @@
             text-decoration: none;
             outline: none !important;
         }
+
         table.table td a:hover {
             color: #2196F3;
         }
+
         table.table td i {
             font-size: 19px;
         }
+
         .pagination li a {
             border: none;
             font-size: 13px;
@@ -136,32 +154,40 @@
             text-align: center;
             padding: 0 6px;
         }
+
         .pagination li a:hover {
             color: #666;
         }
+
         .pagination li.active a, .pagination li.active a.page-link {
             background: #03A9F4;
         }
+
         .pagination li.active a:hover {
             background: #0397d6;
         }
+
         .pagination li.disabled i {
             color: #ccc;
         }
+
         .pagination li i {
             font-size: 16px;
             padding-top: 6px
         }
+
         .custom-checkbox input[type="checkbox"] {
             opacity: 0;
             position: absolute;
             margin: 5px 0 0 3px;
             z-index: 9;
         }
-        .custom-checkbox label:before{
+
+        .custom-checkbox label:before {
             width: 18px;
             height: 18px;
         }
+
         .custom-checkbox label:before {
             content: '';
             margin-right: 10px;
@@ -173,6 +199,7 @@
             box-sizing: border-box;
             z-index: 2;
         }
+
         .custom-checkbox input[type="checkbox"]:checked + label:after {
             content: '';
             position: absolute;
@@ -186,47 +213,57 @@
             z-index: 3;
             transform: rotateZ(45deg);
         }
+
         .custom-checkbox input[type="checkbox"]:checked + label:before {
             border-color: #03A9F4;
             background: #03A9F4;
         }
+
         .custom-checkbox input[type="checkbox"]:checked + label:after {
             border-color: #fff;
         }
+
         .custom-checkbox input[type="checkbox"]:disabled + label:before {
             color: #b8b8b8;
             cursor: auto;
             box-shadow: none;
             background: #ddd;
         }
+
         /* Modal styles */
         .modal .modal-dialog {
             max-width: 400px;
         }
+
         .modal .modal-header, .modal .modal-body, .modal .modal-footer {
             padding: 20px 30px;
         }
+
         .modal .modal-content {
             border-radius: 3px;
         }
+
         .modal .modal-footer {
             background: #ecf0f1;
             border-radius: 0 0 3px 3px;
         }
+
         .modal .modal-title {
             display: inline-block;
         }
+
         .modal .btn {
             border-radius: 2px;
             min-width: 100px;
         }
+
         .modal form label {
             font-weight: normal;
         }
     </style>
 </head>
 <body>
-<%@include file="../include/header.jsp"%>
+<%@include file="../include/header.jsp" %>
 
 <div class="container-fluid">
     <div class="row">
@@ -263,25 +300,77 @@
                                 <c:forEach var="Contract" items="${contractList}" varStatus="status">
                                     <tr>
                                         <td>${status.count}</td>
-                                        <td>${Contract.nameFacility}</td>
-                                        <td>${Contract.nameCustomer}</td>
+                                        <c:forEach var="Facility" items="${facilityList}">
+                                            <c:if test="${Contract.facilityId==Facility.id}">
+                                                <td>${Facility.name}</td>
+                                            </c:if>
+                                        </c:forEach>
+
+                                        <c:forEach var="Customer" items="${customerList}">
+                                            <c:if test="${Contract.customerId==Customer.id}">
+                                                <td>${Customer.name}</td>
+                                            </c:if>
+                                        </c:forEach>
+
                                         <td>${Contract.startDate}</td>
                                         <td>${Contract.endDate}</td>
                                         <td>${Contract.deposit}</td>
-                                        <td>${Contract.totalMoney}</td>
+                                        <td>${totalMoneyList.get(status.count - 1)}</td>
                                         <td>
-                                            <a href="#addContractDetailModal" data-toggle="modal">
+                                            <a href="#addContractDetailModal" data-toggle="modal"
+                                               onclick="infoCreateContractDetail('${Contract.id}')">
                                                 <button type="button" class="btn btn-primary">
                                                     +
                                                 </button>
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="\view\contract\list-contrac-detail.jsp">
+                                            <a href="#listContractDetailModal${Contract.id}" data-toggle="modal">
                                                 <button type="button" class="btn btn-primary">
                                                     Danh sách các dịch vụ đi kèm
                                                 </button>
                                             </a>
+                                                <div id="listContractDetailModal${Contract.id}" class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Danh sách dịch vụ đi kèm</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <table class="table table-striped table-hover">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>STT</th>
+                                                                        <th>Tên dịch vụ đi kèm</th>
+                                                                        <th>Giá</th>
+                                                                        <th>Đơn vị</th>
+                                                                        <th>Tình trạng</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <c:forEach var="ContractDetail" items="${contractDetailList}" varStatus="status">
+                                                                        <c:forEach var="AttachFacility" items="${attachFacilityList}">
+                                                                            <c:if test="${ContractDetail.contractId==Contract.id && ContractDetail.attachFacilityId == AttachFacility.id }">
+                                                                                <tr>
+                                                                                    <td>${status.count}</td>
+                                                                                    <td>${AttachFacility.name}</td>
+                                                                                    <td>${AttachFacility.cost}</td>
+                                                                                    <td>${AttachFacility.unit}</td>
+                                                                                    <td>${AttachFacility.status}</td>
+                                                                                </tr>
+                                                                            </c:if>
+                                                                        </c:forEach>
+                                                                    </c:forEach>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Đóng">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -299,23 +388,29 @@
 <div id="addContractDetailModal" class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form method="post">
                 <div class="modal-header">
                     <h4 class="modal-title">Tạo hợp đồng chi tiết</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
+                    <input type="text" hidden name="action" value="createContractDetail">
                     <div class="form-group">
                         <label>Mã hợp đồng</label>
-                        <input type="number" class="form-control">
+                        <input readonly name="contractId" id="contractId" type="text" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label>Tên dịch vụ đi kèm</label>
-                        <input type="text" class="form-control">
+                        <select class = "form-control" name="idAttachFacility">
+                            <option value="">Chọn dịch vụ đi kèm</option>
+                            <c:forEach var="AttachFacility" items="${attachFacilityList}">
+                                <option value="${AttachFacility.id}">${AttachFacility.name}</option>
+                            </c:forEach>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Số lượng</label>
-                        <input type="number" class="form-control">
+                        <input name="quantity" type="number" class="form-control">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -326,8 +421,16 @@
         </div>
     </div>
 </div>
-<%@include file="../include/footer.jsp"%>
 
+
+
+<%@include file="../include/footer.jsp" %>
+
+<script>
+    function infoCreateContractDetail(id) {
+        document.getElementById("contractId").value = id;
+    }
+</script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"

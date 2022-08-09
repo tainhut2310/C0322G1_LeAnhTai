@@ -1,6 +1,5 @@
 package controllers;
 
-import model.CustomerType;
 import model.Facility;
 import model.FacilityType;
 import model.RentType;
