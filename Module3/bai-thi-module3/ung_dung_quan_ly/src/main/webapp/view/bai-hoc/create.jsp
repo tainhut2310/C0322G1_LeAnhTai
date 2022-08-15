@@ -52,60 +52,56 @@
         <div class="container-fluid">
             <h3 style="text-align: center">CHỈNH SỬA THÔNG TIN KHÁCH HÀNG</h3>
             <form method="post" action="/customer?action=update">
+
                 <div class="mb-2">
                     <label class="form-label">ID</label>
-                    <input readonly name="id" type="text" class="form-control" value="${customer.id}">
+                    <input readonly name="id" type="text" class="form-control" value="">
                 </div>
+
                 <div class="mb-2">
                     <label class="form-label">Tên khách hàng</label>
-                    <input name="name" type="text" class="form-control" value="${customer.name}">
+                    <input name="name" type="text" class="form-control" value="">
                 </div>
+
                 <div class="mb-2">
                     <label class="form-label">Ngày sinh</label>
-                    <input name="dateOfBirthday" type="date" class="form-control" value="${customer.dateOfBirthday}">
+                    <input name="dateOfBirthday" type="date" class="form-control" value="">
                 </div>
-                <div class="mb-2">
-                    <label class="form-label">Giới tính: </label>
-                    <select class ="form-control" name="gender">
-                        <c:if test="${customer.gender==1}">
-                            <option value="1" selected>Nam</option>
-                            <option value="0">Nữ</option>
-                        </c:if>
-                        <c:if test="${customer.gender==0}">
-                            <option value="1">Nam</option>
-                            <option value="0" selected>Nữ</option>
-                        </c:if>
-                    </select>
-                </div>
+<%--                <div class="mb-2">--%>
+<%--                    <label class="form-label">Giới tính: </label>--%>
+<%--                    <select class ="form-control" name="gender">--%>
+<%--                        <c:if test="${customer.gender==1}">--%>
+<%--                            <option value="1" selected>Nam</option>--%>
+<%--                            <option value="0">Nữ</option>--%>
+<%--                        </c:if>--%>
+<%--                        <c:if test="${customer.gender==0}">--%>
+<%--                            <option value="1">Nam</option>--%>
+<%--                            <option value="0" selected>Nữ</option>--%>
+<%--                        </c:if>--%>
+<%--                    </select>--%>
+<%--                </div>--%>
                 <div class="mb-2">
                     <label class="form-label">Số CMND</label>
-                    <input name="idCard" type="text" class="form-control" value="${customer.idCard}">
+                    <input name="idCard" type="text" class="form-control" value="">
                 </div>
                 <div class="mb-2">
                     <label class="form-label">Số điện thoại</label>
-                    <input name="phoneNumber" type="text" class="form-control" value="${customer.phoneNumber}">
+                    <input name="phoneNumber" type="text" class="form-control" value="">
                 </div>
-                <div class="mb-2">
-                    <label class="form-label">Email</label>
-                    <input name="email" type="text" class="form-control" value="${customer.email}">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label">Địa chỉ</label>
-                    <input name="address" type="text" class="form-control" value="${customer.address}">
-                </div>
-                <div class="mb-2">
-                    <label class="form-label">Kiểu khách hàng: </label>
-                    <select class ="form-control" name="typeOfCustomer">
-                        <c:forEach var="customerType" items="${customerTypeList}">
-                            <c:if test="${customerType.id==customer.customerTypeId}">
-                                <option value="${customerType.id}" selected>${customerType.name}</option>
-                            </c:if>
-                            <c:if test="${customerType.id!=customer.customerTypeId}">
-                                <option value="${customerType.id}">${customerType.name}</option>
-                            </c:if>
-                        </c:forEach>
-                    </select>
-                </div>
+
+<%--                <div class="mb-2">--%>
+<%--                    <label class="form-label">Kiểu khách hàng: </label>--%>
+<%--                    <select class ="form-control" name="typeOfCustomer">--%>
+<%--                        <c:forEach var="customerType" items="${customerTypeList}">--%>
+<%--                            <c:if test="${customerType.id==customer.customerTypeId}">--%>
+<%--                                <option value="${customerType.id}" selected>${customerType.name}</option>--%>
+<%--                            </c:if>--%>
+<%--                            <c:if test="${customerType.id!=customer.customerTypeId}">--%>
+<%--                                <option value="${customerType.id}">${customerType.name}</option>--%>
+<%--                            </c:if>--%>
+<%--                        </c:forEach>--%>
+<%--                    </select>--%>
+<%--                </div>--%>
                 <br>
                 <div style="text-align: center">
                     <a href="/customer"><input class="btn btn-primary" type="button" value="Quay lại"></a>
