@@ -29,5 +29,4 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
-
 }

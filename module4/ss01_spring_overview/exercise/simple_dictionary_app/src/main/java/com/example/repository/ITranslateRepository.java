@@ -1,5 +1,5 @@
-package com.example.service;
+package com.example.repository;
 
-public interface IConvertService {
-    double translate(double rate, double usd);
+public interface ITranslateRepository {
+    String translate(String txtSearch);
 }
