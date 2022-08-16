@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Repository
 public class TranslateRepository implements ITranslateRepository {
-    static Map<String, String> dictionary = new HashMap<>();
+    private static Map<String, String> dictionary = new HashMap<>();
 
     static {
         dictionary.put("hello", "Xin chào");
