@@ -12,10 +12,6 @@ import java.util.List;
 public class ProductService implements IProductService {
     @Autowired
     private IProductRepository repositoryProduct;
-    @Override
-    public List<Product> findAll() {
-        return repositoryProduct.findAll();
-    }
 
     @Override
     public void save(Product product) {
@@ -28,8 +24,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> findByName(String name) {
-        return repositoryProduct.findByName(name);
+    public List<Product> findAllSearch(String name) {
+        return repositoryProduct.findAllSearch(name);
     }
 
     @Override

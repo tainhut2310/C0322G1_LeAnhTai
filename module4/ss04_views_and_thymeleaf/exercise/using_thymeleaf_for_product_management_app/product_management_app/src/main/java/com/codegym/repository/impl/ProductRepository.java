@@ -20,11 +20,6 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public List<Product> findAll() {
-        return productList;
-    }
-
-    @Override
     public void save(Product product) {
         productList.add(product);
     }
@@ -40,7 +35,7 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public List<Product> findByName(String name) {
+    public List<Product> findAllSearch(String name) {
         List<Product> list = new ArrayList<>();
         for (Product item : productList) {
             if (item.getName().toLowerCase().contains(name.toLowerCase())) {

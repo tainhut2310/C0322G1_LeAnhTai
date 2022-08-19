@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/product")
@@ -17,9 +16,8 @@ public class ProductController {
     private IProductService productService;
 
     @GetMapping("")
-    public String index(Model model) {
-        List<Product> productList = productService.findAll();
-        model.addAttribute("product", productList);
+    public String index(@RequestParam(value = "nameSearch", defaultValue = "") String nameSearch, Model model) {
+        model.addAttribute("product", productService.findAllSearch(nameSearch));
         return "/list";
     }
 
@@ -68,9 +66,4 @@ public class ProductController {
         return "/view";
     }
 
-    @GetMapping("/search")
-    public String search(@RequestParam String nameSearch, Model model) {
-        model.addAttribute("product", productService.findByName(nameSearch));
-        return "/list";
-    }
 }
