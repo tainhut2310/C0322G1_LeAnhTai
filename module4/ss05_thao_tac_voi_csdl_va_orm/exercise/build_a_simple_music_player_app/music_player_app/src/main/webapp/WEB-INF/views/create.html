@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head">
 <body>
+<h3>Add Music</h3>
 <div id="form">
     <form th:action="@{/music/save}" th:object="${music}"
           method="post" novalidate="novalidate">
-        <input type="hidden" th:field="*{idTheSong}">
         <div>
             <label>Tên bài hát</label>
             <input type="text" th:field="*{nameOfTheSong}">

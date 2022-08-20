@@ -36,39 +36,11 @@
         <td th:text="${row.getProductDescription()}"></td>
         <td th:text="${row.getProducer()}"></td>
         <td><a th:href="@{/product/{id}/edit(id=${row.getId()})}">edit</a></td>
-        <td>
-            <button th:onclick="|infoDelete('${row.id}','${row.name}')|"
-                    data-bs-toggle="modal" data-bs-target="#deleteModal">
-                delete
-            </button>
-        </td>
+        <td><a th:href="@{/product/{id}/delete(id=${row.getId()})}">delete</a></td>
         <td><a th:href="@{/product/{id}/view(id=${row.getId()})}">view</a></td>
     </tr>
     </tbody>
 </table>
-
-<!--delete modal-->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <form th:action="@{/product/delete}" method="post">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="text" hidden name="idDelete" id="idDelete">
-                    <span>Bạn có muốn xóa sản phẩm: </span>
-                    <span id="nameDelete"></span>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Delete</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
 
 <script>
     function infoDelete(id, name) {

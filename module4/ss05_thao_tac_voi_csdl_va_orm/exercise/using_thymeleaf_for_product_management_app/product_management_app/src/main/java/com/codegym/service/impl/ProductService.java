@@ -24,8 +24,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> findAllSearch(String name) {
-        return repositoryProduct.findAllSearch(name);
+    public List<Product> findAll(String name) {
+        return repositoryProduct.findAll(name);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void remove(int id) {
-        repositoryProduct.remove(id);
+    public void remove(Product product) {
+        repositoryProduct.remove(product);
     }
 }

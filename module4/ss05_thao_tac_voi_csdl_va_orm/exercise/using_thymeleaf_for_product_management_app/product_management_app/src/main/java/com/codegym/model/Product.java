@@ -3,14 +3,17 @@ package com.codegym.model;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private double price;
+
+    @Column(name = "product_pescription")
     private String productDescription;
+
     private String producer;
 
     public Product() {

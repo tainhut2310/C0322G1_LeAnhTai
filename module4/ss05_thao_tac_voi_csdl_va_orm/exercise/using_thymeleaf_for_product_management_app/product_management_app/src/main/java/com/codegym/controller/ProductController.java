@@ -17,7 +17,7 @@ public class ProductController {
 
     @GetMapping("")
     public String index(@RequestParam(value = "nameSearch", defaultValue = "") String nameSearch, Model model) {
-        model.addAttribute("product", productService.findAllSearch(nameSearch));
+        model.addAttribute("product", productService.findAll(nameSearch));
         return "/list";
     }
 
@@ -29,7 +29,6 @@ public class ProductController {
 
     @PostMapping("/save")
     public String save(Product product, RedirectAttributes redirectAttributes) {
-        product.setId((int) (Math.random() * 1000));
         productService.save(product);
         redirectAttributes.addFlashAttribute("success", "Add product successfully!");
         return "redirect:/product";
@@ -47,10 +46,15 @@ public class ProductController {
         return "redirect:/product";
     }
 
+    @GetMapping("/{id}/delete")
+    public String delete(@PathVariable int id, Model model) {
+        model.addAttribute("product", productService.findById(id));
+        return "/delete";
+    }
+
     @PostMapping("/delete")
-    public String delete(@RequestParam int idDelete, RedirectAttributes redirectAttributes) {
-        productService.remove(idDelete);
-        redirectAttributes.addFlashAttribute("success", "Delete product successfully!");
+    public String delete(Product product) {
+        productService.remove(product);
         return "redirect:/product";
     }
 

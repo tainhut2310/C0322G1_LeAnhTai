@@ -28,7 +28,6 @@ public class MusicController {
 
     @PostMapping("/save")
     public String save(Music music, RedirectAttributes redirectAttributes) {
-        music.setIdTheSong((int) (Math.random() * 1000));
         musicService.save(music);
         redirectAttributes.addFlashAttribute("success", "Add product successfully!");
         return "redirect:/music";
@@ -46,10 +45,15 @@ public class MusicController {
         return "redirect:/music";
     }
 
+    @GetMapping("/{id}/delete")
+    public String delete(@PathVariable int id, Model model) {
+        model.addAttribute("music", musicService.findOne(id));
+        return "/delete";
+    }
+
     @PostMapping("/delete")
-    public String delete(@RequestParam int idDelete, RedirectAttributes redirectAttributes) {
-        musicService.delete(idDelete);
-        redirectAttributes.addFlashAttribute("success", "Delete product successfully!");
+    public String delete(Music music) {
+        musicService.remove(music);
         return "redirect:/music";
     }
 }
