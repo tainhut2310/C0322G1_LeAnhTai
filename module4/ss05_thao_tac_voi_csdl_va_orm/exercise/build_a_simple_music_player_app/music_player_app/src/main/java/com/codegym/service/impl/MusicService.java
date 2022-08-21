@@ -29,8 +29,8 @@ public class MusicService implements IMusicService {
     }
 
     @Override
-    public void remove(Music music) {
-        musicRepository.remove(music);
+    public void remove(int id) {
+        musicRepository.remove(id);
     }
 
     @Override

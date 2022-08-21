@@ -52,8 +52,9 @@ public class MusicController {
     }
 
     @PostMapping("/delete")
-    public String delete(Music music) {
-        musicService.remove(music);
+    public String delete(@RequestParam int idDelete, RedirectAttributes redirectAttributes) {
+        musicService.remove(idDelete);
+        redirectAttributes.addFlashAttribute("success", "Delete product successfully!");
         return "redirect:/music";
     }
 }

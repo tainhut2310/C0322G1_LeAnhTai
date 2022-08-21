@@ -36,29 +36,12 @@ public class IMusicRepository implements com.codegym.repository.IMusicRepository
     }
 
     @Override
-    public void remove(Music music) {
-        Session session = null;
-        Transaction transaction = null;
-        try {
-            session = BaseRepository.sessionFactory.openSession();
-            transaction = session.beginTransaction();
-            Music origin = findOne(music.getIdTheSong());
-            origin.setNameOfTheSong(music.getNameOfTheSong());
-            origin.setPerformingArtist(music.getPerformingArtist());
-            origin.setKindOfMusic(music.getKindOfMusic());
-            origin.setSongFilePath(music.getSongFilePath());
-            session.delete(origin);
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (transaction != null) {
-                transaction.rollback();
-            }
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
+    public void remove(int id) {
+        Music music = findOne(id);
+        EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
+        entityTransaction.begin();
+        BaseRepository.entityManager.remove(music);
+        entityTransaction.commit();
     }
 
     @Override
