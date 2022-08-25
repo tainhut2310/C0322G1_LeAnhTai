@@ -6,6 +6,7 @@ import com.codegym.service.IBlogService;
 import com.codegym.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +33,9 @@ public class BlogController {
     @GetMapping(value = "")
     public String findAll(Model model, @PageableDefault(size = 2) Pageable pageable, @RequestParam Optional<String> keyword) {
         String keyWord = keyword.orElse("");
-
+//        for (Sort.Order name: pageable.getSort()) {
+//            model.addAttribute("sortVal",name.getProperty() );
+//        }
         model.addAttribute("blogs", blogService.findByName(keyWord, pageable));
         model.addAttribute("keyword", keyWord);
         return "blog/list";
