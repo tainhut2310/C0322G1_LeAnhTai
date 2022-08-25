@@ -28,31 +28,31 @@
                     <label class="form-label">First Name</label>
                 </div>
 
-                <div class="mb-4 text-danger" th:errors="*{firstName}"></div>
+                <div class="mb-4 text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
 
                 <div class="form-outline mb-4">
                     <input type="text" th:field="*{lastName}" class="form-control"/>
                     <label class="form-label">Last Name</label>
                 </div>
-                <div class="mb-4 text-danger" th:errors="*{lastName}"></div>
+                <div class="mb-4 text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
 
                 <div class="form-outline mb-4">
                     <input type="text" th:field="*{phoneNumber}" class="form-control"/>
                     <label class="form-label">Phone NUmber</label>
                 </div>
-                <div class="mb-4 text-danger" th:errors="*{phoneNumber}"></div>
+                <div class="mb-4 text-danger" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></div>
 
                 <div class="form-outline mb-4">
                     <input type="date" th:field="*{age}" class="form-control"/>
                     <label class="form-label">Age</label>
                 </div>
-                <div class="mb-4 text-danger" th:errors="*{age}"></div>
+                <div class="mb-4 text-danger" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
 
                 <div class="form-outline mb-4">
                     <input type="text" th:field="*{email}" class="form-control"/>
                     <label class="form-label">Email</label>
                 </div>
-                <div class="mb-4 text-danger" th:errors="*{email}"></div>
+                <div class="mb-4 text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
 
                 <button id="btnCreate" type="submit" class="btn btn-primary btn-block">
                     Create

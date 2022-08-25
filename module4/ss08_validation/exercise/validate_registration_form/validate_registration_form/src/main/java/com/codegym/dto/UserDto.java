@@ -7,24 +7,29 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class UserDto implements Validator {
     private Integer id;
-    @NotBlank
-    @Size(min = 5, max = 45, message = "Vui lòng không để trống.Tên có độ dài không dưới 5 ký tự và không quá 45 ký tự")
+
+    @NotBlank(message = "*Không được để trống")
+    @Size(min = 5, max = 45, message = "*Vui lòng không để trống.Tên có độ dài không dưới 5 ký tự và không quá 45 ký tự")
     private String firstName;
-    @NotBlank
-    @Size(min = 5, max = 45, message = "Vui lòng không để trống.Họ có độ dài không dưới 5 ký tự và không quá 45 ký tự")
+
+    @NotBlank(message = "*Không được để trống")
+    @Size(min = 5, max = 45, message = "*Vui lòng không để trống.Họ có độ dài không dưới 5 ký tự và không quá 45 ký tự")
     private String lastName;
+
     @Pattern(regexp = "^09[0|1][0-9]{7}$", message = "Số điện thoại bắt đầu 090 hoặc 091 gồm 10 số")
     private String phoneNumber;
-    @NotBlank(message = "Không được để trống")
+
+    @NotBlank(message = "*Không được để trống")
     private String age;
-    @Email(message = "Vui lòng nhập mail đúng định dạng")
+
+    @Email(message = "*Vui lòng nhập mail đúng định dạng")
+    @NotBlank(message = "*Không được để trống")
     private String email;
 
     public UserDto() {
@@ -92,16 +97,17 @@ public class UserDto implements Validator {
         return false;
     }
 
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
     @Override
     public void validate(Object target, Errors errors) {
         UserDto userDto = (UserDto) target;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.parse(userDto.age, formatter);
-        int current = Period.between(LocalDate.now(), localDate).getDays();
-        if(current < 18) {
+        int current = Period.between(localDate, LocalDate.now()).getYears();
+        System.out.println(current);
+        if (current < 18) {
             errors.rejectValue("age",
-                    "age.file",
-                    "Tuổi phải lớn hơn hoặc bằng 18");
+                    "age.file");
         }
     }
 }

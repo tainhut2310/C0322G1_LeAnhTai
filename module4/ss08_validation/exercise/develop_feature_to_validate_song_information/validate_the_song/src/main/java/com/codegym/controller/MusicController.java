@@ -24,7 +24,7 @@ public class MusicController {
     private IMusicService musicService;
 
     @GetMapping(value = "")
-    public String findAll(Model model, @PageableDefault(size = 2) Pageable pageable, @RequestParam Optional<String> keyword) {
+    public String findAll(Model model, @PageableDefault(size = 5) Pageable pageable, @RequestParam Optional<String> keyword) {
         String keyWord = keyword.orElse("");
 
         model.addAttribute("musics", musicService.findByName(keyWord, pageable));
@@ -34,14 +34,14 @@ public class MusicController {
 
     @GetMapping(value = "/create")
     public String showCreate(Model model) {
-        model.addAttribute("music", new MusicDto());
+        model.addAttribute("musicDto", new MusicDto());
         return "index";
     }
 
     @PostMapping(value = "/create")
     public String save(@ModelAttribute @Valid MusicDto musicDto, BindingResult bindingResult,
                        RedirectAttributes redirectAttributes) {
-        new MusicDto().validate(musicDto, bindingResult);
+
         if (bindingResult.hasErrors()) {
             return "index";
         }

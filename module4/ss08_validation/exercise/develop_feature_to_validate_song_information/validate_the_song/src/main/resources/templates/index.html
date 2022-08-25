@@ -22,25 +22,27 @@
     <div class="row w-50 mx-auto">
         <div class="col-lg-12">
             <h2>Create Music</h2>
-            <form action="/music/create" method="post" th:object="${music}">
+            <form action="/music/create" method="post" th:object="${musicDto}">
                 <div class="form-outline mb-4">
                     <input type="text" th:field="*{nameMusic}" class="form-control"/>
-                    <label class="form-label">First Name</label>
+                    <label class="form-label">Name Music</label>
                 </div>
 
-                <div class="mb-4" th:errors="*{nameMusic}"></div>
+                <div class="mb-4 text-danger" th:if="${#fields.hasErrors('nameMusic')}" th:errors="*{nameMusic}"></div>
 
                 <div class="form-outline mb-4">
                     <input type="text" th:field="*{performanceArtist}" class="form-control"/>
-                    <label class="form-label">Last Name</label>
+                    <label class="form-label">Performance Artist</label>
                 </div>
-                <div class="mb-4" th:errors="*{performanceArtist}"></div>
+                <div class="mb-4 text-danger" th:if="${#fields.hasErrors('performanceArtist')}"
+                     th:errors="*{performanceArtist}"></div>
 
                 <div class="form-outline mb-4">
                     <input type="text" th:field="*{kindOfMusic}" class="form-control"/>
-                    <label class="form-label">Phone NUmber</label>
+                    <label class="form-label">Kind Of Music</label>
                 </div>
-                <div class="mb-4" th:errors="*{kindOfMusic}"></div>
+                <div class="mb-4 text-danger" th:if="${#fields.hasErrors('kindOfMusic')}"
+                     th:errors="*{kindOfMusic}"></div>
 
                 <button id="btnCreate" type="submit" class="btn btn-primary btn-block">
                     Create

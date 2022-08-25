@@ -4,17 +4,30 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class MusicDto implements Validator {
     private Integer id;
-    @NotBlank(message = "Không được để trống")
-    @Size(max = 800, message = "Tên không được quá 800 ký tự")
+    @NotBlank(message = "*Không được để trống!")
+    @Size(max = 800, message = "*Tên không được quá 800 ký tự!")
+    @Pattern(regexp = "^[a-zỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôư" +
+            " ăêđâ0-9A-ZĐỲỌÁẦẢẤỜỄÀẠẰỆẾÝỘẬỐŨỨĨÕÚỮỊỖÌỀỂẨỚẶÒÙỒỢÃỤỦÍỸẮẪỰỈỎỪỶỞÓÉỬỴẲẸÈẼỔẴẺỠƠÔƯĂÊÂ ]+$",
+            message = "*Tên không được chứa các ký tự đặc biệt!")
     private String nameMusic;
-    @NotBlank(message = "Không được để trống")
-    @Size(max = 800, message = "Tên không được quá 800 ký tự")
+
+    @NotBlank(message = "*Không được để trống!")
+    @Size(max = 800, message = "*Tên không được quá 800 ký tự!")
+    @Pattern(regexp = "^[a-zỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹè" +
+            " ẽổẵẻỡơôưăêđâ0-9A-ZĐỲỌÁẦẢẤỜỄÀẠẰỆẾÝỘẬỐŨỨĨÕÚỮỊỖÌỀỂẨỚẶÒÙỒỢÃỤỦÍỸẮẪỰỈỎỪỶỞÓÉỬỴẲẸÈẼỔẴẺỠƠÔƯĂÊÂ]+$",
+            message = "*Tên không được chứa các ký tự đặc biệt!")
     private String performanceArtist;
-    @NotBlank(message = "Không được để trống")
+
+    @NotBlank(message = "*Không được để trống!")
+    @Size(max = 1000, message = "*Tên không được quá 1000 ký tự!")
+    @Pattern(regexp = "^[a-zỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹè" +
+            " ẽổẵẻỡơôưăêđâ0-9A-ZĐỲỌÁẦẢẤỜỄÀẠẰỆẾÝỘẬỐŨỨĨÕÚỮỊỖÌỀỂẨỚẶÒÙỒỢÃỤỦÍỸẮẪỰỈỎỪỶỞÓÉỬỴẲẸÈẼỔẴẺỠƠÔƯĂÊÂ,]+$",
+            message = "*Tên không được chứa các ký tự đặc biệt trừ dấu phẩy!")
     private String kindOfMusic;
 
     public MusicDto() {
@@ -72,18 +85,5 @@ public class MusicDto implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        MusicDto musicDto = (MusicDto) target;
-
-        if (!musicDto.nameMusic.matches("^([A-Z][a-z]*)+(\\\\s([A-Z][a-z]*))*$")) {
-            errors.rejectValue("nameMusic",
-                    "create.nameMusic",
-                    "Tên không được chứa ký tự đặc biệt");
-        }
-
-        if (!musicDto.performanceArtist.matches("^([A-Z][a-z]*)+(\\\\s([A-Z][a-z]*))*$")) {
-            errors.rejectValue("kindOfMusic",
-                    "create.kindOfMusic",
-                    "Tên không được chứa ký tự đặc biệt");
-        }
     }
 }

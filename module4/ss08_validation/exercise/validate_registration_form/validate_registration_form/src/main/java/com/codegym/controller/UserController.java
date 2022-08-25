@@ -10,6 +10,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -41,9 +42,11 @@ public class UserController {
     }
 
     @PostMapping(value = "/create")
-    public String save(@ModelAttribute @Valid UserDto userDto, BindingResult bindingResult,
+    public String save(@Validated @ModelAttribute UserDto userDto, BindingResult bindingResult,
                        RedirectAttributes redirectAttributes) {
-        new UserDto().validate(userDto, bindingResult);
+        if (!userDto.getAge().equals("")) {
+            new UserDto().validate(userDto, bindingResult);
+        }
         if (bindingResult.hasErrors()) {
             return "index";
         }
