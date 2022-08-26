@@ -1,5 +1,6 @@
 package com.codegym.dto;
 
+import com.codegym.until.DateTimeUntil;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -7,22 +8,20 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class UserDto implements Validator {
     private Integer id;
 
+    @Size(min = 5, max = 45, message = "*Tên có độ dài không dưới 5 ký tự và không quá 45 ký tự!")
     @NotBlank(message = "*Không được để trống")
-    @Size(min = 5, max = 45, message = "*Vui lòng không để trống.Tên có độ dài không dưới 5 ký tự và không quá 45 ký tự")
     private String firstName;
 
+    @Size(min = 5, max = 45, message = "*Họ có độ dài không dưới 5 ký tự và không quá 45 ký tự!")
     @NotBlank(message = "*Không được để trống")
-    @Size(min = 5, max = 45, message = "*Vui lòng không để trống.Họ có độ dài không dưới 5 ký tự và không quá 45 ký tự")
     private String lastName;
 
-    @Pattern(regexp = "^09[0|1][0-9]{7}$", message = "Số điện thoại bắt đầu 090 hoặc 091 gồm 10 số")
+    @Pattern(regexp = "^09[0|1][0-9]{7}$", message = "*Số điện thoại bắt đầu 090XXXXXXX hoặc 091XXXXXXX!")
     private String phoneNumber;
 
     @NotBlank(message = "*Không được để trống")
@@ -33,6 +32,15 @@ public class UserDto implements Validator {
     private String email;
 
     public UserDto() {
+    }
+
+    public UserDto(String firstName, String lastName, String phoneNumber, String age, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.age = age;
+        this.email = email;
+
     }
 
     public UserDto(Integer id, String firstName, String lastName, String phoneNumber, String age, String email) {
@@ -97,17 +105,14 @@ public class UserDto implements Validator {
         return false;
     }
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @Override
     public void validate(Object target, Errors errors) {
         UserDto userDto = (UserDto) target;
-        LocalDate localDate = LocalDate.parse(userDto.age, formatter);
-        int current = Period.between(localDate, LocalDate.now()).getYears();
-        System.out.println(current);
-        if (current < 18) {
-            errors.rejectValue("age",
-                    "age.file");
+        boolean result = DateTimeUntil.formatterAge(userDto.age, formatter);
+        if (result) {
+            errors.rejectValue("age", "age.file");
         }
     }
 }

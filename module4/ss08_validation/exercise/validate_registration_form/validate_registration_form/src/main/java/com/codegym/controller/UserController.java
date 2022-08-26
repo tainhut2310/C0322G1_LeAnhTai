@@ -47,6 +47,7 @@ public class UserController {
         if (!userDto.getAge().equals("")) {
             new UserDto().validate(userDto, bindingResult);
         }
+
         if (bindingResult.hasErrors()) {
             return "index";
         }

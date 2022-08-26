@@ -15,7 +15,6 @@ public class UserService implements IUserService {
     @Autowired
     private IUserRepository userRepository;
 
-
     @Override
     public Page<User> findByName(String name, Pageable pageable) {
         return userRepository.findByFirstNameContaining(name, pageable);
