@@ -44,10 +44,7 @@ public class UserController {
     @PostMapping(value = "/create")
     public String save(@Validated @ModelAttribute UserDto userDto, BindingResult bindingResult,
                        RedirectAttributes redirectAttributes) {
-        if (!userDto.getAge().equals("")) {
-            new UserDto().validate(userDto, bindingResult);
-        }
-
+        new UserDto().validate(userDto, bindingResult);
         if (bindingResult.hasErrors()) {
             return "index";
         }

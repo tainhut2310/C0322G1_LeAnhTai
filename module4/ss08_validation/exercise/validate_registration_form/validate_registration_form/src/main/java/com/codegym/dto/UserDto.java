@@ -21,7 +21,7 @@ public class UserDto implements Validator {
     @NotBlank(message = "*Không được để trống")
     private String lastName;
 
-    @Pattern(regexp = "^09[0|1][0-9]{7}$", message = "*Số điện thoại bắt đầu 090XXXXXXX hoặc 091XXXXXXX!")
+    @Pattern(regexp = "^09[0|1][0-9]{7}$", message = "*Số điện thoại bắt đầu 090xxxxxxx hoặc 091xxxxxxx!")
     private String phoneNumber;
 
     @NotBlank(message = "*Không được để trống")
@@ -110,9 +110,11 @@ public class UserDto implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         UserDto userDto = (UserDto) target;
-        boolean result = DateTimeUntil.formatterAge(userDto.age, formatter);
-        if (result) {
-            errors.rejectValue("age", "age.file");
+        if (!"".equals(userDto.age)) {
+            boolean result = DateTimeUntil.formatterAge(userDto.age, formatter);
+            if (result) {
+                errors.rejectValue("age", "age.file");
+            }
         }
     }
 }
