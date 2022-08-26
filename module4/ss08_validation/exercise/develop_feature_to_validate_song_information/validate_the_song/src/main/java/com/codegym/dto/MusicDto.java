@@ -17,7 +17,7 @@ public class MusicDto implements Validator {
     private String nameMusic;
 
     @NotBlank(message = "*Không được để trống!")
-    @Size(max = 800, message = "*Tên không được quá 800 ký tự!")
+    @Size(max = 300, message = "*Tên không được quá 800 ký tự!")
     @Pattern(regexp = "^[a-zỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹè" +
             " ẽổẵẻỡơôưăêđâ0-9A-ZĐỲỌÁẦẢẤỜỄÀẠẰỆẾÝỘẬỐŨỨĨÕÚỮỊỖÌỀỂẨỚẶÒÙỒỢÃỤỦÍỸẮẪỰỈỎỪỶỞÓÉỬỴẲẸÈẼỔẴẺỠƠÔƯĂÊÂ]+$",
             message = "*Tên không được chứa các ký tự đặc biệt!")
