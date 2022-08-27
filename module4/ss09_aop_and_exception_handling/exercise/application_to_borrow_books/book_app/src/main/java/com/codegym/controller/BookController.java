@@ -36,23 +36,22 @@ public class BookController {
     }
 
     @PostMapping(value = "/edit")
-    public String update(Book book) throws Exception {
-        bookService.save(book);
-        Long rentalCode = (long) Math.floor(Math.random() * 89999) + 10000;
-        Optional<Book> bookOptional = bookService.findById(book.getId());
-        if (bookOptional.get().getQuantity() <= 0) {
-            throw new Exception();
+    public String update(Book book) throws NullPointerException {
+        if (book.getQuantity() == 0) {
+            throw new NullPointerException();
         } else {
+            bookService.save(book);
+            Long rentalCode = (long) Math.floor(Math.random() * 89999) + 10000;
             libraryService.save(new Library(rentalCode, book));
         }
         return "redirect:/book";
     }
 
     @PostMapping(value = "/pay")
-    public String payBook(@RequestParam Long rentalCode) throws NullPointerException {
+    public String payBook(@RequestParam Long rentalCode) throws IllegalArgumentException {
         Optional<Library> library = libraryService.findByRentalCode(rentalCode);
-        if (library.get().getId() == null) {
-            throw new NullPointerException();
+        if (library.get().getRentalCode() == null) {
+            throw new IllegalArgumentException();
         } else {
             Optional<Book> book = bookService.findById(library.get().getBook().getId());
             book.get().setQuantity(book.get().getQuantity() + 1);
@@ -61,12 +60,12 @@ public class BookController {
         return "redirect:/book";
     }
 
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = NullPointerException.class)
     public String goBookError() {
         return "error";
     }
 
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = IllegalArgumentException.class)
     public String goError() {
         return "error2";
     }
