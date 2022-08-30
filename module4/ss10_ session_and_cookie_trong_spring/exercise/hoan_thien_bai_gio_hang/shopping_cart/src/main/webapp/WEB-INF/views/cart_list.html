@@ -18,14 +18,28 @@
                 <th>Quantity</th>
             </tr>
             <tr th:each="products: ${cart.products}">
-                <td th:text="${products.getKey().name}"></td>
+                <td th:text="${products.key.name}"></td>
                 <td>
                     <img th:src="${products.key.image}" style="width: 70px; height: auto">
                 </td>
-                <td th:text="${products.getKey().price}"></td>
-                <td th:text="${products.value}"></td>
+                <td th:text="${products.key.price}"></td>
+                <td>
+                    <a id="decrease_button" th:href="@{/shop/add/__${products.key.id}__(action='reduce')}"
+                       th:text="${'-'}"></a>
+                    <span th:text="${products.value}"></span>
+                    <a id="increase_button" th:href="@{/shop/add/__${products.key.id}__(action='more')}"
+                       th:text="${'+'}"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td th:text="${cart.countTotalPayment()}"></td>
+                <td></td>
             </tr>
         </table>
+        <a class="btn btn-success" role="button" th:href="@{/shop/pay}">
+            Thanh toán</a>
         <div class="alert alert-warning" role="alert" th:if="${cart == null || cart.getProducts().size() == 0}">
             Cart Empty
         </div>

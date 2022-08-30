@@ -34,12 +34,20 @@
                 <div class="card" style="width: 18rem;">
                     <img th:src="@{${products.image}}">
                     <div class="card-body">
+                        <td th:text="${products.price}"></td>
                         <td th:text="${products.name}"></td>
                     </div>
-                    <div class="card-body">
-                        <td th:text="${products.price}"></td>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-8">
+                                <a class="btn btn-success" role="button" th:href="@{/shop/detail/{id}(id=${products.id})}">
+                                    Chi tiết</a>
+                            </div>
+                            <div class="col-4">
+                                <a class="btn btn-success" role="button" th:href="@{/shop/add/{id}(id=${products.id})}">+</a>
+                            </div>
+                        </div>
                     </div>
-                    <a class="btn btn-success" role="button" th:href="@{/shop/add/{id}(id=${products.id})}">+</a>
                 </div>
             </a>
         </div>

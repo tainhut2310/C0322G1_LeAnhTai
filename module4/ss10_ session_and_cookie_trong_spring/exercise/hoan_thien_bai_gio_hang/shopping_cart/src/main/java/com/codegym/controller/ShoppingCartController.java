@@ -2,6 +2,8 @@ package com.codegym.controller;
 
 
 import com.codegym.model.Cart;
+import com.codegym.service.ICartService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,6 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ShoppingCartController {
+
+    @Autowired
+    private ICartService cartService;
 
     @ModelAttribute("cart")
     public Cart setupCart() {

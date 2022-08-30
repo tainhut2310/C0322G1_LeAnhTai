@@ -24,12 +24,12 @@ public class Cart {
         this.products = products;
     }
 
-    public void addProduct(ProductDto productDto) {
-        if (products.containsKey(productDto)) {
-            Integer currentValue = products.get(productDto);
-            products.replace(productDto, currentValue + 1);
-        } else {
-            products.put(productDto, 1);
+    public Float countTotalPayment() {
+        float payment = 0;
+        for (Map.Entry<ProductDto, Integer> entry : products.entrySet()) {
+            payment += entry.getKey().getPrice() * (float) entry.getValue();
         }
+        return payment;
     }
+
 }
