@@ -51,7 +51,7 @@ public class CustomerController {
         return "redirect:/customer";
     }
 
-    @GetMapping("/{id}/edit")
+    @GetMapping("/edit/{id}")
     public String showUpdate(@PathVariable Integer id, Model model) {
         model.addAttribute("customer", customerService.findById(id));
         return "customer/edit";

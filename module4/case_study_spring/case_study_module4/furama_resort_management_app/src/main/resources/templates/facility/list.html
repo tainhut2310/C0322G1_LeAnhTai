@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{layout-table :: link-style}"></head>
+<head th:replace="~{layout-list :: link-style}"></head>
 <body>
-<div th:replace="~{layout :: advertisement}"></div>
-<div th:replace="~{layout :: header}"></div>
+<div th:replace="~{layout-action :: advertisement}"></div>
+<div th:replace="~{layout-action :: header}"></div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
@@ -66,7 +66,7 @@
                                         <td th:text="${facilities.rentType.name}"></td>
                                         <td th:text="${facilities.facilityType.name}"></td>
                                         <td>
-                                            <a th:href="@{/facility/{id}/edit(id=${facilities.id})}" class="edit"><i
+                                            <a th:href="@{/facility/edit/{id}(id=${facilities.id})}" class="edit"><i
                                                     class="material-icons"
                                                     data-toggle="tooltip"
                                                     title="Edit">&#xE254;</i></a>
@@ -84,8 +84,7 @@
                             <div>
                                 <a th:href="@{/facility(page=${facilities.number - 1}, keyword = ${keyword})}"
                                    th:if="${facilities.hasPrevious()}">Previous</a>
-                                <span th:text="${facilities.number + 1}"></span>/<span
-                                    th:text="${facilities.totalPages}"></span>
+                                <span th:text="${facilities.number + 1}"></span>/<span th:text="${facilities.totalPages}"></span>
                                 <a th:href="@{/facility(page=${facilities.number + 1}, keyword = ${keyword})}"
                                    th:if="${facilities.hasNext()}">Next</a>
                             </div>
@@ -97,27 +96,29 @@
     </div>
 </div>
 
-<div th:replace="~{layout :: footer}"></div>
+<div th:replace="~{layout-action :: footer}"></div>
 
-<div class="modal fade" id="deleteFacilityModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<%-- DeleteModal--%>
+<div id="deleteFacilityModal" class="modal fade">
     <div class="modal-dialog">
-        <form th:action="@{/facility/delete}" method="post">
-            <div class="modal-content">
+        <div class="modal-content">
+            <form th:action="@{/facility/delete}" method="post">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h4 class="modal-title">Delete Customer</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" hidden name="idDelete" id="idDelete">
-                    <span>Bạn có muốn xóa chủ đề: </span>
+                    <span>Bạn có chắc chắn muốn xóa cơ sở:  </span>
                     <span id="nameDelete"></span>
+                    <input type="text" hidden name="idDelete" id="idDelete">
+                    <p class="text-warning"><small>Hành động này không thể hoàn tác.</small></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Delete</button>
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-danger" value="Delete">
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 

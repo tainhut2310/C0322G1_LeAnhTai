@@ -1,56 +1,69 @@
-package model;
+package com.codegym.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "contract_detail")
 public class ContractDetail {
-    private int id;
-    private int contractId;
-    private int attachFacilityId;
-    private int quantity;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "contract_id", referencedColumnName = "id")
+    private Contract contract;
+
+    @ManyToOne
+    @JoinColumn(name = "attach_facility_id", referencedColumnName = "id")
+    private AttachFacility attachFacility;
+
+    private Integer quantity;
 
     public ContractDetail() {
     }
 
-    public ContractDetail(int contractId, int attachFacilityId, int quantity) {
-        this.contractId = contractId;
-        this.attachFacilityId = attachFacilityId;
+    public ContractDetail(Contract contract, AttachFacility attachFacility, Integer quantity) {
+        this.contract = contract;
+        this.attachFacility = attachFacility;
         this.quantity = quantity;
     }
 
-    public ContractDetail(int id, int contractId, int attachFacilityId, int quantity) {
+    public ContractDetail(Integer id, Contract contract, AttachFacility attachFacility, Integer quantity) {
         this.id = id;
-        this.contractId = contractId;
-        this.attachFacilityId = attachFacilityId;
+        this.contract = contract;
+        this.attachFacility = attachFacility;
         this.quantity = quantity;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getContractId() {
-        return contractId;
+    public Contract getContract() {
+        return contract;
     }
 
-    public void setContractId(int contractId) {
-        this.contractId = contractId;
+    public void setContract(Contract contract) {
+        this.contract = contract;
     }
 
-    public int getAttachFacilityId() {
-        return attachFacilityId;
+    public AttachFacility getAttachFacility() {
+        return attachFacility;
     }
 
-    public void setAttachFacilityId(int attachFacilityId) {
-        this.attachFacilityId = attachFacilityId;
+    public void setAttachFacility(AttachFacility attachFacility) {
+        this.attachFacility = attachFacility;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 }

@@ -1,28 +1,48 @@
-package model;
+package com.codegym.model;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "attach_facility")
 public class AttachFacility {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String name;
-    private double cost;
+    private Double cost;
     private String unit;
     private String status;
+
+    @OneToMany(mappedBy = "attachFacility")
+    private List<ContractDetail> contractDetails;
 
     public AttachFacility() {
     }
 
-    public AttachFacility(int id, String name, double cost, String unit, String status) {
+    public AttachFacility(String name, Double cost, String unit, String status, List<ContractDetail> contractDetails) {
+        this.name = name;
+        this.cost = cost;
+        this.unit = unit;
+        this.status = status;
+        this.contractDetails = contractDetails;
+    }
+
+    public AttachFacility(Integer id, String name, Double cost, String unit, String status, List<ContractDetail> contractDetails) {
         this.id = id;
         this.name = name;
         this.cost = cost;
         this.unit = unit;
         this.status = status;
+        this.contractDetails = contractDetails;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -34,11 +54,11 @@ public class AttachFacility {
         this.name = name;
     }
 
-    public double getCost() {
+    public Double getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(Double cost) {
         this.cost = cost;
     }
 
@@ -56,5 +76,13 @@ public class AttachFacility {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public List<ContractDetail> getContractDetails() {
+        return contractDetails;
+    }
+
+    public void setContractDetails(List<ContractDetail> contractDetails) {
+        this.contractDetails = contractDetails;
     }
 }

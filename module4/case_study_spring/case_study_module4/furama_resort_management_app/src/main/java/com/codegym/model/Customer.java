@@ -1,6 +1,7 @@
 package com.codegym.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -20,6 +21,7 @@ public class Customer {
 
     @Column(name = "phone_number")
     private String phoneNumber;
+
     private String email;
     private String address;
 
@@ -27,10 +29,13 @@ public class Customer {
     @JoinColumn(name = "customer_type_id", referencedColumnName = "id")
     private CustomerType customerType;
 
+    @OneToMany(mappedBy = "customer")
+    private List<Contract> contracts;
+
     public Customer() {
     }
 
-    public Customer(String name, String dateOfBirthday, Integer gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType) {
+    public Customer(String name, String dateOfBirthday, Integer gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType, List<Contract> contracts) {
         this.name = name;
         this.dateOfBirthday = dateOfBirthday;
         this.gender = gender;
@@ -39,9 +44,10 @@ public class Customer {
         this.email = email;
         this.address = address;
         this.customerType = customerType;
+        this.contracts = contracts;
     }
 
-    public Customer(Integer id, String name, String dateOfBirthday, Integer gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType) {
+    public Customer(Integer id, String name, String dateOfBirthday, Integer gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType, List<Contract> contracts) {
         this.id = id;
         this.name = name;
         this.dateOfBirthday = dateOfBirthday;
@@ -51,6 +57,7 @@ public class Customer {
         this.email = email;
         this.address = address;
         this.customerType = customerType;
+        this.contracts = contracts;
     }
 
     public Integer getId() {
@@ -124,4 +131,13 @@ public class Customer {
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
     }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
+    }
 }
+

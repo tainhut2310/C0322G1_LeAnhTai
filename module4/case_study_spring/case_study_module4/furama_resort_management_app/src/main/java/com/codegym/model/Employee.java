@@ -1,31 +1,54 @@
-package model;
+package com.codegym.model;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table
 public class Employee {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String name;
+
+    @Column(name = "date_of_birthday")
     private String dateOfBirthday;
+
+    @Column(name = "id_card")
     private String idCard;
-    private double salary;
+
+    private Double salary;
+
+    @Column(name = "phone_number")
     private String phoneNumber;
+
     private String email;
     private String address;
-    private int positionId;
-    private int educationDegreeId;
-    private int divisionId;
+
+    @ManyToOne
+    @JoinColumn(name = "position_id", referencedColumnName = "id")
+    private Position position;
+
+    @ManyToOne
+    @JoinColumn(name = "education_degree_id", referencedColumnName = "id")
+    private EducationDegree educationDegree;
+
+    @ManyToOne
+    @JoinColumn(name = "division_id", referencedColumnName = "id")
+    private Division division;
+
+    @ManyToOne
+    @JoinColumn(name = "username", referencedColumnName = "username")
+    private User user;
+
+    @OneToMany(mappedBy = "employee")
+    private List<Contract> contracts;
 
     public Employee() {
     }
 
-    public Employee(String name,
-                    String dateOfBirthday,
-                    String idCard,
-                    double salary,
-                    String phoneNumber,
-                    String email,
-                    String address,
-                    int positionId,
-                    int educationDegreeId,
-                    int divisionId) {
+    public Employee(String name, String dateOfBirthday, String idCard, Double salary, String phoneNumber, String email, String address, Position position, EducationDegree educationDegree, Division division, User user, List<Contract> contracts) {
         this.name = name;
         this.dateOfBirthday = dateOfBirthday;
         this.idCard = idCard;
@@ -33,22 +56,14 @@ public class Employee {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-        this.positionId = positionId;
-        this.educationDegreeId = educationDegreeId;
-        this.divisionId = divisionId;
+        this.position = position;
+        this.educationDegree = educationDegree;
+        this.division = division;
+        this.user = user;
+        this.contracts = contracts;
     }
 
-    public Employee(int id,
-                    String name,
-                    String dateOfBirthday,
-                    String idCard,
-                    double salary,
-                    String phoneNumber,
-                    String email,
-                    String address,
-                    int positionId,
-                    int educationDegreeId,
-                    int divisionId) {
+    public Employee(Integer id, String name, String dateOfBirthday, String idCard, Double salary, String phoneNumber, String email, String address, Position position, EducationDegree educationDegree, Division division, User user, List<Contract> contracts) {
         this.id = id;
         this.name = name;
         this.dateOfBirthday = dateOfBirthday;
@@ -57,16 +72,18 @@ public class Employee {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-        this.positionId = positionId;
-        this.educationDegreeId = educationDegreeId;
-        this.divisionId = divisionId;
+        this.position = position;
+        this.educationDegree = educationDegree;
+        this.division = division;
+        this.user = user;
+        this.contracts = contracts;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -94,11 +111,11 @@ public class Employee {
         this.idCard = idCard;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
@@ -126,27 +143,43 @@ public class Employee {
         this.address = address;
     }
 
-    public int getPositionId() {
-        return positionId;
+    public Position getPosition() {
+        return position;
     }
 
-    public void setPositionId(int positionId) {
-        this.positionId = positionId;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
-    public int getEducationDegreeId() {
-        return educationDegreeId;
+    public EducationDegree getEducationDegree() {
+        return educationDegree;
     }
 
-    public void setEducationDegreeId(int educationDegreeId) {
-        this.educationDegreeId = educationDegreeId;
+    public void setEducationDegree(EducationDegree educationDegree) {
+        this.educationDegree = educationDegree;
     }
 
-    public int getDivisionId() {
-        return divisionId;
+    public Division getDivision() {
+        return division;
     }
 
-    public void setDivisionId(int divisionId) {
-        this.divisionId = divisionId;
+    public void setDivision(Division division) {
+        this.division = division;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 }

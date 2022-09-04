@@ -29,12 +29,12 @@ public class FacilityController {
     @Autowired
     private IRentTypeService rentTypeService;
 
-    @ModelAttribute
+    @ModelAttribute("facilityTypes")
     public List<FacilityType> facilityTypes() {
         return facilityTypeService.findAll();
     }
 
-    @ModelAttribute
+    @ModelAttribute("rentTypes")
     public List<RentType> rentTypes() {
         return rentTypeService.findAll();
     }
@@ -56,8 +56,50 @@ public class FacilityController {
 
     @PostMapping(value = "/create")
     public String create(Facility facility, RedirectAttributes redirectAttributes) {
+        if (facility.getFacilityType().getId() == 1) {
+            facility.setFacilityFree(null);
+        } else if (facility.getFacilityType().getId() == 2) {
+            facility.setPoolArea(null);
+            facility.setFacilityFree(null);
+        } else {
+            facility.setStandardRoom(null);
+            facility.setDescriptionOtherConvenience(null);
+            facility.setPoolArea(null);
+            facility.setNumberOfFloors(null);
+        }
         facilityService.save(facility);
         redirectAttributes.addFlashAttribute("message", "Register successfully!");
+        return "redirect:/facility";
+    }
+
+    @GetMapping(value = "/edit/{id}")
+    public String showUpdate(@PathVariable Integer id, Model model) {
+        model.addAttribute("facility", facilityService.findById(id));
+        return "facility/edit";
+    }
+
+    @PostMapping(value = "/edit")
+    public String update(Facility facility, RedirectAttributes redirectAttributes) {
+        if (facility.getFacilityType().getId() == 1) {
+            facility.setFacilityFree(null);
+        } else if (facility.getFacilityType().getId() == 2) {
+            facility.setPoolArea(null);
+            facility.setFacilityFree(null);
+        } else {
+            facility.setStandardRoom(null);
+            facility.setDescriptionOtherConvenience(null);
+            facility.setPoolArea(null);
+            facility.setNumberOfFloors(null);
+        }
+        facilityService.save(facility);
+        redirectAttributes.addFlashAttribute("message", "Edit successfully!");
+        return "redirect:/facility";
+    }
+
+    @PostMapping(value = "/delete")
+    public String remove(@RequestParam Integer idDelete, RedirectAttributes redirectAttributes) {
+        this.facilityService.remove(idDelete);
+        redirectAttributes.addFlashAttribute("message", "Delete successfully!");
         return "redirect:/facility";
     }
 }

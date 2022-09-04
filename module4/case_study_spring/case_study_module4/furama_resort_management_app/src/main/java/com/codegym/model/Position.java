@@ -1,22 +1,34 @@
-package model;
+package com.codegym.model;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Position {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
+
+
+    @OneToMany(mappedBy = "position")
+    private List<Employee> employees;
 
     public Position() {
     }
 
-    public Position(int id, String name) {
+    public Position(Integer id, String name, List<Employee> employees) {
         this.id = id;
         this.name = name;
+        this.employees = employees;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -26,5 +38,13 @@ public class Position {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }

@@ -1,22 +1,33 @@
-package model;
+package com.codegym.model;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
 public class Division {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
+
+    @OneToMany(mappedBy = "division")
+    private List<Employee> employees;
 
     public Division() {
     }
 
-    public Division(int id, String name) {
+    public Division(Integer id, String name, List<Employee> employees) {
         this.id = id;
         this.name = name;
+        this.employees = employees;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -26,5 +37,13 @@ public class Division {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }

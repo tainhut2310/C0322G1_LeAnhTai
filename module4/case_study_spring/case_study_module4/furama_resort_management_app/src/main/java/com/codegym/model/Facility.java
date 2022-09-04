@@ -94,7 +94,7 @@ public class Facility {
         this.area = area;
     }
 
-    public double getCost() {
+    public Double getCost() {
         return cost;
     }
 
