@@ -64,8 +64,8 @@
                     <th scope="col">Category</th>
                     <th scope="col">Writer</th>
                     <th scope="col">Date Submitted</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th th:if="${userInfo.equals('ROLE_ADMIN')}" scope="col">Edit</th>
+                    <th th:if="${userInfo.equals('ROLE_ADMIN')}" scope="col">Delete</th>
                     <th scope="col">View Content</th>
                 </tr>
                 </thead>
@@ -78,12 +78,12 @@
                         <td th:text="${blog.category.name}"></td>
                         <td th:text="${blog.writer}"></td>
                         <td th:text="${blog.dateSubmitted}"></td>
-                        <td>
+                        <td th:if="${userInfo.equals('ROLE_ADMIN')}">
                             <a th:href="@{/blog/{id}/edit(id=${blog.id})}">
                                 Edit
                             </a>
                         </td>
-                        <td>
+                        <td th:if="${userInfo.equals('ROLE_ADMIN')}">
                             <button th:attr="onclick=|infoDelete('${blog.id}','${blog.title}')|"
                                     data-bs-toggle="modal" data-bs-target="#deleteModal">
                                 Delete
