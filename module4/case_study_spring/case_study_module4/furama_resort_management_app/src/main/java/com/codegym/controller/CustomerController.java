@@ -1,17 +1,22 @@
 package com.codegym.controller;
 
+import com.codegym.dto.CustomerDto;
 import com.codegym.model.Customer;
 import com.codegym.model.CustomerType;
 import com.codegym.service.ICustomerService;
 import com.codegym.service.ICustomerTypeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,22 +35,29 @@ public class CustomerController {
     }
 
     @GetMapping(value = "")
-    public String findAll(Model model, @PageableDefault(size = 5) Pageable pageable, @RequestParam Optional<String> keyword) {
-        String keyWord = keyword.orElse("");
+    public String findAll(Model model, @PageableDefault(size = 5) Pageable pageable, @RequestParam Optional<String> nameSearch) {
+        String name = nameSearch.orElse("");
 
-        model.addAttribute("customers", customerService.findByName(keyWord, pageable));
-        model.addAttribute("keyword", keyWord);
+        model.addAttribute("customers", customerService.findByName(name, pageable));
+        model.addAttribute("name", name);
         return "customer/list";
     }
 
     @GetMapping(value = "/create")
     public String showCreate(Model model) {
-        model.addAttribute("customer", new Customer());
+        model.addAttribute("customerDto", new CustomerDto());
         return "customer/create";
     }
 
     @PostMapping(value = "/create")
-    public String save(Customer customer, RedirectAttributes redirectAttributes) {
+    public String save(@ModelAttribute @Valid CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+
+        new CustomerDto().validate(customerDto, bindingResult);
+        if (bindingResult.hasErrors()) {
+            return "customer/create";
+        }
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(customerDto, customer);
         customerService.save(customer);
         redirectAttributes.addFlashAttribute("message", "Register successfully!");
         return "redirect:/customer";

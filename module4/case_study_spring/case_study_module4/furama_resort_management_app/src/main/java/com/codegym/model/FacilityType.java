@@ -14,15 +14,6 @@ public class FacilityType {
     @OneToMany(mappedBy = "facilityType")
     private List<Facility> facilityList;
 
-    public FacilityType() {
-    }
-
-    public FacilityType(Integer id, String name, List<Facility> facilityList) {
-        this.id = id;
-        this.name = name;
-        this.facilityList = facilityList;
-    }
-
     public Integer getId() {
         return id;
     }

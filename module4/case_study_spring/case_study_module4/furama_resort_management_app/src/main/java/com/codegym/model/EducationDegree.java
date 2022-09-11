@@ -13,15 +13,6 @@ public class EducationDegree {
     @OneToMany(mappedBy = "educationDegree")
     private List<Employee> employees;
 
-    public EducationDegree() {
-    }
-
-    public EducationDegree(Integer id, String name, List<Employee> employees) {
-        this.id = id;
-        this.name = name;
-        this.employees = employees;
-    }
-
     public Integer getId() {
         return id;
     }

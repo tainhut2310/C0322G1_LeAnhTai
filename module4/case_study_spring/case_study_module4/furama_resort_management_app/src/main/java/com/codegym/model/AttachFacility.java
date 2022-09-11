@@ -18,26 +18,6 @@ public class AttachFacility {
     @OneToMany(mappedBy = "attachFacility")
     private List<ContractDetail> contractDetails;
 
-    public AttachFacility() {
-    }
-
-    public AttachFacility(String name, Double cost, String unit, String status, List<ContractDetail> contractDetails) {
-        this.name = name;
-        this.cost = cost;
-        this.unit = unit;
-        this.status = status;
-        this.contractDetails = contractDetails;
-    }
-
-    public AttachFacility(Integer id, String name, Double cost, String unit, String status, List<ContractDetail> contractDetails) {
-        this.id = id;
-        this.name = name;
-        this.cost = cost;
-        this.unit = unit;
-        this.status = status;
-        this.contractDetails = contractDetails;
-    }
-
     public Integer getId() {
         return id;
     }

@@ -15,15 +15,6 @@ public class Position {
     @OneToMany(mappedBy = "position")
     private List<Employee> employees;
 
-    public Position() {
-    }
-
-    public Position(Integer id, String name, List<Employee> employees) {
-        this.id = id;
-        this.name = name;
-        this.employees = employees;
-    }
-
     public Integer getId() {
         return id;
     }

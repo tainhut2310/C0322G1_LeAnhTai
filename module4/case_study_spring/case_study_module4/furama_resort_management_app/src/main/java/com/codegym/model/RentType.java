@@ -15,15 +15,6 @@ public class RentType {
     @OneToMany(mappedBy = "rentType")
     private List<Facility> facilityList;
 
-    public RentType() {
-    }
-
-    public RentType(Integer id, String name, List<Facility> facilityList) {
-        this.id = id;
-        this.name = name;
-        this.facilityList = facilityList;
-    }
-
     public Integer getId() {
         return id;
     }

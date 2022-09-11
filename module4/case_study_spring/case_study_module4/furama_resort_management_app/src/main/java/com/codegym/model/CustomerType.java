@@ -14,15 +14,6 @@ public class CustomerType {
     @OneToMany(mappedBy = "customerType")
     private List<Customer> customerList;
 
-    public CustomerType() {
-    }
-
-    public CustomerType(Integer id, String name, List<Customer> customerList) {
-        this.id = id;
-        this.name = name;
-        this.customerList = customerList;
-    }
-
     public Integer getId() {
         return id;
     }

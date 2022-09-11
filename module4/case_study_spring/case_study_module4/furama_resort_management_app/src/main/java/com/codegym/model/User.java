@@ -18,16 +18,6 @@ public class User {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "username"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    public User() {
-    }
-
-    public User(String username, String password, List<Employee> employees, Set<Role> roles) {
-        this.username = username;
-        this.password = password;
-        this.employees = employees;
-        this.roles = roles;
-    }
-
     public String getUsername() {
         return username;
     }

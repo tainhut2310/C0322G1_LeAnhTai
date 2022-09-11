@@ -14,15 +14,6 @@ public class Division {
     @OneToMany(mappedBy = "division")
     private List<Employee> employees;
 
-    public Division() {
-    }
-
-    public Division(Integer id, String name, List<Employee> employees) {
-        this.id = id;
-        this.name = name;
-        this.employees = employees;
-    }
-
     public Integer getId() {
         return id;
     }

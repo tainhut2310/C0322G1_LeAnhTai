@@ -15,6 +15,7 @@ public class Contract {
 
     @Column(name = "end_date")
     private String endDate;
+
     private Double deposit;
 
     @ManyToOne
@@ -29,32 +30,8 @@ public class Contract {
     @JoinColumn(name = "facility_id", referencedColumnName = "id")
     private Facility facility;
 
-    @OneToMany(mappedBy = "contract")
+    @OneToMany(mappedBy = "contract", cascade = CascadeType.ALL)
     private List<ContractDetail> contractDetails;
-
-    public Contract() {
-    }
-
-    public Contract(String startDate, String endDate, Double deposit, Employee employee, Customer customer, Facility facility, List<ContractDetail> contractDetails) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.deposit = deposit;
-        this.employee = employee;
-        this.customer = customer;
-        this.facility = facility;
-        this.contractDetails = contractDetails;
-    }
-
-    public Contract(Integer id, String startDate, String endDate, Double deposit, Employee employee, Customer customer, Facility facility, List<ContractDetail> contractDetails) {
-        this.id = id;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.deposit = deposit;
-        this.employee = employee;
-        this.customer = customer;
-        this.facility = facility;
-        this.contractDetails = contractDetails;
-    }
 
     public Integer getId() {
         return id;

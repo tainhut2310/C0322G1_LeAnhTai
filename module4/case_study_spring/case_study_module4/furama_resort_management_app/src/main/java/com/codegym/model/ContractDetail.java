@@ -9,7 +9,7 @@ public class ContractDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "contract_id", referencedColumnName = "id")
     private Contract contract;
 
@@ -18,22 +18,6 @@ public class ContractDetail {
     private AttachFacility attachFacility;
 
     private Integer quantity;
-
-    public ContractDetail() {
-    }
-
-    public ContractDetail(Contract contract, AttachFacility attachFacility, Integer quantity) {
-        this.contract = contract;
-        this.attachFacility = attachFacility;
-        this.quantity = quantity;
-    }
-
-    public ContractDetail(Integer id, Contract contract, AttachFacility attachFacility, Integer quantity) {
-        this.id = id;
-        this.contract = contract;
-        this.attachFacility = attachFacility;
-        this.quantity = quantity;
-    }
 
     public Integer getId() {
         return id;

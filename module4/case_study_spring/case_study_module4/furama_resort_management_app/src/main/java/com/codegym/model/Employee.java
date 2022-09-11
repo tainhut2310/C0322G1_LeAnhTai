@@ -42,42 +42,8 @@ public class Employee {
     @JoinColumn(name = "username", referencedColumnName = "username")
     private User user;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Contract> contracts;
-
-    public Employee() {
-    }
-
-    public Employee(String name, String dateOfBirthday, String idCard, Double salary, String phoneNumber, String email, String address, Position position, EducationDegree educationDegree, Division division, User user, List<Contract> contracts) {
-        this.name = name;
-        this.dateOfBirthday = dateOfBirthday;
-        this.idCard = idCard;
-        this.salary = salary;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.position = position;
-        this.educationDegree = educationDegree;
-        this.division = division;
-        this.user = user;
-        this.contracts = contracts;
-    }
-
-    public Employee(Integer id, String name, String dateOfBirthday, String idCard, Double salary, String phoneNumber, String email, String address, Position position, EducationDegree educationDegree, Division division, User user, List<Contract> contracts) {
-        this.id = id;
-        this.name = name;
-        this.dateOfBirthday = dateOfBirthday;
-        this.idCard = idCard;
-        this.salary = salary;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.position = position;
-        this.educationDegree = educationDegree;
-        this.division = division;
-        this.user = user;
-        this.contracts = contracts;
-    }
 
     public Integer getId() {
         return id;

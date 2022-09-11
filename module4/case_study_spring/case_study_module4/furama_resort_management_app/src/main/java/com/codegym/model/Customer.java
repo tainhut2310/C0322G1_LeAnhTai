@@ -29,36 +29,8 @@ public class Customer {
     @JoinColumn(name = "customer_type_id", referencedColumnName = "id")
     private CustomerType customerType;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Contract> contracts;
-
-    public Customer() {
-    }
-
-    public Customer(String name, String dateOfBirthday, Integer gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType, List<Contract> contracts) {
-        this.name = name;
-        this.dateOfBirthday = dateOfBirthday;
-        this.gender = gender;
-        this.idCard = idCard;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.customerType = customerType;
-        this.contracts = contracts;
-    }
-
-    public Customer(Integer id, String name, String dateOfBirthday, Integer gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType, List<Contract> contracts) {
-        this.id = id;
-        this.name = name;
-        this.dateOfBirthday = dateOfBirthday;
-        this.gender = gender;
-        this.idCard = idCard;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.customerType = customerType;
-        this.contracts = contracts;
-    }
 
     public Integer getId() {
         return id;

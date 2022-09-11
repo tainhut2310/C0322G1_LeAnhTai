@@ -1,6 +1,5 @@
 insert into customer_type (`name`) values ('Diamond'), ('Platinium'), ('Gold'), ('Silver'), ('Member');
 
-
 insert into customer value
 (1, '23 Nguyễn Hoàng, Đà Nẵng', '1970-11-07', 'thihao07@gmail.com', 0, '643431213', 'Nguyễn Thị Hào', '0945423362', 5),
 (2, 'K77/22 Thái Phiên, Quảng Trị', '1992-08-08', 'xuandieu92@gmail.com', 0, '865342123', 'Phạm Xuân Diệu', '0954333333', 3),
