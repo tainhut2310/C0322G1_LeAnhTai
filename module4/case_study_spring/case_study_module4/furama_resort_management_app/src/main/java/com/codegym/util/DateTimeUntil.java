@@ -5,8 +5,16 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class DateTimeUntil {
-    public static boolean formatterAge(String age, DateTimeFormatter formatter) {
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    public static boolean formatterAge(String age) {
         LocalDate localDate = LocalDate.parse(age, formatter);
         return Period.between(localDate, LocalDate.now()).getYears() < 18;
+    }
+
+    public static boolean formatterDate(String startDate, String endDate, DateTimeFormatter formatter) {
+        LocalDate localStartDate = LocalDate.parse(startDate, formatter);
+        LocalDate localEndDate = LocalDate.parse(endDate, formatter);
+        return Period.between(localStartDate,localEndDate).getDays() > 0;
     }
 }

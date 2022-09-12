@@ -30,8 +30,8 @@
                                     </div>
                                     <div class="col-xs-5">
                                         <form class="d-flex" role="search" action="/contract">
-                                            <input class="form-control me-2" type="search" placeholder="search"
-                                                   aria-label="Search" name="keyword">
+                                            <input class="form-control me-2" type="search" placeholder="search by name customer"
+                                                   aria-label="Search" name="nameCustomer">
                                             <button class="btn btn-success" type="submit" name="action" value="search">
                                                 search
                                             </button>
@@ -129,11 +129,11 @@
                                 </tbody>
                             </table>
                             <div>
-                                <a th:href="@{/contract(page=${contracts.number - 1}, keyword = ${name})}"
+                                <a th:href="@{/contract(page=${contracts.number - 1})}"
                                    th:if="${contracts.hasPrevious()}">Previous</a>
                                 <span th:text="${contracts.number + 1}"></span>/<span
                                     th:text="${contracts.totalPages}"></span>
-                                <a th:href="@{/contract(page=${contracts.number + 1}, keyword = ${name})}"
+                                <a th:href="@{/contract(page=${contracts.number + 1})}"
                                    th:if="${contracts.hasNext()}">Next</a>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
 
 <script>
     function infoCreateContractDetail(id) {
-        document.getElementById("contractId").value = id;
+        document.getElementById("inputContractId").value = id;
     }
 </script>
 

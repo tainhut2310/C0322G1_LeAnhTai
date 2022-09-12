@@ -61,10 +61,8 @@ public class ContractController {
     }
 
     @GetMapping(value = "")
-    public String findAll(Model model, @PageableDefault(size = 3) Pageable pageable, @RequestParam Optional<String> nameCustomer) {
-        String name = nameCustomer.orElse("");
-        model.addAttribute("contracts", contractService.findAll(name, pageable));
-        model.addAttribute("name", name);
+    public String findAll(Model model, @PageableDefault(size = 5) Pageable pageable) {
+        model.addAttribute("contracts", contractService.findAll(pageable));
         model.addAttribute("totalMoneys", contractService.totalMoney());
         model.addAttribute("contractDetail", new ContractDetail());
         return "contract/list";
@@ -83,10 +81,10 @@ public class ContractController {
         return "redirect:/contract";
     }
 
-//    @PostMapping(value = "/createContractDetail")
-//    public String save(ContractDetail contractDetail, RedirectAttributes redirectAttributes) {
-//        contractDetailService.save(contractDetail);
-//        redirectAttributes.addFlashAttribute("message", "Register successfully!");
-//        return "redirect:/contract";
-//    }
+    @PostMapping(value = "/createContractDetail")
+    public String save(ContractDetail contractDetail, RedirectAttributes redirectAttributes) {
+        contractDetailService.save(contractDetail);
+        redirectAttributes.addFlashAttribute("message", "Register successfully!");
+        return "redirect:/contract";
+    }
 }

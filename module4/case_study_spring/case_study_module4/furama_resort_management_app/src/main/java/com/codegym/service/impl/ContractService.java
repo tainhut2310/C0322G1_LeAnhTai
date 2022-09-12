@@ -25,8 +25,8 @@ public class ContractService implements IContractService {
     private IContractDetailRepository contractDetailRepository;
 
     @Override
-    public Page<Contract> findAll(String name, Pageable pageable) {
-        return contractRepository.findByCustomerNameContaining(name, pageable);
+    public Page<Contract> findAll(Pageable pageable) {
+        return contractRepository.findAll(pageable);
     }
 
     @Override
@@ -57,6 +57,7 @@ public class ContractService implements IContractService {
         List<Double> listTotalMoney = new ArrayList<>();
         for (Contract contract : contractList) {
             totalMoney = contract.getFacility().getCost() - contract.getDeposit();
+            System.out.println(totalMoney);
             for (ContractDetail contractDetail : contractDetailList) {
                     if (contract.getId() == contractDetail.getContract().getId()) {
                         totalMoney += contractDetail.getQuantity() * contractDetail.getAttachFacility().getCost();

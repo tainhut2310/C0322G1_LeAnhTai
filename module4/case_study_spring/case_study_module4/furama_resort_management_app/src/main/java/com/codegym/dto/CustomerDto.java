@@ -111,22 +111,17 @@ public class CustomerDto implements Validator {
         this.customerType = customerType;
     }
 
-    public static DateTimeFormatter getFormatter() {
-        return formatter;
-    }
-
     @Override
     public boolean supports(Class<?> clazz) {
         return false;
     }
 
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @Override
     public void validate(Object target, Errors errors) {
         CustomerDto customerDto = (CustomerDto) target;
         if (!"".equals(customerDto.dateOfBirthday)) {
-            boolean result = DateTimeUntil.formatterAge(customerDto.dateOfBirthday, formatter);
+            boolean result = DateTimeUntil.formatterAge(customerDto.dateOfBirthday);
             if (result) {
                 errors.rejectValue("dateOfBirthday",
                         "create.dateOfBirthday",
