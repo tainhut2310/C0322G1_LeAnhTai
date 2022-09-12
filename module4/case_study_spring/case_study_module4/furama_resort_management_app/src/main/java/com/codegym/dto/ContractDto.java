@@ -1,44 +1,33 @@
 package com.codegym.dto;
 
+import com.codegym.model.Customer;
+import com.codegym.model.Employee;
+import com.codegym.model.Facility;
+import com.codegym.util.DateTimeUntil;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import javax.validation.constraints.NotBlank;
+
 public class ContractDto implements Validator {
-    private int id;
+    private Integer id;
+    @NotBlank(message = "*Không được để trống!")
     private String startDate;
+
+    @NotBlank(message = "*Không được để trống!")
     private String endDate;
-    private double deposit;
-    private int employeeId;
-    private int customerId;
-    private int facilityId;
 
-    public ContractDto() {
-    }
+    @NotBlank(message = "*Không được để trống!")
+    private String deposit;
+    private Employee employee;
+    private Customer customer;
+    private Facility facility;
 
-    public ContractDto(String startDate, String endDate, double deposit, int employeeId, int customerId, int facilityId) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.deposit = deposit;
-        this.employeeId = employeeId;
-        this.customerId = customerId;
-        this.facilityId = facilityId;
-    }
-
-    public ContractDto(int id, String startDate, String endDate, double deposit, int employeeId, int customerId, int facilityId) {
-        this.id = id;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.deposit = deposit;
-        this.employeeId = employeeId;
-        this.customerId = customerId;
-        this.facilityId = facilityId;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -58,36 +47,36 @@ public class ContractDto implements Validator {
         this.endDate = endDate;
     }
 
-    public double getDeposit() {
+    public String getDeposit() {
         return deposit;
     }
 
-    public void setDeposit(double deposit) {
+    public void setDeposit(String deposit) {
         this.deposit = deposit;
     }
 
-    public int getEmployeeId() {
-        return employeeId;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public int getFacilityId() {
-        return facilityId;
+    public Facility getFacility() {
+        return facility;
     }
 
-    public void setFacilityId(int facilityId) {
-        this.facilityId = facilityId;
+    public void setFacility(Facility facility) {
+        this.facility = facility;
     }
 
     @Override
@@ -97,6 +86,41 @@ public class ContractDto implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
+        ContractDto contractDto = (ContractDto) target;
+        if (!"".equals(contractDto.startDate) && !"".equals(contractDto.endDate)) {
+            boolean result = DateTimeUntil.formatterDate(contractDto.startDate, contractDto.endDate);
+            if (result) {
+                errors.rejectValue("endDate",
+                        "create.endDate",
+                        "*Ngày kết thúc phải lớn hơn ngày bắt đầu!");
 
+                errors.rejectValue("startDate",
+                        "create.startDate",
+                        "*Ngày bắt đầu phải bé hơn ngày kết thúc!");
+            }
+        }
+        if (!contractDto.deposit.matches("^?\\d*(\\.\\d+)?$")) {
+            errors.rejectValue("deposit",
+                    "create.deposit",
+                    "*Tiền đặt cọc phải là số nguyên hoặc số thập phân!");
+        }
+
+        if (contractDto.customer == null) {
+            errors.rejectValue("customer",
+                    "create.customer",
+                    "*Không được để trống!");
+        }
+
+        if (contractDto.employee == null) {
+            errors.rejectValue("employee",
+                    "create.employee",
+                    "*Không được để trống!");
+        }
+
+        if (contractDto.facility == null) {
+            errors.rejectValue("facility",
+                    "create.facility",
+                    "*Không được để trống!");
+        }
     }
 }

@@ -12,9 +12,9 @@ public class DateTimeUntil {
         return Period.between(localDate, LocalDate.now()).getYears() < 18;
     }
 
-    public static boolean formatterDate(String startDate, String endDate, DateTimeFormatter formatter) {
+    public static boolean formatterDate(String startDate, String endDate) {
         LocalDate localStartDate = LocalDate.parse(startDate, formatter);
         LocalDate localEndDate = LocalDate.parse(endDate, formatter);
-        return Period.between(localStartDate,localEndDate).getDays() > 0;
+        return Period.between(localStartDate,localEndDate).getDays() < 0;
     }
 }

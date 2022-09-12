@@ -56,7 +56,7 @@
                                         <td th:text="${employees.name}"></td>
                                         <td th:text="${employees.dateOfBirthday}"></td>
                                         <td th:text="${employees.idCard}"></td>
-                                        <td th:text="${employees.salary}"></td>
+                                        <td th:text="${#numbers.formatCurrency(employees.salary)}"></td>
                                         <td th:text="${employees.phoneNumber}"></td>
                                         <td th:text="${employees.email}"></td>
                                         <td th:text="${employees.address}"></td>
