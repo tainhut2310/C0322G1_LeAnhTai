@@ -57,7 +57,6 @@ public class ContractService implements IContractService {
         List<Double> listTotalMoney = new ArrayList<>();
         for (Contract contract : contractList) {
             totalMoney = contract.getFacility().getCost() - contract.getDeposit();
-            System.out.println(totalMoney);
             for (ContractDetail contractDetail : contractDetailList) {
                     if (contract.getId() == contractDetail.getContract().getId()) {
                         totalMoney += contractDetail.getQuantity() * contractDetail.getAttachFacility().getCost();

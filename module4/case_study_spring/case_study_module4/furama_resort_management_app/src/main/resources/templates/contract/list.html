@@ -145,75 +145,38 @@
 </div>
 
 <!--Add Modal Contract Detail HTML-->
-<!--<div id="addContractDetailModal" class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--            <form action="/contract/createContractDetail" method="post" th:object="${contractDetail}">-->
-<!--                <div class="modal-header">-->
-<!--                    <h4 class="modal-title">Tạo hợp đồng chi tiết</h4>-->
-<!--                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-<!--                </div>-->
-<!--                <div class="modal-body">-->
-<!--                    <div class="form-group">-->
-<!--                        <label>Mã hợp đồng</label>-->
-<!--                        <input readonly id="contractId" th:field="*{contract}" type="text" class="form-control"/>-->
-<!--                    </div>-->
-
-<!--                    <div class="form-group">-->
-<!--                        <label class="form-label">Tên dịch vụ đi kèm</label>-->
-<!--                        <select th:field="*{attachFacility}" class="form-select">-->
-<!--                            <option value="">Chọn dịch vụ đi kèm</option>-->
-<!--                            <option th:each="attachFacilities : ${attachFacilities}"-->
-<!--                                    th:value="${attachFacilities.id}"-->
-<!--                                    th:text="${attachFacilities.name} + ' - giá: ' + ${attachFacilities.cost}"></option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-
-<!--                    <div class="form-group">-->
-<!--                        <label class="form-label">Số lượng</label>-->
-<!--                        <input type="text" th:field="*{quantity}" class="form-control"/>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="modal-footer">-->
-<!--                    <input type="button" class="btn btn-default" data-dismiss="modal" value="HỦy bỏ">-->
-<!--                    <input id="btnCreate" type="submit" class="btn btn-success" value="Tạo hợp đồng chi tiết">-->
-<!--                </div>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
 <div id="addContractDetailModal" class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="post" th:object="${contractDetail}">
+            <form action="/contract/createContractDetail" method="post" th:object="${contractDetail}">
                 <div class="modal-header">
                     <h4 class="modal-title">Tạo hợp đồng chi tiết</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="inputContractId">Mã hợp đồng</label>
+                        <label>Mã hợp đồng</label>
                         <input readonly id="inputContractId" th:field="*{contract}" type="text" class="form-control"/>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="inputAttachFacility">Tên dịch vụ đi kèm</label>
-                        <select id="inputAttachFacility" th:field="*{attachFacility}" class="form-select">
+                        <label class="form-label">Tên dịch vụ đi kèm</label>
+                        <select th:field="*{attachFacility}" class="form-select">
                             <option value="">Chọn dịch vụ đi kèm</option>
                             <option th:each="attachFacilities : ${attachFacilities}"
                                     th:value="${attachFacilities.id}"
                                     th:text="${attachFacilities.name} + ' - giá: ' + ${attachFacilities.cost}"></option>
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label class="form-label" for="inputQuantity">Số lượng</label>
-                        <input type="text" id="inputQuantity" th:field="*{quantity}" class="form-control"/>
+                        <label class="form-label">Số lượng</label>
+                        <input type="text" th:field="*{quantity}" class="form-control"/>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="HỦy bỏ">
-                    <input id="btnCreate" type="submit" class="btn btn-success" value="Tạo hợp đồng chi tiết">
+                    <input type="submit" class="btn btn-success" value="Tạo hợp đồng chi tiết">
                 </div>
             </form>
         </div>
